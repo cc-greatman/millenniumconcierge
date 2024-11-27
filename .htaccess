@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteRule ^(.*) public/$1 [l]
+</IfModule>
+<Files .env>
+    Order allow,deny
+    Deny from all
+</Files>
+<Files config>
+    Order Deny,Allow
+    Deny from all
+</Files>
