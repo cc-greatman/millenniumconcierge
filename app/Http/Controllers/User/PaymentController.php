@@ -44,7 +44,7 @@ class PaymentController extends Controller
         if (isset($paymentDetails['status']) && $paymentDetails === "true") {
 
             // Update user's membership
-            $id = auth()->guard('web')->user();
+            $id = auth()->guard('web')->id();
             $user = User::findOrFail($id);
             $user->memberships()->updateOrCreate(
                 ['user_id' => $user->id],
