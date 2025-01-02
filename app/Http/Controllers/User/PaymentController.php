@@ -39,6 +39,8 @@ class PaymentController extends Controller
 
         $paymentDetails = Paystack::getPaymentData();
 
+        dd($paymentDetails);
+
         // Check if payment was successful
         if ($paymentDetails['status']) {
 
