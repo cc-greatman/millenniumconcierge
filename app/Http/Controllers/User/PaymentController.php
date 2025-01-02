@@ -39,10 +39,8 @@ class PaymentController extends Controller
 
         $paymentDetails = Paystack::getPaymentData();
 
-        dd($paymentDetails);
-
         // Check if payment was successful
-        if ($paymentDetails['status']) {
+        if (isset($paymentDetails['status']) && $paymentDetails === "true") {
 
             // Update user's membership
             $id = auth()->guard('web')->user();
