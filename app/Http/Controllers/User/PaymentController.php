@@ -61,7 +61,7 @@ class PaymentController extends Controller
 
             return view('user.membership.setting', compact('pageTitle', 'success'));
         }
-            $$error = "Payment failed. Please try again.";
+            $error = "Payment failed. Please try again.";
 
             $pageTitle = "Membership Overview || ". env('APP_NAME');
 
