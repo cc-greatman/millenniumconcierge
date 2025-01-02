@@ -3905,7 +3905,7 @@ textarea.is-invalid.dataTable-input {
 
 .dropdown-menu-dark {
   --bs-dropdown-color: #dbe0e5;
-  --bs-dropdown-bg: #1d2630;
+  --bs-dropdown-bg: #DFBF81;
   --bs-dropdown-border-color: rgba(0, 0, 0, 0.15);
   --bs-dropdown-box-shadow: ;
   --bs-dropdown-link-color: #dbe0e5;
@@ -8809,6 +8809,9 @@ textarea.is-invalid.dataTable-input {
 [data-pc-direction=ltr] .bg-white {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-white-rgb), var(--bs-bg-opacity)) !important;
+}
+.bg-black {
+    background-color: #131920 !important;
 }
 [data-pc-direction=ltr] .bg-body {
   --bs-bg-opacity: 1;
@@ -17855,7 +17858,7 @@ textarea.is-invalid.dataTable-input {
 }
 
 .bg-brand-color-3 {
-  background: linear-gradient(207.92deg, #0398f2 11.42%, #38b9e7 106.55%);
+  background: linear-gradient(207.92deg, #DFBF81 11.42%, #BF9A53 106.55%);
 }
 
 .bg-brand-color-4 {

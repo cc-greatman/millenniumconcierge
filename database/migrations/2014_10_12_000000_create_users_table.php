@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('password');
             $table->string('google_id')->nullable();
             $table->string('session_id')->nullable();
-            $table->integer('membership')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

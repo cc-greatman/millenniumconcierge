@@ -9,6 +9,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset("../frontend/img/favicon/apple-touch-icon.png") }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset("../frontend/img/favicon/favicon-32x32.png") }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset("../frontend/img/favicon/favicon-16x16.png") }}">
+    <meta name="cryptomus" content="b0176659" />
     <link rel="manifest" href="{{ asset("img/favicon/site.webmanifest") }}"><link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">

@@ -20,4 +20,11 @@ class ViewController extends Controller
 
         return view('user.membership.pricing', compact('pageTitle'));
     }
+
+    public function membershipSetting() {
+
+        $pageTitle = "Membership Overview || ". env('APP_NAME');
+
+        return view('user.membership.setting', compact('pageTitle'));
+    }
 }

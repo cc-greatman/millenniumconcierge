@@ -31,19 +31,19 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
 
         Route::name('auth.')->prefix('auth')->group(function() {
 
-            //Registration Routes
+            //-- Registration Routes
             Route::get('register', 'Auth\RegisterController@show')->name('register.show');
             Route::post('register', 'Auth\RegisterController@register')->name('register.perform');
 
-            //Login Routes
+            //-- Login Routes
             Route::get('login', 'Auth\LoginController@show')->name('login.show');
             Route::post('login', 'Auth\LoginController@login')->name('login.perform');
 
-            //Google Login Routes
+            //-- Google Login Routes
             Route::get('login/google', 'Auth\SocialiteController@redirectToGoogle')->name('login.google');
             Route::get('login/google/callback', 'Auth\SocialiteController@handleGoogleCallback');
 
-            //Forgot Password Routes
+            //-- Forgot Password Routes
             Route::get('forgot-password', 'Auth\ResetPassController@index')->name('forgot-password.show');
             Route::post('forgot-password', 'Auth\ResetPassController@sendLink')->name('forgot-password.perform');
             Route::get('reset-password/{token}', 'Auth\ResetPassController@show')->name('reset-password.show');
@@ -53,28 +53,40 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
 
         Route::middleware(['auth'])->group(function() {
 
-            //Email Verification Routes
+            //-- Email Verification Routes
             Route::name('email.')->prefix('email')->group(function() {
                 Route::get('verify', 'Auth\EmailVerifyController@show')->name('verify.show');
                 Route::post('verify/resend', 'Auth\EmailVerifyController@resend')->name('verify.resend');
             });
 
+            //-- Logout Route
+            Route::get('logout', 'Auth\LogoutController@perform')->name('logout');
+
             Route::group(['middleware' => ['allow.email.verified.users']], function() {
 
-                //Membership Routes
+                //-- Membership Routes
                 Route::name('membership.')->prefix('membership')->group( function() {
 
                     Route::get('plans', 'User\ViewController@membership')->name('plans.view');
+                    Route::get('settings', 'User\ViewController@membershipSetting')->name('setting.view');
                 });
 
                 Route::group(['middleware' => ['is.a.member']], function () {
 
                     Route::name('user.')->prefix('user')->group( function() {
-                        //Dashboard Route
+                        //-- Dashboard Route
                         Route::get('dashboard', 'User\ViewController@index')->name('dashboard');
 
-                        //Logout Route
-                        Route::get('logout', 'Auth\LogoutController@perform')->name('logout');
+                        //-- All Trips Route
+                        Route::name('trips.')->prefix('trips')->group(function () {
+
+                        });
+
+                        Route::name('paystack.')->prefix('paystack')->group(function() {
+                            //-- All Paystack Routes
+                            Route::get('pay', 'User\PaymentController@redirectToGateway')->name('pay.process');
+                            Route::get('callback', 'User\PaymentController@handleGatewayCallback')->name('callback.process');
+                        });
                     });
                 });
             });

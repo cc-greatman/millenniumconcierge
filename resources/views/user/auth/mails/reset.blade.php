@@ -81,7 +81,7 @@
                         <tbody>
                             <tr>
                                 <td style="text-align: center; padding-bottom:25px; padding-top: 15px;">
-                                    <a href="#"><img style="height: 40px; padding-top:10px;" src="https://millenniumconcierge.com/frontend/img/logo-dark.png" alt="logo"></a>
+                                    <a href="#"><img style="height: 40px; padding-top:10px;" src="https://millenniumconcierge.com/frontend/img/logo-light.png" alt="logo"></a>
                                 </td>
                             </tr>
                         </tbody>
@@ -121,7 +121,7 @@
                         <tbody>
                             <tr>
                                 <td style="text-align: center; padding:25px 20px 0;">
-                                    <p style="font-size: 13px; color:#999;">Copyright © 2024 {{ env("APP_NAME") }}. All rights reserved. <br></p>
+                                    <p style="font-size: 13px; color:#999;">Copyright © {{ date('Y') }} {{ env("APP_NAME") }}. All rights reserved. <br></p>
                                     <p style="padding-top: 15px; font-size: 12px; color:#999;">This email was sent to you as a registered user of <a style="color: #DFBF81; text-decoration:none;" href="{{ route('home') }}">{{ env("APP_NAME") }}</a>. To update your emails preferences <a style="color: #DFBF81; text-decoration:none;" href="#">click here</a>.</p>
                                 </td>
                             </tr>

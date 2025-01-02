@@ -4,6 +4,12 @@
 
 @include('user.partials.navbar')
 
+@php
+    $id = auth()->guard('web')->id();
+
+    $user = \App\Models\User::findOrFail($id);
+@endphp
+
 <!-- [ Main Content ] start -->
 <div class="pc-container">
     <div class="pc-content">
@@ -38,7 +44,13 @@
                     <li class="list-group-item enable"><i class="ti ti-check text-success"></i> Itinerary management and flight booking at no extra fee</li>
                     <li class="list-group-item enable"><i class="ti ti-check text-success"></i> Free access to airport exclusive lounge</li>
                   </ul>
-                  <div class="d-grid"><a class="btn btn-primary mt-4" href="#">Buy Now</a></div>
+                  <div class="d-grid">
+                    @if($user->getMembershipType() === "Silver Member")
+                        <a class="btn btn-warning mt-4" href="{{ route('membership.setting.view') }}">Current Plan</a>
+                    @else
+                        <a class="btn btn-primary mt-4" href="{{ route('user.paystack.pay.process', ['plan' => 'silver', 'amount' => 75000]) }}">Buy Now</a>
+                    @endif
+                  </div>
                 </div>
               </div>
             </div>
@@ -55,7 +67,13 @@
                     <li class="list-group-item enable"><i class="ti ti-check text-primary"></i> Access to Exclusive High Value Domestic and International Events</li>
                     <li class="list-group-item enable"><i class="ti ti-check text-primary"></i> Access to 24/7 customer service</li>
                   </ul>
-                  <div class="d-grid"><a class="btn btn-primary mt-4" href="#">Buy Now</a></div>
+                  <div class="d-grid">
+                    @if($user->getMembershipType() === "Gold Member")
+                        <a class="btn btn-warning mt-4" href="{{ route('membership.setting.view') }}">Current Plan</a>
+                    @else
+                        <a class="btn btn-primary mt-4" href="#">Buy Now</a>
+                    @endif
+                  </div>
                 </div>
               </div>
             </div>
@@ -73,7 +91,13 @@
                     <li class="list-group-item enable" style="color: black !important;"><i class="ti ti-check text-warning"></i> International Speaking opportunity</li>
                     <li class="list-group-item enable" style="color: black !important;"><i class="ti ti-check text-warning"></i> International award nomination</li>
                   </ul>
-                  <div class="d-grid"><a class="btn btn-primary mt-4" href="#">Buy Now</a></div>
+                  <div class="d-grid">
+                    @if($user->getMembershipType() === "Platinum Member")
+                        <a class="btn btn-warning mt-4" href="{{ route('membership.setting.view') }}">Current Plan</a>
+                    @else
+                        <a class="btn btn-primary mt-4" href="#">Buy Now</a>
+                    @endif
+                  </div>
                 </div>
               </div>
             </div>

@@ -241,7 +241,7 @@
               data-bs-auto-close="outside"
               aria-expanded="false"
             >
-              <img src="{{ asset("../frontend/img/favicon/apple-touch-icon.png") }}" alt="user-image" class="user-avtar" />
+              <img src="{{ asset("../backend/images/user/user.png") }}" alt="user-image" class="user-avtar" />
             </a>
             <div class="dropdown-menu dropdown-user-profile dropdown-menu-end pc-h-dropdown">
               <div class="dropdown-header d-flex align-items-center justify-content-between">
@@ -293,7 +293,7 @@
                       </a>
                     </li>
                     <li class="list-group-item">
-                      <a href="{{ route('user.logout') }}" class="dropdown-item">
+                      <a href="{{ route('logout') }}" class="dropdown-item">
                         <span class="d-flex align-items-center">
                           <i class="ph-duotone ph-power"></i>
                           <span>Logout</span>

@@ -77,4 +77,43 @@ class User extends Authenticatable
 
         return $this->hasOne(UserVerify::class);
     }
+
+    public function memberships() {
+
+        return $this->hasOne(Membership::class, 'user_id', 'id');
+    }
+
+    public function getMembershipType() {
+
+        $types = [
+            0 => "Non Member",
+            1 => "Silver Member",
+            2 => "Gold Member",
+            3 => "Platinum Member",
+        ];
+
+        // Using the optional() helper to avoid checking if the membership exists
+        return $types[optional($this->memberships)->type] ?? "Non Member";
+
+    }
+
+    public function trips() {
+
+        return $this->hasMany(Trips::class, 'user_id', 'id');
+    }
+
+    public function bookings() {
+
+        return $this->hasMany(Bookings::class, 'user_id', 'id');
+    }
+
+    public function identification() {
+
+        return $this->hasMany(Identification::class, 'user_id', 'id');
+    }
+
+    public function reports() {
+
+        return $this->hasMany(Reports::class, 'user_id', 'id');
+    }
 }

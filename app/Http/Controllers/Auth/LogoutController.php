@@ -25,6 +25,6 @@ class LogoutController extends Controller
         session()->invalidate();
         session()->regenerateToken();
 
-        return redirect('auth/login');
+        return redirect()->route('auth.login.show');
     }
 }

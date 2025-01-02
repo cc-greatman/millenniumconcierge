@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\User;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -16,7 +17,10 @@ class IsAMember
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::guard('web')->user()->membership === 0) {
+        $id = Auth::guard('web')->id();
+        $user = User::findOrFail($id);
+
+        if (!$user->memberships || $user->memberships->type === 0 || in_array($user->memberships->status, ['inactive', 'canceled'])) {
 
             return redirect()->route('membership.plans.view');
         }

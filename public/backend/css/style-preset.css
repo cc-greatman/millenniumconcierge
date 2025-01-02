@@ -3406,7 +3406,7 @@ h2 {
   --bs-offcanvas-bg: #19212a;
 }
 [data-pc-theme=dark] .list-group {
-  --bs-list-group-bg: #1b232d;
+  --bs-list-group-bg: #131920;
   --bs-list-group-border-color: #202b36;
   --bs-list-group-disabled-bg: #171e26;
   --bs-list-group-action-hover-bg: #1d2630;
@@ -3436,7 +3436,7 @@ h2 {
 [data-pc-theme=dark] .dropdown-menu {
   --bs-dropdown-color: var(--bs-body-color);
   --bs-dropdown-link-color: var(--bs-body-color);
-  --bs-dropdown-bg: #263240;
+  --bs-dropdown-bg: #BF9A53;
   --bs-dropdown-link-hover-bg: #19212a;
   --bs-dropdown-divider-bg: #1d2630;
 }
