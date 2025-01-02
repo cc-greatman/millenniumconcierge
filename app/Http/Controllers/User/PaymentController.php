@@ -36,15 +36,16 @@ class PaymentController extends Controller
     }
 
     public function handleGatewayCallback() {
-
+        
         $paymentDetails = Paystack::getPaymentData();
-
+    
         // Check if payment was successful
-        if (isset($paymentDetails['status']) && $paymentDetails === "true") {
-
-            // Update user's membership
-            $id = auth()->guard('web')->id();
-            $user = User::findOrFail($id);
+        if (isset($paymentDetails['status']) && $paymentDetails['status'] === true) {
+    
+            // Get authenticated user
+            $user = auth()->guard('web')->user();
+    
+            // Update or create membership
             $user->memberships()->updateOrCreate(
                 ['user_id' => $user->id],
                 [
@@ -54,18 +55,17 @@ class PaymentController extends Controller
                     'end_date' => now()->addYear(),
                 ]
             );
-
+    
             $success = "Payment successful. Welcome to Silver Membership!";
-
-            $pageTitle = "Membership Overview || ". env('APP_NAME');
-
+            $pageTitle = "Membership Overview || " . env('APP_NAME');
+    
             return view('user.membership.setting', compact('pageTitle', 'success'));
         }
-            $error = "Payment failed. Please try again.";
-
-            $pageTitle = "Membership Overview || ". env('APP_NAME');
-
-            return view('user.membership.setting', compact('pageTitle', 'error'));
-
+    
+        // If payment failed
+        $error = "Payment failed. Please try again.";
+        $pageTitle = "Membership Overview || " . env('APP_NAME');
+    
+        return view('user.membership.setting', compact('pageTitle', 'error'));
     }
 }
