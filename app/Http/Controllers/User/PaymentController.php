@@ -55,9 +55,17 @@ class PaymentController extends Controller
                 ]
             );
 
-            return redirect()->route('membership.setting.view')->with('success', 'Payment successful. Welcome to Silver Membership!');
-        }
+            $success = "Payment successful. Welcome to Silver Membership!";
 
-        return redirect()->route('membership.setting.view')->with('error', 'Payment failed. Please try again.');
+            $pageTitle = "Membership Overview || ". env('APP_NAME');
+
+            return view('user.membership.setting', compact('pageTitle', 'success'));
+        }
+            $$error = "Payment failed. Please try again.";
+
+            $pageTitle = "Membership Overview || ". env('APP_NAME');
+
+            return view('user.membership.setting', compact('pageTitle', 'error'));
+
     }
 }
