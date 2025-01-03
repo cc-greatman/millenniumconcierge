@@ -134,9 +134,15 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
                 Route::get('dashboard', 'Admin\ViewController@index')->name('dashboard.show');
 
                 Route::name('manage.')->prefix('manage')->group(function() {
-
+                    //-- Manage User Routes
                     Route::get('user/view', 'Admin\ViewController@manageUsers')->name('users.view');
+                    Route::get('user/view/{id}', 'Admin\UserController@viewUser')->name('person.view');
                     Route::get('user/create', 'Admin\UserController@createUser')->name('users.create');
+                    Route::post('user/edit/{id}', 'Admin\UserController@editUser')->name('user.edit');
+                    Route::post('user/password/{id}', 'Admin\UserController@editUserPwd')->name('user.pwd.edit');
+                    Route::post('user/membership/{id}', 'Admin\UserController@editUserMembership')->name('user.membership.edit');
+                    Route::post('user/identity/{id}', 'Admin\UserController@editUseridentity')->name('user.identity.edit');
+                    Route::post('user/delete/{id}', 'Admin\UserController@deleteUser')->name('user.delete');
                 });
             });
         });

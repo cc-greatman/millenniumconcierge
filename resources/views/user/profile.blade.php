@@ -157,58 +157,120 @@
                   </form>
                 </div>
                 <div class="tab-pane fade" id="user-set-account" role="tabpanel" aria-labelledby="user-set-account-tab">
-                <form action="{{ route('user.account.identity.upload') }}" method="post" enctype="multipart/form-data">
-                    @csrf
-                    <div class="card">
-                        <div class="card-header">
-                          <h5>Identity Verification</h5>
-                        </div>
-                        <div class="card-body">
-                          <ul class="list-group list-group-flush">
-                            <li class="list-group-item px-0">
-                              <div class="row mb-0">
-                                <label class="col-form-label col-md-4 col-sm-12 text-md-end">Type of ID Card</label>
-                                <div class="col-md-8 col-sm-12">
-                                  <select class="form-control" name="id_type">
-                                    <option disabled selected>Select ID Type</option>
-                                    <option value="local_passport">Local Passport</option>
-                                    <option value="intl_passport">International Passport</option>
-                                    <option value="drivers_license">Driver's License</option>
-                                    <option value="nin">NIN Card(Physical/Digital)</option>
-                                    <option value="voters_card">Voter's Card</option>
-                                  </select>
-                                </div>
-                              </div>
-                            </li>
-                            <li class="list-group-item px-0 pt-0">
-                                <div class="row mb-0">
-                                  <label class="col-form-label col-md-4 col-sm-12 text-md-end"
-                                    >Front of ID <span class="text-danger">*</span></label
-                                  >
-                                  <div class="col-md-8 col-sm-12">
-                                    <input type="file" name="front_id" class="form-control" value="Ashoka_Tano_16" accept=".jpeg,.png,.jpg"/>
-                                    <small class="text-muted">Allowed file types: JPEG, PNG. Max size: 10MB.</small>
+                    @if(is_null($user->identification))
+                    <form action="{{ route('user.account.identity.upload') }}" method="post" enctype="multipart/form-data">
+                        @csrf
+                        <div class="card">
+                            <div class="card-header">
+                              <h5>Identity Verification</h5>
+                            </div>
+                            <div class="card-body">
+                              <ul class="list-group list-group-flush">
+                                <li class="list-group-item px-0">
+                                  <div class="row mb-0">
+                                    <label class="col-form-label col-md-4 col-sm-12 text-md-end">Type of ID Card</label>
+                                    <div class="col-md-8 col-sm-12">
+                                      <select class="form-control" name="id_type">
+                                        <option disabled selected>Select ID Type</option>
+                                        <option value="local_passport">Local Passport</option>
+                                        <option value="intl_passport">International Passport</option>
+                                        <option value="drivers_license">Driver's License</option>
+                                        <option value="nin">NIN Card(Physical/Digital)</option>
+                                        <option value="voters_card">Voter's Card</option>
+                                      </select>
+                                    </div>
                                   </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item px-0 pt-0">
-                                <div class="row mb-0">
-                                  <label class="col-form-label col-md-4 col-sm-12 text-md-end"
-                                    >Back of ID <span class="text-danger">*</span></label
-                                  >
-                                  <div class="col-md-8 col-sm-12">
-                                    <input type="file" name="back_id" class="form-control" value="Ashoka_Tano_16" accept=".jpeg,.png,.jpg" />
-                                    <small class="text-muted">Allowed file types: JPEG, PNG. Max size: 10MB.</small>
-                                  </div>
-                                </div>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="text-end btn-page">
-                        <button name="submit" type="submit" class="btn btn-primary">Update Profile</button>
-                      </div>
-                </form>
+                                </li>
+                                <li class="list-group-item px-0 pt-0">
+                                    <div class="row mb-0">
+                                      <label class="col-form-label col-md-4 col-sm-12 text-md-end"
+                                        >Front of ID <span class="text-danger">*</span></label
+                                      >
+                                      <div class="col-md-8 col-sm-12">
+                                        <input type="file" name="front_id" class="form-control" value="Ashoka_Tano_16" accept=".jpeg,.png,.jpg"/>
+                                        <small class="text-muted">Allowed file types: JPEG, PNG. Max size: 10MB.</small>
+                                      </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item px-0 pt-0">
+                                    <div class="row mb-0">
+                                      <label class="col-form-label col-md-4 col-sm-12 text-md-end"
+                                        >Back of ID <span class="text-danger">*</span></label
+                                      >
+                                      <div class="col-md-8 col-sm-12">
+                                        <input type="file" name="back_id" class="form-control" value="Ashoka_Tano_16" accept=".jpeg,.png,.jpg" />
+                                        <small class="text-muted">Allowed file types: JPEG, PNG. Max size: 10MB.</small>
+                                      </div>
+                                    </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="text-end btn-page">
+                            <button name="submit" type="submit" class="btn btn-primary">Update Profile</button>
+                          </div>
+                    </form>
+                    @else
+                        <div class="card">
+                            <div class="card-header">
+                              <h5>Identity Documents</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item px-0 pt-0">
+                                      <div class="row">
+                                        <div class="col-md-6">
+                                          <p class="mb-1 text-muted">Identification Type</p>
+                                          <p class="mb-0">{{ strtoupper($user->identification->type) }}</p>
+                                          <small></small>
+                                        </div>
+                                      </div>
+                                    </li>
+                                </ul>
+                              <ul class="list-group list-group-flush">
+                                <li class="list-group-item px-0 pt-0">
+                                    <div class="row mb-0">
+                                      <label class="col-form-label col-md-4 col-sm-12 text-md-end"
+                                        >Front of ID <span class="text-danger">*</span></label
+                                      >
+                                      <div class="col-md-8 col-sm-12">
+                                            @if(isset($user->identification->file))
+                                                @php
+                                                    $files = json_decode($user->identification->file, true);
+                                                @endphp
+                                                <img
+                                                    src="{{ asset('storage/' . ($files['front'] ?? '')) }}"
+                                                    alt="Front of ID"
+                                                    class="img-fluid mb-2"
+                                                    style="max-height: 200px;">
+                                            @else
+                                                <p class="text-muted">No front ID uploaded.</p>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item px-0 pt-0">
+                                    <div class="row mb-0">
+                                      <label class="col-form-label col-md-4 col-sm-12 text-md-end"
+                                        >Back of ID <span class="text-danger">*</span></label
+                                      >
+                                      <div class="col-md-8 col-sm-12">
+                                            @if(isset($user->identification->file))
+                                                <img
+                                                    src="{{ asset('storage/' . ($files['back'] ?? '')) }}"
+                                                    alt="Back of ID"
+                                                    class="img-fluid mb-2"
+                                                    style="max-height: 200px;">
+                                            @else
+                                                <p class="text-muted">No back ID uploaded.</p>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                    @endif
                 </div>
                 <div class="tab-pane fade" id="user-set-passwort" role="tabpanel" aria-labelledby="user-set-passwort-tab">
                     <form action="{{ route('user.account.password.update') }}" method="post">

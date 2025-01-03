@@ -64,10 +64,9 @@
                                 <div class="overlay-edit">
                                   <ul class="list-inline mb-0">
                                     <li class="list-inline-item m-0"
-                                      ><a href="#" class="avtar avtar-s btn btn-primary"><i class="ti ti-pencil f-18"></i></a
+                                      ><a href="{{ route('admin.manage.person.view', $user->id) }}" class="avtar avtar-s btn btn-primary"><i class="ti ti-pencil f-18"></i></a
                                     ></li>
-                                    <li class="list-inline-item m-0"
-                                      ><a href="#" class="avtar avtar-s btn bg-white btn-link-danger"><i class="ti ti-trash f-18"></i></a
+                                    <li class="list-inline-item m-0"><a href="{{ route('admin.manage.user.delete', $user->id) }}" onclick="return confirm('This action cannot be undone')" class="avtar avtar-s btn bg-white btn-link-danger"><i class="ti ti-trash f-18"></i></a
                                     ></li>
                                   </ul>
                                 </div>
