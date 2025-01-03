@@ -27,9 +27,9 @@ class NowPaymentsService
             'ipn_callback_url' => $callbackUrl,
         ]);
 
-        if ($response->successful()) {
+        //if ($response->successful()) {
             return $response->json();
-        }
+        //}
 
         throw new \Exception('NowPayments API error: ' . $response->body());
     }
