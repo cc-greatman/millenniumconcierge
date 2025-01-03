@@ -155,7 +155,7 @@
                   </form>
                 </div>
                 <div class="tab-pane fade" id="user-set-account" role="tabpanel" aria-labelledby="user-set-account-tab">
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="{{ route('user.account.identity.upload') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="card">
                         <div class="card-header">
