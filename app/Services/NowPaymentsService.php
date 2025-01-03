@@ -19,17 +19,17 @@ class NowPaymentsService
         $response = Http::withHeaders([
             'x-api-key' => $this->apiKey,
             'Content-Type' => 'application/json'
-        ])->post('https://api.nowpayments.io/v1/payment', [
+        ])->post('https://api.nowpayments.io/v1/invoice', [
             'price_amount' => $amount,
             'price_currency' => $currency,
-            'pay_currency' => 'ETH', // or any cryptocurrency
+            'pay_currency' => 'BTC', // or any cryptocurrency
             'order_id' => $orderId,
             'ipn_callback_url' => $callbackUrl,
         ]);
 
-        //if ($response->successful()) {
+        if ($response->successful()) {
             return $response->json();
-        //}
+        }
 
         throw new \Exception('NowPayments API error: ' . $response->body());
     }

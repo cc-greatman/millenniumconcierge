@@ -58,6 +58,8 @@ class CryptoController extends Controller {
 
         $nowPaymentResponse = $this->nowPayments->createPayment($paymentData['price_amount'], $paymentData['price_currency'], $paymentData['order_id'], $paymentData['ipn_callback_url']);
 
+        return $nowPaymentResponse;
+
         if (isset($nowPaymentResponse['status']) && $nowPaymentResponse['status'] === 'success') {
             return redirect($nowPaymentResponse['invoice_url']); // Redirect user to NowPayments
         }
