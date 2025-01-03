@@ -21,8 +21,8 @@
                 </div>
             </div>
         </footer>
-
         <!-- [Page Specific JS] start -->
+        <script src="{{ asset("../backend/js/pages/dashboard-help.js") }}"></script>
         <script src="{{ asset("../backend/js/plugins/apexcharts.min.js") }}"></script>
         <script src="{{ asset("../backend/js/plugins/jsvectormap.min.js") }}"></script>
         <script src="{{ asset("../backend/js/plugins/world.js") }}"></script>
@@ -37,6 +37,36 @@
         <script src="{{ asset("../backend/js/pcoded.js") }}"></script>
         <script src="{{ asset("../backend/js/show-password.js") }}"></script>
         <script src="{{ asset("../backend/js/plugins/feather.min.js") }}"></script>
+
+        <!-- [Page Specific JS] start -->
+        <!-- datatable Js -->
+        <script src="{{ asset("../backend/js/cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js") }}"></script>
+        <script src="{{ asset("../backend/js/plugins/dataTables.min.js") }}"></script>
+        <script src="{{ asset("../backend/js/plugins/dataTables.bootstrap5.min.js") }}"></script>
+        <script src="{{ asset("../backend/js/plugins/dataTables.responsive.min.js") }}"></script>
+        <script src="{{ asset("../backend/js/plugins/responsive.bootstrap5.min.js") }}"></script>
+        <script>
+        // [ Configuration Option ]
+        $('#res-config').DataTable({
+            responsive: true
+        });
+
+        // [ New Constructor ]
+        var newcs = $('#new-cons').DataTable();
+
+        new $.fn.dataTable.Responsive(newcs);
+
+        // [ Immediately Show Hidden Details ]
+        $('#show-hide-res').DataTable({
+            responsive: {
+            details: {
+                display: $.fn.dataTable.Responsive.display.childRowImmediate,
+                type: ''
+            }
+            }
+        });
+        </script>
+        <!-- [Page Specific JS] end -->
 
     </body>
     <!-- [Body] end -->
