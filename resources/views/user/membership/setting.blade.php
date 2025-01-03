@@ -146,7 +146,7 @@
                                     </td>
                                     <td>@if($payment->membership_type ===  1)&#8358;@else$@endif{{ number_format($payment->amount, 2) }}</td>
                                     <td>{{ $payment->payment_id }}</td>
-                                    <td>{{ $payment->created_at->format('Y-m-d H:i') }}/td>
+                                    <td>{{ $payment->created_at->format('Y-m-d H:i') }}</td>
                                     @if ($payment->status === "completed")
                                     <td><span class="badge text-bg-success">Completed</span></td>
                                     @elseif ($payment->status === "pending")
