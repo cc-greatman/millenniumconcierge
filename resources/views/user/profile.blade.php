@@ -8,6 +8,9 @@
 <div class="pc-container">
     <div class="pc-content">
       <!-- [ breadcrumb ] start -->
+      @include('user.alerts.success')
+        @include('user.alerts.error')
+        @include('user.alerts.error-lists')
       <div class="page-header">
         <div class="page-block">
           <div class="row align-items-center">
@@ -117,7 +120,7 @@
             <div class="col-lg-7 col-xxl-9">
               <div class="tab-content" id="user-set-tabContent">
                 <div class="tab-pane fade" id="user-set-information" role="tabpanel" aria-labelledby="user-set-information-tab">
-                  <form action="" method="post">
+                  <form action="{{ route('user.account.profile.update') }}" method="post">
                     @csrf
                     <div class="card">
                         <div class="card-header">
@@ -140,7 +143,7 @@
                             <div class="col-sm-6">
                               <div class="mb-3">
                                 <label class="form-label">Phone Number</label>
-                                <input type="text" name="phone" placeholder="0701000100(digits only)" class="form-control" value="{{ optional($user)->phone }}" />
+                                <input type="text" name="phone" placeholder="0701000100 (digits only)" class="form-control" value="{{ optional($user)->phone }}" />
                               </div>
                             </div>
                           </div>
@@ -152,97 +155,105 @@
                   </form>
                 </div>
                 <div class="tab-pane fade" id="user-set-account" role="tabpanel" aria-labelledby="user-set-account-tab">
-                  <div class="card">
-                    <div class="card-header">
-                      <h5>General Settings</h5>
-                    </div>
-                    <div class="card-body">
-                      <ul class="list-group list-group-flush">
-                        <li class="list-group-item px-0">
-                          <div class="row mb-0">
-                            <label class="col-form-label col-md-4 col-sm-12 text-md-end">Type of ID Card</label>
-                            <div class="col-md-8 col-sm-12">
-                              <select class="form-control">
-                                <option value="local_passport">Local Passport</option>
-                                <option value="intl_passport">International Passport</option>
-                                <option value="drivers_license">Driver's License</option>
-                                <option value="nin">NIN Card(Physical/Digital)</option>
-                                <option value="voters_card">Voter's Card</option>
-                              </select>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="list-group-item px-0 pt-0">
-                            <div class="row mb-0">
-                              <label class="col-form-label col-md-4 col-sm-12 text-md-end"
-                                >Front of ID <span class="text-danger">*</span></label
-                              >
-                              <div class="col-md-8 col-sm-12">
-                                <input type="file" class="form-control" value="Ashoka_Tano_16" />
+                <form action="" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <div class="card">
+                        <div class="card-header">
+                          <h5>Identity Verification</h5>
+                        </div>
+                        <div class="card-body">
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item px-0">
+                              <div class="row mb-0">
+                                <label class="col-form-label col-md-4 col-sm-12 text-md-end">Type of ID Card</label>
+                                <div class="col-md-8 col-sm-12">
+                                  <select class="form-control" name="id_type">
+                                    <option disabled selected>Select ID Type</option>
+                                    <option value="local_passport">Local Passport</option>
+                                    <option value="intl_passport">International Passport</option>
+                                    <option value="drivers_license">Driver's License</option>
+                                    <option value="nin">NIN Card(Physical/Digital)</option>
+                                    <option value="voters_card">Voter's Card</option>
+                                  </select>
+                                </div>
                               </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item px-0 pt-0">
-                            <div class="row mb-0">
-                              <label class="col-form-label col-md-4 col-sm-12 text-md-end"
-                                >Back of ID <span class="text-danger">*</span></label
-                              >
-                              <div class="col-md-8 col-sm-12">
-                                <input type="file" class="form-control" value="Ashoka_Tano_16" />
-                              </div>
-                            </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="text-end btn-page">
-                    <button name="submit" type="submit" class="btn btn-primary">Update Profile</button>
-                  </div>
+                            </li>
+                            <li class="list-group-item px-0 pt-0">
+                                <div class="row mb-0">
+                                  <label class="col-form-label col-md-4 col-sm-12 text-md-end"
+                                    >Front of ID <span class="text-danger">*</span></label
+                                  >
+                                  <div class="col-md-8 col-sm-12">
+                                    <input type="file" class="form-control" value="Ashoka_Tano_16" accept=".jpeg,.png,.jpg"/>
+                                    <small class="text-muted">Allowed file types: JPEG, PNG. Max size: 10MB.</small>
+                                  </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item px-0 pt-0">
+                                <div class="row mb-0">
+                                  <label class="col-form-label col-md-4 col-sm-12 text-md-end"
+                                    >Back of ID <span class="text-danger">*</span></label
+                                  >
+                                  <div class="col-md-8 col-sm-12">
+                                    <input type="file" class="form-control" value="Ashoka_Tano_16" accept=".jpeg,.png,.jpg" />
+                                    <small class="text-muted">Allowed file types: JPEG, PNG. Max size: 10MB.</small>
+                                  </div>
+                                </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="text-end btn-page">
+                        <button name="submit" type="submit" class="btn btn-primary">Update Profile</button>
+                      </div>
+                </form>
                 </div>
                 <div class="tab-pane fade" id="user-set-passwort" role="tabpanel" aria-labelledby="user-set-passwort-tab">
-                  <div class="card">
-                    <div class="card-header">
-                      <h5>Change Password</h5>
-                    </div>
-                    <div class="card-body">
-                      <ul class="list-group list-group-flush">
-                        <li class="list-group-item pt-0 px-0">
-                          <div class="row mb-0">
-                            <label class="col-form-label col-md-4 col-sm-12 text-md-end"
-                              >Current Password <span class="text-danger">*</span>
-                            </label>
-                            <div class="col-md-8 col-sm-12">
-                              <input type="password" class="form-control" />
-                              <div class="form-text"> Forgot password? <a href="#" class="link-primary">Click here</a> </div>
+                    <form action="" method="post">
+                        @csrf
+                        <div class="card">
+                            <div class="card-header">
+                              <h5>Change Password</h5>
+                            </div>
+                            <div class="card-body">
+                              <ul class="list-group list-group-flush">
+                                <li class="list-group-item pt-0 px-0">
+                                  <div class="row mb-0">
+                                    <label class="col-form-label col-md-4 col-sm-12 text-md-end"
+                                      >Current Password <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-md-8 col-sm-12">
+                                      <input type="password" name="current_password" placeholder="Current Password" class="form-control" />
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="list-group-item px-0">
+                                  <div class="row mb-0">
+                                    <label class="col-form-label col-md-4 col-sm-12 text-md-end"
+                                      >New Password <span class="text-danger">*</span></label
+                                    >
+                                    <div class="col-md-8 col-sm-12">
+                                      <input type="password" name="password" placeholder="Password" class="form-control" />
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="list-group-item pb-0 px-0">
+                                  <div class="row mb-0">
+                                    <label class="col-form-label col-md-4 col-sm-12 text-md-end"
+                                      >Confirm Password <span class="text-danger">*</span></label
+                                    >
+                                    <div class="col-md-8 col-sm-12">
+                                      <input type="password" name="password_confirmation" placeholder="Password Confirmation" class="form-control" />
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
                             </div>
                           </div>
-                        </li>
-                        <li class="list-group-item px-0">
-                          <div class="row mb-0">
-                            <label class="col-form-label col-md-4 col-sm-12 text-md-end"
-                              >New Password <span class="text-danger">*</span></label
-                            >
-                            <div class="col-md-8 col-sm-12">
-                              <input type="password" class="form-control" />
-                            </div>
+                          <div class="text-end btn-page">
+                            <button name="submit" type="submit" class="btn btn-primary">Update Profile</button>
                           </div>
-                        </li>
-                        <li class="list-group-item pb-0 px-0">
-                          <div class="row mb-0">
-                            <label class="col-form-label col-md-4 col-sm-12 text-md-end"
-                              >Confirm Password <span class="text-danger">*</span></label
-                            >
-                            <div class="col-md-8 col-sm-12">
-                              <input type="password" class="form-control" />
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="text-end btn-page">
-                    <button name="submit" type="submit" class="btn btn-primary">Update Profile</button>
-                  </div>
+                    </form>
                 </div>
               </div>
             </div>
