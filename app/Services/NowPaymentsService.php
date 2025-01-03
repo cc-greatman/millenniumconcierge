@@ -18,6 +18,7 @@ class NowPaymentsService
 
         $response = Http::withHeaders([
             'x-api-key' => $this->apiKey,
+            'Content-Type' => 'application/json'
         ])->post('https://api.nowpayments.io/v1/invoice', [
             'price_amount' => $amount,
             'price_currency' => $currency,
