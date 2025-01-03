@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Services\NowPaymentsService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Schema;
@@ -14,7 +15,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->singleton(NowPaymentsService::class, function ($app) {
+            return new NowPaymentsService();
+        });
     }
 
     /**

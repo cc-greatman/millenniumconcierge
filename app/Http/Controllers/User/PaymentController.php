@@ -57,10 +57,8 @@ class PaymentController extends Controller
                 ]
             );
 
-            $success = "Payment successful. Welcome to Silver Membership!";
-            $pageTitle = "Membership Overview || " . env('APP_NAME');
-
-            return view('user.membership.setting', compact('pageTitle', 'success'));
+            // Handle successful payment (e.g., activate membership)
+            return redirect()->route('membership.setting.view')->with('success', 'Payment successful!');
         }
 
         // If payment failed
