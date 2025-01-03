@@ -40,7 +40,7 @@ class CryptoController extends Controller {
         // Create payment record
         $payment = Payments::create([
             'user_id' => auth()->id(),
-            'membership_type' => $type,
+            'membership_type' => $membership['type'],
             'amount' => $membership['price'],
             'mode' => 'crypto',
             'payment_id' => uniqid('mcon_'),
