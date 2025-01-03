@@ -134,17 +134,17 @@
                                       <div class="d-flex align-items-center">
                                         <div class="flex-grow-1 ms-3">
                                           <h6 class="mb-0">
-                                            @if(ucfirst($payment->membership_type) ===  1)
+                                            @if($payment->membership_type ===  1)
                                                 SILVER MEMBERSHIP
-                                            @elseif(ucfirst($payment->membership_type) ===  2)
+                                            @elseif($payment->membership_type ===  2)
                                                 GOLD MEMBERSHIP
-                                            @elseif(ucfirst($payment->membership_type) ===  3)
+                                            @elseif($payment->membership_type ===  3)
                                                 PLATINUM MEMBERSHIP
                                             @endif</h6>
                                         </div>
                                       </div>
                                     </td>
-                                    <td>@if(ucfirst($payment->membership_type) ===  1)&#8358;@else$@endif{{ number_format($payment->amount, 2) }}</td>
+                                    <td>@if($payment->membership_type ===  1)&#8358;@else$@endif{{ number_format($payment->amount, 2) }}</td>
                                     <td>{{ $payment->payment_id }}</td>
                                     <td>{{ $payment->created_at->format('Y-m-d H:i') }}/td>
                                     @if ($payment->status === "completed")
