@@ -65,7 +65,7 @@ class PaymentController extends Controller
                 'amount' => 75000,
                 'mode' => 'crypto',
                 'payment_id' => uniqid('mcon_'),
-                'status' => 'successful',
+                'status' => 'completed',
             ]);
 
             // Handle successful payment (e.g., activate membership)
