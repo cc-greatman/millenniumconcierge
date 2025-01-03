@@ -71,6 +71,19 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
                     Route::get('settings', 'User\ViewController@membershipSetting')->name('setting.view');
                 });
 
+                //-- Paystack Routes
+                Route::name('user.paystack.')->prefix('user/payment/paystack')->group(function() {
+                    //-- All Paystack Routes
+                    Route::get('pay', 'User\PaymentController@redirectToGateway')->name('pay.process');
+                    Route::get('callback', 'User\PaymentController@handleGatewayCallback')->name('callback.process');
+                });
+                //-- Paystack Routes
+                Route::name('user.crypto.')->prefix('user/payment/crypto')->group(function() {
+                    //-- All Crypto Routes
+                    Route::get('create/pay/{type}', 'User\CryptoController@createPayment')->name('create.pay');
+                    Route::post('pay/callback', 'User\CryptoController@handleCallback')->name('callback.process');
+                });
+
                 Route::group(['middleware' => ['is.a.member']], function () {
 
                     Route::name('user.')->prefix('user')->group( function() {
@@ -80,18 +93,6 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
                         //-- All Trips Route
                         Route::name('trips.')->prefix('trips')->group(function () {
 
-                        });
-
-                        Route::name('paystack.')->prefix('paystack')->group(function() {
-                            //-- All Paystack Routes
-                            Route::get('pay', 'User\PaymentController@redirectToGateway')->name('pay.process');
-                            Route::get('callback', 'User\PaymentController@handleGatewayCallback')->name('callback.process');
-                        });
-
-                        Route::name('crypto.')->prefix('crypto')->group(function() {
-                            //-- All Crypto Routes
-                            Route::get('create/pay/{type}', 'User\CryptoController@createPayment')->name('create.pay');
-                            Route::post('pay/callback', 'User\CryptoController@handleCallback')->name('callback.process');
                         });
                     });
                 });
