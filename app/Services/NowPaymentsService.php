@@ -25,6 +25,7 @@ class NowPaymentsService
             'pay_currency' => 'BTC', // or any cryptocurrency
             'order_id' => $orderId,
             'ipn_callback_url' => $callbackUrl,
+            'is_fee_paid_by_user' => true,
         ]);
 
         if ($response->successful()) {
