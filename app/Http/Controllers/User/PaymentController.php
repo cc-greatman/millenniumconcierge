@@ -26,16 +26,6 @@ class PaymentController extends Controller
             'email' => auth()->guard('web')->user()->email, // Authenticated user's email
         ];
 
-        // Create payment record
-        $payment = Payments::create([
-            'user_id' => auth()->id(),
-            'membership_type' => 1,
-            'amount' => 750000,
-            'mode' => 'crypto',
-            'payment_id' => uniqid('mcon_'),
-            'status' => 'pending',
-        ]);
-
         // Initialize payment
         return Paystack::getAuthorizationUrl([
             'amount' => $amountInKobo,

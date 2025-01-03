@@ -108,7 +108,53 @@
                         </a>
                         </div>
                     </div>
+                </div>
+                <div class="col-12">
+                    <div class="card shadow-none border mb-0 table-card">
+                      <div class="card-header d-flex align-items-center justify-content-between py-3">
+                        <h5 class="mb-0">Transaction History</h5>
+                        <button class="btn btn-sm btn-link-primary">View All</button>
+                      </div>
+                      <div class="card-body">
+                        <div class="table-responsive">
+                          <table class="table table-hover" id="pc-dt-simple">
+                            <thead>
+                              <tr>
+                                <th>Membership Type</th>
+                                <th>Amount</th>
+                                <th>Payment ID</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($payments as $payment)
+                                <tr>
+                                    <td>
+                                      <div class="d-flex align-items-center">
+                                        <div class="flex-grow-1 ms-3">
+                                          <h6 class="mb-0">{{ ucfirst($payment->membership_type) }}</h6>
+                                        </div>
+                                      </div>
+                                    </td>
+                                    <td>@if(ucfirst($payment->membership_type === 'silver'))&#8358;@else$@endif{{ number_format($payment->amount, 2) }}</td>
+                                    <td>{{ $payment->payment_id }}</td>
+                                    <td>{{ $payment->created_at->format('Y-m-d H:i') }}/td>
+                                    @if ($payment->status === "completed")
+                                    <td><span class="badge text-bg-success">Completed</span></td>
+                                    @elseif ($payment->status === "pending")
+                                    <td><span class="badge text-bg-warning">Pending</span></td>
+                                    @elseif ($payment->status === "failed")
+                                    <td><span class="badge text-bg-danger">Failed</span></td>
+                                    @endif
+                                  </tr>
+                                @endforeach
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
                     </div>
+                  </div>
                 </div>
                 </div>
             </div>
