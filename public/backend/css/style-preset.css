@@ -3406,7 +3406,7 @@ h2 {
   --bs-offcanvas-bg: #19212a;
 }
 [data-pc-theme=dark] .list-group {
-  --bs-list-group-bg: #131920;
+  --bs-list-group-bg: #282828;
   --bs-list-group-border-color: #202b36;
   --bs-list-group-disabled-bg: #171e26;
   --bs-list-group-action-hover-bg: #1d2630;
