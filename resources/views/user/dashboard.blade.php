@@ -121,7 +121,7 @@
                               </div>
                             </div>
                           </div>
-                          <h6 class="mb-3">Trips</h6>
+                          <h6 class="mb-3">Flights</h6>
                           <div class="bg-dark p-3 pt-4 rounded-4">
                             <div class="progress bg-white bg-opacity-25" style="height: 6px">
                               <div class="progress-bar bg-white" style="width: {{ min($tripsProgress, 100) }}%"></div>
