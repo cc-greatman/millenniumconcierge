@@ -13,18 +13,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
 
     <!-- [phosphor Icons] https://phosphoricons.com/ -->
-    <link rel="stylesheet" href="{{ asset("../backend/fonts/phosphor/duotone/style.css") }}" />
+    <link rel="stylesheet" href="{{ asset("../backend/fonts/phosphor/duotone/style.css") }}?v={{ time() }}" />
     <!-- [Tabler Icons] https://tablericons.com -->
-    <link rel="stylesheet" href="{{ asset("../backend/fonts/tabler-icons.min.css") }}" />
+    <link rel="stylesheet" href="{{ asset("../backend/fonts/tabler-icons.min.css") }}?v={{ time() }}" />
 
     <!-- [Feather Icons] https://feathericons.com -->
-    <link rel="stylesheet" href="{{ asset("../backend/fonts/feather.css") }}" />
+    <link rel="stylesheet" href="{{ asset("../backend/fonts/feather.css") }}?v={{ time() }}" />
 
     <!-- [Font Awesome Icons] https://fontawesome.com/icons -->
-    <link rel="stylesheet" href="{{ asset("../backend/fonts/fontawesome.css") }}" />
+    <link rel="stylesheet" href="{{ asset("../backend/fonts/fontawesome.css") }}?v={{ time() }}" />
 
     <!-- [Material Icons] https://fonts.google.com/icons -->
-    <link rel="stylesheet" href="{{ asset("../backend/fonts/material.css") }}" />
+    <link rel="stylesheet" href="{{ asset("../backend/fonts/material.css") }}?v={{ time() }}" />
 
     <!-- [Remix Icons] https://remixicon.com -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
