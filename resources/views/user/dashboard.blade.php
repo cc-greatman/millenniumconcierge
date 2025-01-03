@@ -117,20 +117,18 @@
                                 <i class="ti ti-dots-vertical f-18"></i>
                               </a>
                               <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item" href="#">Weekly</a>
-                                <a class="dropdown-item" href="#">Monthly</a>
-                                <a class="dropdown-item" href="#">Yearly</a>
+                                <a class="dropdown-item" href="javscript:void(0);">Yearly</a>
                               </div>
                             </div>
                           </div>
                           <h6 class="mb-3">Trips</h6>
                           <div class="bg-dark p-3 pt-4 rounded-4">
                             <div class="progress bg-white bg-opacity-25" style="height: 6px">
-                              <div class="progress-bar bg-white" style="width: 30%"></div>
+                              <div class="progress-bar bg-white" style="width: {{ min($tripsProgress, 100) }}%"></div>
                             </div>
                             <div class="d-flex align-items-center justify-content-between mt-2">
-                              <p class="mb-0 text-white text-opacity-75 text-sm">30%</p>
-                              <p class="mb-0 text-white text-opacity-75 text-sm">$400</p>
+                              <p class="mb-0 text-white text-opacity-75 text-sm">{{ number_format($tripsProgress, 2) }}%</p>
+                              <p class="mb-0 text-white text-opacity-75 text-sm">${{ number_format($yearlyTripsExpenses, 2) }}</p>
                             </div>
                           </div>
                         </div>
@@ -152,20 +150,18 @@
                                 <i class="ti ti-dots-vertical f-18"></i>
                               </a>
                               <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item" href="#">Weekly</a>
-                                <a class="dropdown-item" href="#">Monthly</a>
-                                <a class="dropdown-item" href="#">Yearly</a>
+                                <a class="dropdown-item" href="javascript:void(0);">Yearly</a>
                               </div>
                             </div>
                           </div>
                           <h6 class="mb-3">Hotel Bookings</h6>
                           <div class="bg-dark p-3 pt-4 rounded-4">
                             <div class="progress bg-white bg-opacity-25" style="height: 6px">
-                              <div class="progress-bar bg-white" style="width: 52%"></div>
+                              <div class="progress-bar bg-white" style="width: {{ min($hotelProgress, 100) }}%"></div>
                             </div>
                             <div class="d-flex align-items-center justify-content-between mt-2">
-                              <p class="mb-0 text-white text-opacity-75 text-sm">52%</p>
-                              <p class="mb-0 text-white text-opacity-75 text-sm">$900</p>
+                              <p class="mb-0 text-white text-opacity-75 text-sm">{{ number_format($hotelProgress, 2) }}%</p>
+                              <p class="mb-0 text-white text-opacity-75 text-sm">${{ number_format($yearlyHotelExpenses, 2) }}</p>
                             </div>
                           </div>
                         </div>

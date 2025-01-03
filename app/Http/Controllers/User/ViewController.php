@@ -44,12 +44,32 @@ class ViewController extends Controller
             ->whereYear('created_at', $now->year)
             ->sum('cost');
 
+        // Yearly trips expenses
+        $yearlyTripsExpenses = Trips::where('user_id', $id)
+        ->whereYear('created_at', $now->year)
+        ->sum('cost');
+
+        // Yearly hotel bookings expenses
+        $yearlyHotelExpenses = Bookings::where('user_id', $id)
+            ->whereYear('created_at', $now->year)
+            ->sum('cost');
+
+        $yearlyGoal = $yearlyExpenses;
+
+        // Calculate progress percentage for trips and hotel bookings
+        $tripsProgress = ($yearlyTripsExpenses / $yearlyGoal) * 100;
+        $hotelProgress = ($yearlyHotelExpenses / $yearlyGoal) * 100;
+
         $pageTitle = "Dashboard || ".env('APP_NAME');
 
         return view('user.dashboard', compact('pageTitle'), [
             'weeklyExpenses' => $weeklyExpenses,
             'monthlyExpenses' => $monthlyExpenses,
             'yearlyExpenses' => $yearlyExpenses,
+            'yearlyTripsExpenses' => $yearlyTripsExpenses,
+            'yearlyHotelExpenses' => $yearlyHotelExpenses,
+            'tripsProgress' => $tripsProgress,
+            'hotelProgress' => $hotelProgress,
         ]);
     }
 
