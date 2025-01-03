@@ -56,9 +56,14 @@ class ViewController extends Controller
 
         $yearlyGoal = $yearlyExpenses;
 
-        // Calculate progress percentage for trips and hotel bookings
-        $tripsProgress = ($yearlyTripsExpenses / $yearlyGoal) * 100;
-        $hotelProgress = ($yearlyHotelExpenses / $yearlyGoal) * 100;
+        // Check for zero expenses and handle division by zero
+        if ($yearlyGoal > 0) {
+            $tripsProgress = ($yearlyTripsExpenses / $yearlyGoal) * 100;
+            $hotelProgress = ($yearlyHotelExpenses / $yearlyGoal) * 100;
+        } else {
+            $tripsProgress = 0;
+            $hotelProgress = 0;
+        }
 
         $pageTitle = "Dashboard || ".env('APP_NAME');
 
