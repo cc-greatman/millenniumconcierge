@@ -58,13 +58,10 @@ class PaymentController extends Controller
             );
 
             // Handle successful payment (e.g., activate membership)
-            return redirect()->route('membership.setting.view')->with('success', 'Payment successful!');
+            return redirect()->route('membership.setting.view')->with('success', 'Welcome to the Family!! New Silver Member!!!');
         }
 
         // If payment failed
-        $error = "Payment failed. Please try again.";
-        $pageTitle = "Membership Overview || " . env('APP_NAME');
-
-        return view('user.membership.setting', compact('pageTitle', 'error'));
+        return redirect()->route('membership.setting.view')->with('error', 'Payment failed! Please try agaian');
     }
 }

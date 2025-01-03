@@ -6,9 +6,6 @@
 
     <!-- [ Main Content ] start -->
     <div class="pc-container">
-        @include('user.alerts.success')
-        @include('user.alerts.error')
-        
         <div class="pc-content">
         <!-- [ breadcrumb ] start -->
         <div class="page-header">
@@ -30,6 +27,9 @@
             </div>
         </div>
         <!-- [ breadcrumb ] end -->
+
+        @include('user.alerts.success')
+        @include('user.alerts.error')
 
 
         <!-- [ Main Content ] start -->
