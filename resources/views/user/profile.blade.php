@@ -184,7 +184,7 @@
                                     >Front of ID <span class="text-danger">*</span></label
                                   >
                                   <div class="col-md-8 col-sm-12">
-                                    <input type="file" class="form-control" value="Ashoka_Tano_16" accept=".jpeg,.png,.jpg"/>
+                                    <input type="file" name="front_id" class="form-control" value="Ashoka_Tano_16" accept=".jpeg,.png,.jpg"/>
                                     <small class="text-muted">Allowed file types: JPEG, PNG. Max size: 10MB.</small>
                                   </div>
                                 </div>
@@ -195,7 +195,7 @@
                                     >Back of ID <span class="text-danger">*</span></label
                                   >
                                   <div class="col-md-8 col-sm-12">
-                                    <input type="file" class="form-control" value="Ashoka_Tano_16" accept=".jpeg,.png,.jpg" />
+                                    <input type="file" name="back_id" class="form-control" value="Ashoka_Tano_16" accept=".jpeg,.png,.jpg" />
                                     <small class="text-muted">Allowed file types: JPEG, PNG. Max size: 10MB.</small>
                                   </div>
                                 </div>
