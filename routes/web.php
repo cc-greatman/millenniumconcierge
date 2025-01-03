@@ -107,6 +107,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
                         Route::name('account.')->prefix('account')->group(function() {
                             Route::get('profile', 'User\ViewController@profileView')->name('profile.view');
                             Route::post('profile/update', 'User\ProfileController@updateProfile')->name('profile.update');
+                            Route::post('identity/upload', 'User\ProfileController@identityUpload')->name('identity.upload');
                         });
                     });
                 });
