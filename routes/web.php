@@ -51,7 +51,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
         });
     });
 
-        Route::middleware(['auth'])->group(function() {
+        Route::middleware(['auth:web'])->group(function() {
 
             //-- Email Verification Routes
             Route::name('email.')->prefix('email')->group(function() {
@@ -111,6 +111,32 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
                             Route::post('password/update', 'User\ProfileController@passwordUpdate')->name('password.update');
                         });
                     });
+                });
+            });
+        });
+
+        //-- All Admin Routes
+        Route::name('admin.')->prefix('admin')->group(function() {
+
+            Route::name('auth.')->prefix('auth')->group(function() {
+
+                //-- Login Routes
+                Route::get('login', 'Auth\LoginController@adminShow')->name('login.show');
+                Route::post('login', 'Auth\LoginController@adminLogin')->name('login.perform');
+
+            });
+
+            Route::middleware(['auth:admin'])->group(function () {
+
+                //-- Logout Route
+                Route::get('logout', 'Auth\LogoutController@adminPerform')->name('logout');
+
+                Route::get('dashboard', 'Admin\ViewController@index')->name('dashboard.show');
+
+                Route::name('manage.')->prefix('manage')->group(function() {
+
+                    Route::get('user/view', 'Admin\ViewController@manageUsers')->name('users.view');
+                    Route::get('user/create', 'Admin\UserController@createUser')->name('users.create');
                 });
             });
         });

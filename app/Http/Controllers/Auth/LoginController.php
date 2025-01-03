@@ -33,7 +33,7 @@ class LoginController extends Controller
 
         $credentials = $request->getCredentials();
 
-        if(!Auth::validate($credentials)):
+        if(!Auth::guard('web')->validate($credentials)):
             return redirect()->to('auth/login')
                 ->withErrors(trans('auth.failed'));
         endif;
@@ -62,5 +62,40 @@ class LoginController extends Controller
         $user->save();
 
         return redirect()->route('user.dashboard');
+    }
+
+    /**
+     * Display admin login page.
+     *
+     * @return Renderable
+     */
+    public function adminShow() {
+        $pageTitle = "Staff sign in || ". env('APP_NAME');
+
+        return view('admin.auth.login', compact('pageTitle'));
+    }
+
+    /**
+     * Handle admin account login request
+     *
+     * @param LoginRequest $request
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function adminLogin(Request $request)
+    {
+
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::guard('admin')->attempt($credentials)) {
+            return redirect()->route('admin.dashboard.show'); // Adjust the route accordingly
+        }
+
+        return back()->withErrors(trans('auth.failed'));
     }
 }

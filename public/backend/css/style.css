@@ -1973,7 +1973,7 @@ progress {
   --bs-table-color: #39465f;
   --bs-table-bg: transparent;
   --bs-table-border-color: #dbe0e5;
-  --bs-table-accent-bg: transparent;
+  --bs-table-accent-bg: #282828;
   --bs-table-striped-color: #39465f;
   --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
   --bs-table-active-color: #39465f;
@@ -30291,7 +30291,7 @@ body.anim-slip-from-top.modal-open .pc-header {
 
 /* Hover effect */
 .table-hover tbody tr:hover {
-  background-color: rgba(57, 70, 95, 0.03);
+  background-color: #aa8453;
 }
 
 /* Table backgrounds */
@@ -30614,7 +30614,7 @@ table.dataTable > tbody > tr.child ul.dtr-details {
 }
 
 .table-striped > tbody > tr:nth-of-type(odd) > * {
-  --bs-table-accent-bg: transparent;
+  --bs-table-accent-bg: #282828;
 }
 
 .dataTables_length select.form-select, .dataTables_length select.datatable-selector {
