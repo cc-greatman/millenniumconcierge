@@ -109,7 +109,7 @@ class User extends Authenticatable
 
     public function identification() {
 
-        return $this->hasMany(Identification::class, 'user_id', 'id');
+        return $this->hasOne(Identification::class, 'user_id', 'id');
     }
 
     public function reports() {

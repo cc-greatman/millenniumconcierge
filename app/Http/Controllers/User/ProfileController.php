@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
@@ -57,5 +58,30 @@ class ProfileController extends Controller
         );
 
         return redirect()->back()->with('success', 'Identity verification documents updated successfully!');
+    }
+
+    public function passwordUpdate(Request $request) {
+
+        $id = auth()->guard('web')->user()->id;
+
+        $user = User::findOrFail($id);
+
+        $request->validate([
+            'current_password' => 'required',
+            'password' => 'required|min:8',
+            'password_confirmation' => 'required|same:password',
+        ],[
+            'current_password.required' => "Please enter your current password",
+        ]);
+
+        if (Hash::check($request->current_password, $user->password)) {
+            // The passwords match...
+            User::where('id', $user->id)->update(['password' => Hash::make($request->password)]);
+
+            return redirect()->back()->with('success', 'Password updated successfully');
+        } else {
+
+            return back()->with('error', 'The inputted current password is incorrect');
+        }
     }
 }

@@ -119,19 +119,19 @@
                 <div class="dropdown-menu">
                   <ul>
                     <li>
-                      <a class="pc-user-links">
+                      <a href="{{ route('user.account.profile.view') }}" class="pc-user-links">
                         <i class="ph-duotone ph-user"></i>
                         <span>My Account</span>
                       </a>
                     </li>
                     <li>
-                      <a class="pc-user-links">
+                      <a href="{{ route('user.account.profile.view') }}" class="pc-user-links">
                         <i class="ph-duotone ph-gear"></i>
                         <span>Settings</span>
                       </a>
                     </li>
                     <li>
-                      <a class="pc-user-links">
+                      <a href="{{ route('membership.setting.view') }}" class="pc-user-links">
                         <i class="ph-duotone ph-lock-key"></i>
                         <span>Membership</span>
                       </a>

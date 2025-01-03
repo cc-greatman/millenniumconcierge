@@ -108,6 +108,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
                             Route::get('profile', 'User\ViewController@profileView')->name('profile.view');
                             Route::post('profile/update', 'User\ProfileController@updateProfile')->name('profile.update');
                             Route::post('identity/upload', 'User\ProfileController@identityUpload')->name('identity.upload');
+                            Route::post('password/update', 'User\ProfileController@passwordUpdate')->name('password.update');
                         });
                     });
                 });

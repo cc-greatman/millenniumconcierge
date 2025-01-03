@@ -30,35 +30,37 @@
         </div>
       </div>
       <!-- [ breadcrumb ] end -->
+        @php
+
+            $id = auth()->guard('web')->id();
+
+            $user = \App\Models\User::findOrFail($id);
+
+            $name = $user->first_name." ".$user->last_name;
+        @endphp
 
       <!-- [ Main Content ] start -->
       <div class="row">
         <!-- [ sample-page ] start -->
         <div class="col-sm-12">
-          <div class="card bg-primary">
-            <div class="card-body">
-              <div class="d-flex align-items-center">
-                <div class="flex-grow-1 me-3">
-                  <h3 class="text-white">Identity Verification</h3>
-                  <p class="text-white text-opacity-75 text-opa mb-0"
-                    >Your identity is not confirmed. Please complete verification by uploading a government issued identification card.
-                    <a href="#" class="link-light"><u>Complete Verification</u></a>
-                  </p>
+            @if (is_null($user->identification))
+                <div class="card bg-brand-color-3">
+                    <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-grow-1 me-3">
+                        <h3 class="text-white">Identity Verification</h3>
+                        <p class="text-white text-opacity-75 text-opa mb-0"
+                            >Your identity is not confirmed. Please complete verification by uploading a government issued identification card.
+                            <a href="javascript:void(0);" class="link-light"><u>Complete Verification</u></a>
+                        </p>
+                        </div>
+                        <div class="flex-shrink-0">
+                        <img src="{{ asset("../backend/images/application/img-accout-alert.png") }}" alt="img" class="img-fluid wid-80" />
+                        </div>
+                    </div>
+                    </div>
                 </div>
-                <div class="flex-shrink-0">
-                  <img src="{{ asset("../backend/images/application/img-accout-alert.png") }}" alt="img" class="img-fluid wid-80" />
-                </div>
-              </div>
-            </div>
-          </div>
-          @php
-
-              $id = auth()->guard('web')->id();
-
-              $user = \App\Models\User::findOrFail($id);
-
-              $name = $user->first_name." ".$user->last_name;
-          @endphp
+            @endif
           <div class="row">
             <div class="col-lg-5 col-xxl-3">
               <div class="card overflow-hidden">
@@ -209,7 +211,7 @@
                 </form>
                 </div>
                 <div class="tab-pane fade" id="user-set-passwort" role="tabpanel" aria-labelledby="user-set-passwort-tab">
-                    <form action="" method="post">
+                    <form action="{{ route('user.account.password.update') }}" method="post">
                         @csrf
                         <div class="card">
                             <div class="card-header">
@@ -223,7 +225,10 @@
                                       >Current Password <span class="text-danger">*</span>
                                     </label>
                                     <div class="col-md-8 col-sm-12">
-                                      <input type="password" name="current_password" placeholder="Current Password" class="form-control" />
+                                        <div class="input-group">
+                                            <input type="password" name="current_password" class="form-control" id="current_password" placeholder="Current Password" value="{{ old('current_password') }}">
+                                            <button aria-label="button" class="btn btn-primary" onclick="createpassword('current_password',this)" type="button" id="button-addon2"><i class="ri-eye-off-line align-middle"></i></button>
+                                        </div>
                                     </div>
                                   </div>
                                 </li>
@@ -233,7 +238,10 @@
                                       >New Password <span class="text-danger">*</span></label
                                     >
                                     <div class="col-md-8 col-sm-12">
-                                      <input type="password" name="password" placeholder="Password" class="form-control" />
+                                        <div class="input-group">
+                                            <input type="password" name="password" class="form-control" id="password" placeholder="Password" value="{{ old('password') }}">
+                                            <button aria-label="button" class="btn btn-primary" onclick="createpassword('password',this)" type="button" id="button-addon2"><i class="ri-eye-off-line align-middle"></i></button>
+                                        </div>
                                     </div>
                                   </div>
                                 </li>
@@ -243,7 +251,10 @@
                                       >Confirm Password <span class="text-danger">*</span></label
                                     >
                                     <div class="col-md-8 col-sm-12">
-                                      <input type="password" name="password_confirmation" placeholder="Password Confirmation" class="form-control" />
+                                        <div class="input-group">
+                                            <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" placeholder="Password" value="{{ old('password_confirmation') }}">
+                                            <button aria-label="button" class="btn btn-primary" onclick="createpassword('password_confirmation',this)" type="button" id="button-addon2"><i class="ri-eye-off-line align-middle"></i></button>
+                                        </div>
                                     </div>
                                   </div>
                                 </li>
