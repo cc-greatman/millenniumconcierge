@@ -51,7 +51,7 @@ class CryptoController extends Controller {
             'price_amount' => $membership['price'],
             'price_currency' => $membership['currency'],
             'pay_currency' => 'USDT', // Or any supported cryptocurrency
-            'ipn_callback_url' => route('membership.callback'),
+            'ipn_callback_url' => route('user.crypto.callback.process'),
             'order_id' => $payment->payment_id,
             'order_description' => ucfirst($type) . " Membership",
         ];
