@@ -133,7 +133,14 @@
                                     <td>
                                       <div class="d-flex align-items-center">
                                         <div class="flex-grow-1 ms-3">
-                                          <h6 class="mb-0">{{ ucfirst($payment->membership_type) }}</h6>
+                                          <h6 class="mb-0">
+                                            @if(ucfirst($payment->membership_type) ===  1)
+                                                SILVER MEMBERSHIP
+                                            @elseif(ucfirst($payment->membership_type) ===  2)
+                                                GOLD MEMBERSHIP
+                                            @elseif(ucfirst($payment->membership_type) ===  3)
+                                                PLATINUM MEMBERSHIP
+                                            @endif</h6>
                                         </div>
                                       </div>
                                     </td>
