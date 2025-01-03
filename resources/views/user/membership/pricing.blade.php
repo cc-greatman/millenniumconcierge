@@ -71,7 +71,7 @@
                     @if($user->getMembershipType() === "Gold Member")
                         <a class="btn btn-warning mt-4" href="{{ route('membership.setting.view') }}">Current Plan</a>
                     @else
-                        <a class="btn btn-primary mt-4" href="#">Buy Now</a>
+                        <a class="btn btn-primary mt-4" href="{{ route('user.crypto.create.pay', ['type' => 'gold']) }}">Buy Now</a>
                     @endif
                   </div>
                 </div>
@@ -95,7 +95,7 @@
                     @if($user->getMembershipType() === "Platinum Member")
                         <a class="btn btn-warning mt-4" href="{{ route('membership.setting.view') }}">Current Plan</a>
                     @else
-                        <a class="btn btn-primary mt-4" href="#">Buy Now</a>
+                        <a class="btn btn-primary mt-4" href="{{ route('user.crypto.create.pay', ['type' => 'platinum']) }}">Buy Now</a>
                     @endif
                   </div>
                 </div>

@@ -90,7 +90,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
 
                         Route::name('crypto.')->prefix('crypto')->group(function() {
                             //-- All Crypto Routes
-                            Route::post('create.pay', 'User\CryptoController@createPayment')->name('create.pay');
+                            Route::get('create/pay/{type}', 'User\CryptoController@createPayment')->name('create.pay');
+                            Route::post('pay/callback', 'User\CryptoController@handleCallback')->name('callback.process');
                         });
                     });
                 });
