@@ -102,7 +102,7 @@
                         <h4 class="mb-3 fw-normal text-muted">{{ \Carbon\Carbon::parse(optional($user->memberships)->end_date)->format('d F, Y') }}</h4>
                         <a class="link-primary">
                             @php
-                                $daysRemaining = \Carbon\Carbon::now()->diffInDays(\Carbon\Carbon::parse($user->memberships->end_date), false);
+                                $daysRemaining = \Carbon\Carbon::now()->diffInDays(\Carbon\Carbon::parse(optional($user->memberships)->end_date), false);
                             @endphp
                             {{ $daysRemaining > 0 ? "$daysRemaining days till renewal" : "Membership expired" }}
                         </a>
