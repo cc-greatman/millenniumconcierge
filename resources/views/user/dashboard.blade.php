@@ -34,10 +34,9 @@
               <img src="{{ asset("../backend/images/widget/img-status-4.svg") }}" alt="img" class="img-fluid img-bg" />
               <h5 class="mb-4">Weekly Expenses</h5>
               <div class="d-flex align-items-center mt-3">
-                <h3 class="f-w-300 d-flex align-items-center m-b-0">$300.95</h3>
-                <span class="badge bg-light-success ms-2">36%</span>
+                <h3 class="f-w-300 d-flex align-items-center m-b-0">${{ number_format($weeklyExpenses,2) }}</h3>
               </div>
-              <p class="text-muted mb-2 text-sm mt-3">You saved an extra $350 this Week</p>
+              <p class="text-white text-opacity-75 mb-2 text-sm mt-3">You spent ${{ number_format($weeklyExpenses,2) }} this Week</p>
               <div class="progress bg-black" style="height: 7px">
                 <div
                   class="progress-bar bg-brand-color-3"
@@ -57,10 +56,9 @@
               <img src="{{ asset("../backend/images/widget/img-status-5.svg") }}" alt="img" class="img-fluid img-bg" />
               <h5 class="mb-4">Monthly Expenses</h5>
               <div class="d-flex align-items-center mt-3">
-                <h3 class="f-w-300 d-flex align-items-center m-b-0">$2,490.95</h3>
-                <span class="badge bg-light-primary ms-2">20%</span>
+                <h3 class="f-w-300 d-flex align-items-center m-b-0">${{ number_format($monthlyExpenses,2) }}</h3>
               </div>
-              <p class="text-muted mb-2 text-sm mt-3">You saved an extra $245 this Month</p>
+              <p class="text-white text-opacity-75 mb-2 text-sm mt-3">You spent ${{ number_format($monthlyExpenses,2) }} this Month</p>
               <div class="progress bg-black" style="height: 7px">
                 <div
                   class="progress-bar bg-brand-color-3"
@@ -80,9 +78,9 @@
               <img src="{{ asset("../backend/images/widget/img-status-6.svg") }}" alt="img" class="img-fluid img-bg" />
               <h5 class="mb-4 text-white">Yearly Expenses</h5>
               <div class="d-flex align-items-center mt-3">
-                <h3 class="text-white f-w-300 d-flex align-items-center m-b-0">$249,390.95</h3>
+                <h3 class="text-white f-w-300 d-flex align-items-center m-b-0">${{ number_format($yearlyExpenses,2) }}</h3>
               </div>
-              <p class="text-white text-opacity-75 mb-2 text-sm mt-3">You saved an extra $3,509 this Year</p>
+              <p class="text-white text-opacity-75 mb-2 text-sm mt-3">You spent ${{ number_format($yearlyExpenses,2) }} this Year</p>
               <div class="progress bg-black " style="height: 7px">
                 <div
                   class="progress-bar bg-white"

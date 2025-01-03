@@ -6,15 +6,51 @@ use App\Http\Controllers\Controller;
 use App\Models\Bookings;
 use App\Models\Trips;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ViewController extends Controller
 {
     public function index() {
 
+        $id = auth()->guard('web')->id();
+
+        // Get current time
+        $now = Carbon::now();
+
+        // Weekly expenses
+        $weeklyExpenses = Trips::where('user_id', $id)
+            ->whereBetween('created_at', [$now->startOfWeek(), $now->endOfWeek()])
+            ->sum('cost') +
+            Bookings::where('user_id', $id)
+            ->whereBetween('created_at', [$now->startOfWeek(), $now->endOfWeek()])
+            ->sum('cost');
+
+        // Monthly expenses
+        $monthlyExpenses = Trips::where('user_id', $id)
+            ->whereYear('created_at', $now->year)
+            ->whereMonth('created_at', $now->month)
+            ->sum('cost') +
+            Bookings::where('user_id', $id)
+            ->whereYear('created_at', $now->year)
+            ->whereMonth('created_at', $now->month)
+            ->sum('cost');
+
+        // Yearly expenses
+        $yearlyExpenses = Trips::where('user_id', $id)
+            ->whereYear('created_at', $now->year)
+            ->sum('cost') +
+            Bookings::where('user_id', $id)
+            ->whereYear('created_at', $now->year)
+            ->sum('cost');
+
         $pageTitle = "Dashboard || ".env('APP_NAME');
 
-        return view('user.dashboard', compact('pageTitle'));
+        return view('user.dashboard', compact('pageTitle'), [
+            'weeklyExpenses' => $weeklyExpenses,
+            'monthlyExpenses' => $monthlyExpenses,
+            'yearlyExpenses' => $yearlyExpenses,
+        ]);
     }
 
     public function membership() {
