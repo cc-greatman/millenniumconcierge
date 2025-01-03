@@ -62,7 +62,7 @@ class PaymentController extends Controller
             $payment = Payments::updateOrCreate([
                 'user_id' => auth()->id(),
                 'membership_type' => 1,
-                'amount' => 750000,
+                'amount' => 75000,
                 'mode' => 'crypto',
                 'payment_id' => uniqid('mcon_'),
                 'status' => 'successful',

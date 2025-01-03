@@ -137,7 +137,7 @@
                                         </div>
                                       </div>
                                     </td>
-                                    <td>@if(ucfirst($payment->membership_type === 'silver'))&#8358;@else$@endif{{ number_format($payment->amount, 2) }}</td>
+                                    <td>@if(ucfirst($payment->membership_type === 1))&#8358;@else$@endif{{ number_format($payment->amount, 2) }}</td>
                                     <td>{{ $payment->payment_id }}</td>
                                     <td>{{ $payment->created_at->format('Y-m-d H:i') }}/td>
                                     @if ($payment->status === "completed")
