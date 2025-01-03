@@ -27,7 +27,8 @@ class RegisterRequest extends FormRequest
             'last_name' => 'required|alpha',
             'phone' => 'required|numeric',
             'password' => 'required|min:8',
-            'password_confirmation' => 'required|same:password'
+            'password_confirmation' => 'required|same:password',
+            'hidden_field' => 'max:0', // Must be empty
         ];
     }
 

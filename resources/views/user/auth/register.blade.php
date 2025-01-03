@@ -14,6 +14,7 @@
             </div>
             <form action="{{ route('auth.register.perform') }}" method="POST" autocomplete="off">
                 @csrf
+                <input type="text" name="hidden_field" style="display:none">
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="mb-3">

@@ -38,20 +38,6 @@ class RegisterController extends Controller
      */
     public function register(RegisterRequest $request) {
 
-        $emailValidator = new EmailValidator([
-            'checkMxRecords' => true,
-            'checkBannedListedEmail' => true,
-            'checkDisposableEmail' => true,
-            'checkFreeEmail' => false,
-        ]);
-
-        $result = $emailValidator->validate($request->validated('email'));
-
-        if (!$result['isValid']) {
-
-            return redirect()->back()->with('error', 'This email address canot be used at this time');
-        }
-
         $user = User::create($request->validated());
 
         if ($request->input('referral_code')) {

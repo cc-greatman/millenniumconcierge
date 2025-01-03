@@ -33,7 +33,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
 
             //-- Registration Routes
             Route::get('register', 'Auth\RegisterController@show')->name('register.show');
-            Route::post('register', 'Auth\RegisterController@register')->name('register.perform');
+            Route::post('register', 'Auth\RegisterController@register')->name('register.perform')->middleware('throttle:5,1');
 
             //-- Login Routes
             Route::get('login', 'Auth\LoginController@show')->name('login.show');
