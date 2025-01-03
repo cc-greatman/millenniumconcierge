@@ -22,7 +22,7 @@ class NowPaymentsService
         ])->post('https://api.nowpayments.io/v1/invoice', [
             'price_amount' => $amount,
             'price_currency' => $currency,
-            'pay_currency' => null, // or any cryptocurrency
+            'pay_currency' => 'BTC', // or any cryptocurrency
             'order_id' => $orderId,
             'ipn_callback_url' => $callbackUrl,
         ]);
