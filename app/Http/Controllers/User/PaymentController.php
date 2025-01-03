@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Payments;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Unicodeveloper\Paystack\Facades\Paystack;
@@ -24,6 +25,16 @@ class PaymentController extends Controller
             'plan' => $request->plan,
             'email' => auth()->guard('web')->user()->email, // Authenticated user's email
         ];
+
+        // Create payment record
+        $payment = Payments::create([
+            'user_id' => auth()->id(),
+            'membership_type' => 1,
+            'amount' => 750000,
+            'mode' => 'crypto',
+            'payment_id' => uniqid('mcon_'),
+            'status' => 'pending',
+        ]);
 
         // Initialize payment
         return Paystack::getAuthorizationUrl([
@@ -56,6 +67,16 @@ class PaymentController extends Controller
                     'end_date' => now()->addYear(),
                 ]
             );
+
+            // Create payment record
+            $payment = Payments::updateOrCreate([
+                'user_id' => auth()->id(),
+                'membership_type' => 1,
+                'amount' => 750000,
+                'mode' => 'crypto',
+                'payment_id' => uniqid('mcon_'),
+                'status' => 'successful',
+            ]);
 
             // Handle successful payment (e.g., activate membership)
             return redirect()->route('membership.setting.view')->with('success', 'Welcome to the Family!! New Silver Member!!!');

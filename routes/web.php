@@ -87,6 +87,11 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
                             Route::get('pay', 'User\PaymentController@redirectToGateway')->name('pay.process');
                             Route::get('callback', 'User\PaymentController@handleGatewayCallback')->name('callback.process');
                         });
+
+                        Route::name('crypto.')->prefix('crypto')->group(function() {
+                            //-- All Crypto Routes
+                            Route::post('create.pay', 'User\CryptoController@createPayment')->name('create.pay');
+                        });
                     });
                 });
             });

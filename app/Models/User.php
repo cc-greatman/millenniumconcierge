@@ -116,4 +116,10 @@ class User extends Authenticatable
 
         return $this->hasMany(Reports::class, 'user_id', 'id');
     }
+
+    public function payments() {
+
+        return $this->hasMany(Payments::class, 'user_id', 'id');
+    }
+
 }
