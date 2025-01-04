@@ -145,6 +145,13 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
                     Route::post('user/identity/{id}', 'Admin\UserController@editUseridentity')->name('user.identity.edit');
                     Route::get('user/delete/{id}', 'Admin\UserController@deleteUser')->name('user.delete');
                 });
+
+                Route::name('trips.')->prefix('trips')->group(function() {
+                    //--Trips Route
+                    Route::get('view/all', 'Admin\ViewController@tripsView')->name('all.view');
+                    Route::get('completed/all', 'Admin\ViewController@completedTrips')->name('completed.view');
+                    Route::get('edit/view/{id}', 'Admin\ViewController@editTrip')->name('edit.view');
+                });
             });
         });
 });
