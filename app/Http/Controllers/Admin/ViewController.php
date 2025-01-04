@@ -38,4 +38,11 @@ class ViewController extends Controller
 
         return view('admin.user.overview', compact('pageTitle', 'users'));
     }
+
+    public function createUser() {
+
+        $pageTitle = "Create Users || ".env('APP_NAME');
+
+        return view('admin.user.create', compact('pageTitle'));
+    }
 }

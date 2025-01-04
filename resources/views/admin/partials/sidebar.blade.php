@@ -35,6 +35,7 @@
             </a>
             <ul class="pc-submenu">
               <li class="pc-item @if(Route::is('admin.manage.users.view')) active @endif"><a class="pc-link" href="{{ route('admin.manage.users.view') }}">Manage</a></li>
+              <li class="pc-item @if(Route::is('admin.manage.users.create')) active @endif"><a class="pc-link" href="{{ route('admin.manage.users.create') }}">Create</a></li>
             </ul>
           </li>
           <li class="pc-item pc-hasmenu  @if (Request::is('user.trips') || Request::is('user/trips/*')) pc-trigger active @endif">

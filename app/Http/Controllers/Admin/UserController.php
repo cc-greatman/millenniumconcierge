@@ -10,6 +10,7 @@ use App\Models\Payments;
 use App\Models\Trips;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -21,6 +22,28 @@ class UserController extends Controller
         $pageTitle = $user->first_name."'s Account Profile || ". env('APP_NAME');
 
         return view('admin.user.profile', compact('pageTitle', 'user'));
+    }
+
+    public function createUser(Request $request) {
+
+        $request->validate([
+            'email' => 'required|email:rfc,dns|unique:users,email',
+            'first_name' => 'required|alpha',
+            'last_name' => 'required|alpha',
+            'phone' => 'required|numeric',
+            'password' => 'required|min:8',
+        ]);
+
+        $user = User::create([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'phone' => $request->phone,
+            'is_email_verified' => 1
+        ]);
+
+        return redirect()->route('admin.manage.person.view', $user->id)->with('success', $user->first_name.'\'s Millennium Concierge account has been created successfully! Proceed to Identity Upload');
     }
 
     public function editUser(Request $request, $id) {
@@ -114,24 +137,33 @@ class UserController extends Controller
 
     public function deleteUser($id) {
 
-        $user = User::where('id', $id);
-        $user->delete();
+        try {
 
-        $trips = Trips::where('user_id', $id);
-        $trips->delete();
+            DB::beginTransaction();
 
-        $bookings = Bookings::where('user_id', $id);
-        $bookings->delete();
+            // Find the user
+            $user = User::find($id);
+            if ($user) {
+                
+                // Delete related records using relationships
+                $user->trips()->delete();
+                $user->bookings()->delete();
+                $user->membership()->delete();
+                $user->payments()->delete();
 
-        $member = Membership::where('user_id', $id);
-        $member->delete();
+                if ($user->identification) {
+                    $user->identification->delete();
+                }
 
-        $payment = Payments::where('user_id', $id);
-        $payment->delete();
+                // Finally delete the user
+                $user->delete();
+            }
 
-        $id = Identification::where('user_id', $id);
-        $id->delete();
-
-        return redirect()->back()->with('success', 'User has been deleted successfully');
+            DB::commit();
+            return redirect()->back()->with('success', 'User has been deleted successfully');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->back()->with('error', 'An error occurred while deleting the user.');
+        }
     }
 }
