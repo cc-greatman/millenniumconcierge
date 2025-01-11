@@ -67,13 +67,14 @@ class ViewController extends Controller
 
         $pageTitle = "Completed Trips || ". env('APP_NAME');
 
-        $trips = Trips::where([
-                            'status' => 'used',
-                            ])->get();
-
-        $sum = Trips::where([
-                    'status' => 'used',
-                    ])->sum('cost');
+        $tripData = \App\Models\Trips::select('type')
+        ->selectRaw('COUNT(*) as total_trips')
+        ->selectRaw('SUM(CASE WHEN status = "used" THEN 1 ELSE 0 END) as used_tickets')
+        ->selectRaw('SUM(CASE WHEN status = "unused" THEN 1 ELSE 0 END) as unused_tickets')
+        ->selectRaw('SUM(cost) as total_cost') // Calculate total cost for each type
+        ->groupBy('type')
+        ->get()
+        ->keyBy('type'); // Key the collection by type for easier access
 
         return view('admin.trips.completed', compact('pageTitle', 'trips', 'sum'));
     }
