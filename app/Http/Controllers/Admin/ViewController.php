@@ -76,7 +76,7 @@ class ViewController extends Controller
         ->get()
         ->keyBy('type'); // Key the collection by type for easier access
 
-        return view('admin.trips.completed', compact('pageTitle', 'trips', 'sum'));
+        return view('admin.trips.completed', compact('pageTitle', 'tripData'));
     }
 
     public function editTrip($id) {
