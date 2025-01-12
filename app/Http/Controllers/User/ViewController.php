@@ -136,7 +136,7 @@ class ViewController extends Controller
                     'status' => 'used',
                     ])->sum('cost');
 
-        $$tripData = \App\Models\Trips::where('user_id', $id)
+        $tripData = \App\Models\Trips::where('user_id', $id)
         ->where('status', 'used') // Filter only trips with 'used' status
         ->select('type')
         ->selectRaw('COUNT(*) as total_trips') // This will now count only 'used' trips
