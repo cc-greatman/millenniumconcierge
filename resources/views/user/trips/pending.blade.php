@@ -50,52 +50,44 @@
             </div>
           </div>
         </div>
-        <div class="col-sm-12">
-            <div class="card">
-              <div class="card-header">
-                <h5>All Pending Trips</h5>
-              </div>
-              <div class="card-body">
-                <table id="res-config" class="display table table-striped table-hover dt-responsive nowrap" style="width: 100%">
-                  <thead>
-                    <tr>
-                      <th>Type</th>
-                      <th>Cost</th>
-                      <th>Departure</th>
-                      <th>Destination</th>
-                      <th>No of Seats</th>
-                      <th>Status</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    @foreach ($trips as $trip)
-                        <tr>
-                            <td>
-                                @if($trip->type === "jet")
-                                    Private
-                                @elseif($trip->type === "flight")
-                                    Commercial
-                                @else
-                                    {{ $trip->type }}
-                                @endif
-                            </td>
-                            <td>${{ number_format($trip->cost, 2) }}</td>
-                            <td>{{ $trip->departure }}</td>
-                            <td>{{ $trip->destination }}</td>
-                            <td>{{ $trip->seats }}</td>
-                            @if ($trip->status === "used")
-                                <td><span class="badge text-bg-success">Used</span></td>
-                            @elseif ($trip->status === "unused")
-                                <td><span class="badge text-bg-warning">Unused</span></td>
-                            @endif
-                        </tr>
-                    @endforeach
-                  </tbody>
-                </table>
-              </div>
+        @php
+            $tripTypes = [
+                'jet' => ['label' => 'Private Jet Trips', 'color' => 'text-info'],
+                'flight' => ['label' => 'Flight Trips', 'color' => 'text-primary'],
+                'yacht' => ['label' => 'Yacht Trips', 'color' => 'text-success'],
+            ];
+        @endphp
+        @foreach ($tripTypes as $type => $details)
+            @php
+                $data = $tripData->get($type, [
+                    'total_trips' => 0,
+                    'unused_tickets' => 0,
+                    'total_cost' => 0.00
+                ]);
+            @endphp
+            <!-- support-section start -->
+            <div class="col-xl-4 col-md-6">
+                <div class="card support-bar">
+                    <div class="card-body pb-0">
+                        <h2 class="m-0">{{ $data['total_trips'] }}</h2>
+                        <a href="http://">
+                            <span class="{{ $details['color'] }}">{{ $details['label'] }}</span>
+                        </a>
+                        <p class="mb-3 mt-3">Total number of uncompleted trips to be taken through {{ strtolower($details['label']) }}.</p>
+                        <p><a href=""><strong>View All</strong></a></p>
+                    </div>
+                    <div class="card-footer bg-brand-color-3 text-white">
+                        <div class="row text-center">
+                            <div class="col">
+                                <h4 class="m-0 text-white">{{ $data['unused_tickets'] }}</h4>
+                                <span>Pending</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-      </div>
+            <!-- support-section end -->
+        @endforeach
       <!-- [ Main Content ] end -->
     </div>
 </div>

@@ -79,7 +79,7 @@
                     </div>
                     <div class="card-footer bg-brand-color-3 text-white">
                         <div class="row text-center">
-                            <div class="col border-end">
+                            <div class="col">
                                 <h4 class="m-0 text-white">{{ $data['used_tickets'] }}</h4>
                                 <span>Completed</span>
                             </div>

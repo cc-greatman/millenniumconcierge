@@ -165,7 +165,16 @@ class ViewController extends Controller
                     'status' => 'unused',
                     ])->sum('cost');
 
-        return view('user.trips.pending', compact('pageTitle', 'trips', 'sum'));
+        $tripData = \App\Models\Trips::where('user_id', $id)
+                ->where('status', 'used') // Filter only trips with 'used' status
+                ->select('type')
+                ->selectRaw('COUNT(*) as total_trips') // This will now count only 'used' trips
+                ->selectRaw('SUM(cost) as total_cost') // Calculate total cost for each type
+                ->groupBy('type')
+                ->get()
+                ->keyBy('type'); // Key the collection by type for easier access
+
+        return view('user.trips.pending', compact('pageTitle', 'trips', 'sum', 'tripData'));
     }
 
     public function bookingsView() {

@@ -55,20 +55,6 @@
               <li class="pc-item @if(Route::is('user.trips.pending.view')) active @endif"><a class="pc-link" href="{{ route('user.trips.pending.view') }}">Pending</a></li>
             </ul>
           </li>
-          <li class="pc-item pc-hasmenu  @if (Request::is('user.bookings') || Request::is('user/bookings/*')) pc-trigger active @endif">
-            <a href="javascript:void(0);" class="pc-link">
-              <span class="pc-micon">
-                <i class="ph-duotone ph-backpack"></i>
-              </span>
-              <span class="pc-mtext">Bookings</span>
-              <span class="pc-arrow"><i data-feather="chevron-right"></i></span>
-            </a>
-            <ul class="pc-submenu">
-              <li class="pc-item @if(Route::is('user.bookings.all.view')) active @endif"><a class="pc-link" href="{{ route('user.bookings.all.view') }}">Overview</a></li>
-              <li class="pc-item @if(Route::is('user.bookings.completed.view')) active @endif"><a class="pc-link" href="{{ route('user.bookings.completed.view') }}">Completed</a></li>
-              <li class="pc-item @if(Route::is('user.bookings.pending.view')) active @endif"><a class="pc-link" href="{{ route('user.bookings.pending.view') }}">Pending</a></li>
-            </ul>
-          </li>
           <li class="pc-item pc-hasmenu  @if (Request::is('user.account') || Request::is('user/account/*')) pc-trigger active @endif">
             <a href="javascript:void(0);" class="pc-link">
               <span class="pc-micon">
