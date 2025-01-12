@@ -63,7 +63,6 @@
                 $data = $tripData->get($type, [
                     'total_trips' => 0,
                     'used_tickets' => 0,
-                    'unused_tickets' => 0,
                     'total_cost' => 0.00
                 ]);
             @endphp
@@ -75,18 +74,14 @@
                         <a href="http://">
                             <span class="{{ $details['color'] }}">{{ $details['label'] }}</span>
                         </a>
-                        <p class="mb-3 mt-3">Total number of trips taken through {{ strtolower($details['label']) }}.</p>
-                        <p><strong>Amount Spent:</strong> ${{ number_format($data['total_cost'], 2) }}</p>
+                        <p class="mb-3 mt-3">Total number of completed trips taken through {{ strtolower($details['label']) }}.</p>
+                        <p><a href=""><strong>View All</strong></a></p>
                     </div>
                     <div class="card-footer bg-brand-color-3 text-white">
                         <div class="row text-center">
                             <div class="col border-end">
                                 <h4 class="m-0 text-white">{{ $data['used_tickets'] }}</h4>
-                                <span>Used Tickets</span>
-                            </div>
-                            <div class="col border-end">
-                                <h4 class="m-0 text-white">{{ $data['unused_tickets'] }}</h4>
-                                <span>Unused Tickets</span>
+                                <span>Completed</span>
                             </div>
                         </div>
                     </div>

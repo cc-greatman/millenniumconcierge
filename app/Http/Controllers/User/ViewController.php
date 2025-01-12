@@ -136,11 +136,10 @@ class ViewController extends Controller
                     'status' => 'used',
                     ])->sum('cost');
 
-        $tripData = \App\Models\Trips::where('user_id', $id)
+        $$tripData = \App\Models\Trips::where('user_id', $id)
+        ->where('status', 'used') // Filter only trips with 'used' status
         ->select('type')
-        ->selectRaw('COUNT(*) as total_trips')
-        ->selectRaw('SUM(CASE WHEN status = "used" THEN 1 ELSE 0 END) as used_tickets')
-        ->selectRaw('SUM(CASE WHEN status = "unused" THEN 1 ELSE 0 END) as unused_tickets')
+        ->selectRaw('COUNT(*) as total_trips') // This will now count only 'used' trips
         ->selectRaw('SUM(cost) as total_cost') // Calculate total cost for each type
         ->groupBy('type')
         ->get()
