@@ -123,7 +123,7 @@ class ViewController extends Controller
 
         $pageTitle = "Flights Completed || ". env('APP_NAME');
 
-        $id = auth(['web'])->id();
+        $id = auth()->guard('web')->id();
 
         $trips = Trips::where([
                         'type' => 'commercial',
@@ -146,7 +146,7 @@ class ViewController extends Controller
 
         $pageTitle = "Flights Pending || ". env('APP_NAME');
 
-        $id = auth(['web'])->id();
+        $id = auth()->guard('web')->id();
 
         $trips = Trips::where([
                         'type' => 'commercial',
@@ -169,7 +169,7 @@ class ViewController extends Controller
 
         $pageTitle = "Helicopter Trips Completed || ". env('APP_NAME');
 
-        $id = auth(['web'])->id();
+        $id = auth()->guard('web')->id();
 
         $trips = Trips::where([
                         'type' => 'helicopter',
@@ -190,7 +190,7 @@ class ViewController extends Controller
 
         $pageTitle = "Helicopter Trips Pending || ". env('APP_NAME');
 
-        $id = auth(['web'])->id();
+        $id = auth()->guard('web')->id();
 
         $trips = Trips::where([
                         'type' => 'helicopter',
@@ -211,7 +211,7 @@ class ViewController extends Controller
 
         $pageTitle = "Yacht Trips Completed || ". env('APP_NAME');
 
-        $id = auth(['web'])->id();
+        $id = auth()->guard('web')->id();
 
         $trips = Trips::where([
                         'type' => 'yacht',
@@ -232,7 +232,7 @@ class ViewController extends Controller
 
         $pageTitle = "Yacht Trips Pending || ". env('APP_NAME');
 
-        $id = auth(['web'])->id();
+        $id = auth()->guard('web')->id();
 
         $trips = Trips::where([
                         'type' => 'yacht',
