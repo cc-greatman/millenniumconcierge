@@ -269,7 +269,7 @@ class ViewController extends Controller
 
     public function completedBookings() {
 
-        $pageTitle = "Completed Bookings || ". env('APP_NAME');
+        $pageTitle = "Completed Hotel Trips || ". env('APP_NAME');
 
         $id = auth()->guard('web')->id();
 
@@ -289,7 +289,7 @@ class ViewController extends Controller
 
     public function pendingBookings() {
 
-        $pageTitle = "Pending Bookings || ". env('APP_NAME');
+        $pageTitle = "Pending Hotel Trips || ". env('APP_NAME');
 
         $id = auth()->guard('web')->id();
 
