@@ -139,7 +139,7 @@ class ViewController extends Controller
                         'status' => 'used',
                         ])->sum('cost');
 
-        return view('user.trips.flights.completed', compact('sum', 'trips', 'pagetitle'));
+        return view('user.trips.flights.completed', compact('sum', 'trips', 'pageTitle'));
     }
 
     public function flightsPending() {
@@ -162,7 +162,7 @@ class ViewController extends Controller
                         'status' => 'unused',
                         ])->sum('cost');
 
-        return view('user.trips.flights.pending', compact('sum', 'trips', 'pagetitle'));
+        return view('user.trips.flights.pending', compact('sum', 'trips', 'pageTitle'));
     }
 
     public function helisCompleted() {
@@ -183,7 +183,7 @@ class ViewController extends Controller
                         'status' => 'used',
                         ])->sum('cost');
 
-        return view('user.trips.helicopters.completed', compact('sum', 'trips', 'pagetitle'));
+        return view('user.trips.helicopters.completed', compact('sum', 'trips', 'pageTitle'));
     }
 
     public function helisPending() {
@@ -204,7 +204,7 @@ class ViewController extends Controller
                         'status' => 'unused',
                         ])->sum('cost');
 
-        return view('user.trips.helicopters.pending', compact('sum', 'trips', 'pagetitle'));
+        return view('user.trips.helicopters.pending', compact('sum', 'trips', 'pageTitle'));
     }
 
     public function yachtsCompleted() {
@@ -225,7 +225,7 @@ class ViewController extends Controller
                         'status' => 'used',
                         ])->sum('cost');
 
-        return view('user.trips.yachts.completed', compact('sum', 'trips', 'pagetitle'));
+        return view('user.trips.yachts.completed', compact('sum', 'trips', 'pageTitle'));
     }
 
     public function yachtsPending() {
@@ -246,7 +246,7 @@ class ViewController extends Controller
                         'status' => 'unused',
                         ])->sum('cost');
 
-        return view('user.trips.yachts.pending', compact('sum', 'trips', 'pagetitle'));
+        return view('user.trips.yachts.pending', compact('sum', 'trips', 'pageTitle'));
     }
 
     public function bookingsView() {
