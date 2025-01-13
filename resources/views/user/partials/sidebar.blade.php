@@ -56,8 +56,8 @@
                       >Hotels<span class="pc-arrow"><i data-feather="chevron-right"></i></span
                     ></a>
                     <ul class="pc-submenu">
-                        <li class="pc-item @if(Route::is('user.trips.all.view')) active @endif"><a class="pc-link" href="{{ route('user.trips.all.view') }}">Completed</a></li>
-                        <li class="pc-item @if(Route::is('user.trips.all.view')) active @endif"><a class="pc-link" href="{{ route('user.trips.all.view') }}">Pending</a></li>
+                        <li class="pc-item @if(Route::is('user.trips.hotels.completed.view')) active @endif"><a class="pc-link" href="{{ route('user.trips.hotels.completed.view') }}">Completed</a></li>
+                        <li class="pc-item @if(Route::is('user.trips.hotels.pending.view')) active @endif"><a class="pc-link" href="{{ route('user.trips.hotels.pending.view') }}">Pending</a></li>
                     </ul>
                 </li>
                 <li class="pc-item pc-hasmenu @if (Request::is('user.trips.flights') || Request::is('user/trips/flights/*')) pc-trigger active @endif">
