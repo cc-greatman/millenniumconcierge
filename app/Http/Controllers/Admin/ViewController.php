@@ -63,14 +63,12 @@ class ViewController extends Controller
         ->get()
         ->keyBy('type'); // Key the collection by type for easier access
 
-        $hotelData = Bookings::selectRaw('
-            SUM(cost) as total_cost,
-            COUNT(*) as total_count,
-            SUM(CASE WHEN status = "unused" THEN 1 ELSE 0 END) as pending_count,
-            SUM(CASE WHEN status = "used" THEN 1 ELSE 0 END) as completed_count
-        ')
-        ->first()
-        ->toArray();
+        $hotelData = [
+            'sum' => Bookings::sum('cost'),
+            'count' => Bookings::count(),
+            'pending' => Bookings::where('status','unused')->count(),
+            'completed' => Bookings::where('status','used')->count(),
+        ];
 
         return view('admin.trips.all', compact('pageTitle', 'tripData', 'hotelData'));
     }
