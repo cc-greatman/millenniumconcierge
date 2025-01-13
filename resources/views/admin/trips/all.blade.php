@@ -82,7 +82,7 @@
                     <a href="http://">
                         <span class="text-info">Hotel Trips</span>
                     </a>
-                    <p class="mb-3 mt-3">Total number of times we've booked a hotel room for {{ auth()->guard('web')->user()->first_name }}.</p>
+                    <p class="mb-3 mt-3">Total number of times we've booked a hotel room for our clients.</p>
                     <p><strong>Amount Spent:</strong> ${{ number_format($hotelData['sum'], 2) }}</p>
                 </div>
                 <div class="card-footer bg-brand-color-3 text-white">
