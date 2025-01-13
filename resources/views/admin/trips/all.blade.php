@@ -33,9 +33,10 @@
       <div class="row">
         @php
             $tripTypes = [
-                'jet' => ['label' => 'Private Flights', 'color' => 'text-info'],
-                'flight' => ['label' => 'Commercial Flights', 'color' => 'text-primary'],
-                'yacht' => ['label' => 'Yacht Cruises', 'color' => 'text-success'],
+                'private' => ['label' => 'Private Flights', 'color' => 'text-info'],
+                'commercial' => ['label' => 'Commercial Flights', 'color' => 'text-primary'],
+                'yacht' => ['label' => 'Yacht Trips', 'color' => 'text-success'],
+                'helicopter' => ['label' => 'Helicopter Trips', 'color' => 'text-info'],
             ];
         @endphp
         @foreach ($tripTypes as $type => $details)
@@ -48,11 +49,11 @@
                 ]);
             @endphp
             <!-- support-section start -->
-            <div class="col-xl-4 col-md-6">
+            <div class="{{ $loop->last ? 'col-xl-6 col-md-6' : 'col-xl-4 col-md-6' }}">
                 <div class="card support-bar">
                     <div class="card-body pb-0">
                         <h2 class="m-0">{{ $data['total_trips'] }}</h2>
-                        <a href="http://">
+                        <a href="vascript:void(0);">
                             <span class="{{ $details['color'] }}">{{ $details['label'] }}</span>
                         </a>
                         <p class="mb-3 mt-3">Total number of trips taken through {{ strtolower($details['label']) }}.</p>
@@ -66,7 +67,7 @@
                             </div>
                             <div class="col border-end">
                                 <h4 class="m-0 text-white">{{ $data['unused_tickets'] }}</h4>
-                                <span>Uncompleted</span>
+                                <span>Pending</span>
                             </div>
                         </div>
                     </div>
@@ -74,6 +75,30 @@
             </div>
             <!-- support-section end -->
         @endforeach
+        <div class="col-xl-6 col-md-6">
+            <div class="card support-bar">
+                <div class="card-body pb-0">
+                    <h2 class="m-0">{{ $hotelData['count'] }}</h2>
+                    <a href="http://">
+                        <span class="text-info">Hotel Trips</span>
+                    </a>
+                    <p class="mb-3 mt-3">Total number of times we've booked a hotel room for {{ auth()->guard('web')->user()->first_name }}.</p>
+                    <p><strong>Amount Spent:</strong> ${{ number_format($hotelData['sum'], 2) }}</p>
+                </div>
+                <div class="card-footer bg-brand-color-3 text-white">
+                    <div class="row text-center">
+                        <div class="col border-end">
+                            <h4 class="m-0 text-white">{{ $hotelData['completed'] }}</h4>
+                            <span>Completed</span>
+                        </div>
+                        <div class="col border-end">
+                            <h4 class="m-0 text-white">{{ $hotelData['pending'] }}</h4>
+                            <span>Pending</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
       </div>
       <!-- [ Main Content ] end -->
     </div>

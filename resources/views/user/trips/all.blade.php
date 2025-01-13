@@ -33,10 +33,10 @@
       <div class="row">
         @php
             $tripTypes = [
-                'private' => ['label' => 'Private Flight', 'color' => 'text-info'],
-                'commercial' => ['label' => 'Commercial Flight', 'color' => 'text-primary'],
-                'yacht' => ['label' => 'Yacht', 'color' => 'text-success'],
-                'helicopter' => ['label' => 'Helicopter', 'color' => 'text-info'],
+                'private' => ['label' => 'Private Flights', 'color' => 'text-info'],
+                'commercial' => ['label' => 'Commercial Flights', 'color' => 'text-primary'],
+                'yacht' => ['label' => 'Yacht Trips', 'color' => 'text-success'],
+                'helicopter' => ['label' => 'Helicopter Trips', 'color' => 'text-info'],
             ];
         @endphp
         @foreach ($tripTypes as $type => $details)
