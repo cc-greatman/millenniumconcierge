@@ -103,7 +103,7 @@ class ViewController extends Controller
     public function flightsCompleted() {
 
         $pageTitle = "Flights Completed || ". env('APP_NAME');
-        
+
         $trips = Trips::where([
                         'type' => 'commercial',
                         'type' => 'private',
@@ -219,7 +219,7 @@ class ViewController extends Controller
                     'status' => 'used',
                     ])->sum('cost');
 
-        return view('user.bookings.completed', compact('pageTitle', 'bookings', 'sum'));
+        return view('admin.trips.hotels.completed', compact('pageTitle', 'bookings', 'sum'));
     }
 
     public function pendingBookings() {
@@ -239,7 +239,7 @@ class ViewController extends Controller
                     'status' => 'unused',
                     ])->sum('cost');
 
-        return view('user.bookings.pending', compact('pageTitle', 'bookings', 'sum'));
+        return view('admin.trips.hotel.pending', compact('pageTitle', 'bookings', 'sum'));
     }
 
     public function editTrip($id) {

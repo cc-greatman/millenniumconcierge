@@ -14,13 +14,13 @@
             <div class="col-md-12">
               <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('user.dashboard') }}">Home</a></li>
-                <li class="breadcrumb-item"><a href="javascript: void(0)">Flights</a></li>
+                <li class="breadcrumb-item"><a href="javascript: void(0)">Bookings</a></li>
                 <li class="breadcrumb-item" aria-current="page">Pending</li>
               </ul>
             </div>
             <div class="col-md-12">
               <div class="page-header-title">
-                <h2 class="mb-0">Pending Flights</h2>
+                <h2 class="mb-0">Pending Bookings</h2>
               </div>
             </div>
           </div>
@@ -53,40 +53,34 @@
         <div class="col-sm-12">
             <div class="card">
               <div class="card-header">
-                <h5>All Pending Flights</h5>
+                <h5>All Pending Bookings</h5>
               </div>
               <div class="card-body">
                 <table id="res-config" class="display table table-striped table-hover dt-responsive nowrap" style="width: 100%">
                   <thead>
                     <tr>
-                      <th>Type</th>
+                      <th>Hotel</th>
                       <th>Cost</th>
-                      <th>Departure</th>
-                      <th>Destination</th>
-                      <th>No of Seats</th>
+                      <th>Check In</th>
+                      <th>Check Out</th>
+                      <th>Details</th>
+                      <th>No of Rooms</th>
                       <th>Status</th>
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach ($trips as $trip)
+                    @foreach ($bookings as $trip)
                         <tr>
-                            <td>
-                                @if($trip->type === "private")
-                                    Private
-                                @elseif($trip->type === "commercial")
-                                    Commercial
-                                @else
-                                    {{ $trip->type }}
-                                @endif
-                            </td>
+                            <td>{{ $trip->hotel }}</td>
                             <td>${{ number_format($trip->cost, 2) }}</td>
-                            <td>{{ $trip->departure }}</td>
-                            <td>{{ $trip->destination }}</td>
-                            <td>{{ $trip->seats }}</td>
+                            <td>{{ \Carbon\Carbon::parse($trip->check_in)->format('d F, Y') }}</td>
+                            <td>{{ \Carbon\Carbon::parse($trip->check_in)->format('d F, Y') }}</td>
+                            <td>{{ $trip->details }}</td>
+                            <td>{{ $trip->room_qty }}</td>
                             @if ($trip->status === "used")
-                                <td><span class="badge text-bg-success">Completed</span></td>
+                                <td><span class="badge text-bg-success">Used</span></td>
                             @elseif ($trip->status === "unused")
-                                <td><span class="badge text-bg-warning">Pending</span></td>
+                                <td><span class="badge text-bg-warning">Unused</span></td>
                             @endif
                         </tr>
                     @endforeach
@@ -94,7 +88,8 @@
                 </table>
               </div>
             </div>
-        </div>
+          </div>
+      </div>
       <!-- [ Main Content ] end -->
     </div>
 </div>

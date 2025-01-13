@@ -1,8 +1,8 @@
-@include('user.partials.head')
+@include('admin.partials.head')
 
-@include('user.partials.sidebar')
+@include('admin.partials.sidebar')
 
-@include('user.partials.navbar')
+@include('admin.partials.navbar')
 
 <!-- [ Main Content ] start -->
 <div class="pc-container">
@@ -98,4 +98,4 @@
     </div>
 </div>
 
-@include('user.partials.footer')
+@include('admin.partials.footer')
