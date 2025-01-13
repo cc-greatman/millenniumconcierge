@@ -51,7 +51,7 @@
             </a>
             <ul class="pc-submenu">
                 <li class="pc-item @if(Route::is('user.trips.all.view')) active @endif"><a class="pc-link" href="{{ route('user.trips.all.view') }}">Overview</a></li>
-                <li class="pc-item pc-hasmenu @if (Request::is('user.trips') || Request::is('user/trips/*')) pc-trigger active @endif">
+                <li class="pc-item pc-hasmenu @if (Request::is('user.trips.hotels') || Request::is('user/trips/hotels/*')) pc-trigger active @endif">
                     <a class="pc-link" href="javascript:void(0);"
                       >Hotels<span class="pc-arrow"><i data-feather="chevron-right"></i></span
                     ></a>

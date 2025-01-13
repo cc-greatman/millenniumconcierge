@@ -116,7 +116,14 @@ class ViewController extends Controller
         ->get()
         ->keyBy('type'); // Key the collection by type for easier access
 
-        return view('user.trips.all', compact('pageTitle', 'tripData'));
+        $hotelData = [
+            'sum' => Bookings::where('user_id', $id)->sum('cost'),
+            'count' => Bookings::where('user_id', $id)->count(),
+            'pending' => Bookings::where('user_id', $id)->where('status','unused')->count(),
+            'completed' => Bookings::where('user_id', $id)->where('status','used')->count(),
+        ];
+
+        return view('user.trips.all', compact('pageTitle', 'tripData', 'hotelData'));
     }
 
     public function flightsCompleted() {
