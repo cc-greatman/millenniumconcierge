@@ -62,7 +62,7 @@
                         <p class="mb-0">{{ $user->email }}</p>
                         </div>
                         <div class="flex-shrink-0">
-                        <a class="btn btn-sm btn-light-secondary"><i class="ti ti-edit"></i></a>
+                        <a href="{{ route('user.account.profile.view') }}" class="btn btn-sm btn-light-secondary"><i class="ti ti-edit"></i></a>
                         </div>
                     </div>
                     </div>
