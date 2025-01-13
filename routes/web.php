@@ -99,6 +99,18 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
                                 Route::get('completed', 'User\ViewController@flightsCompleted')->name('completed.view');
                                 Route::get('pending', 'User\ViewController@flightsPending')->name('pending.view');
                             });
+
+                            //-- All Helicopters Route
+                            Route::name('helicopters.')->prefix('helicopters')->group(function() {
+                                Route::get('completed', 'User\ViewController@helisCompleted')->name('completed.view');
+                                Route::get('pending', 'User\ViewController@helisPending')->name('pending.view');
+                            });
+
+                            //-- All Yachts Route
+                            Route::name('yachts.')->prefix('yachts')->group(function() {
+                                Route::get('completed', 'User\ViewController@yachtsCompleted')->name('completed.view');
+                                Route::get('pending', 'User\ViewController@yachtsPending')->name('pending.view');
+                            });
                         });
 
                         //-- All Booking Route

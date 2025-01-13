@@ -165,6 +165,90 @@ class ViewController extends Controller
         return view('user.trips.flights.pending', compact('sum', 'trips', 'pagetitle'));
     }
 
+    public function helisCompleted() {
+
+        $pageTitle = "Helicopter Trips Completed || ". env('APP_NAME');
+
+        $id = auth(['web'])->id();
+
+        $trips = Trips::where([
+                        'type' => 'helicopter',
+                        'user_id'=> $id,
+                        'status' => 'used',
+                        ])->get();
+
+        $sum = Trips::where([
+                        'type' => 'helicopter',
+                        'user_id'=> $id,
+                        'status' => 'used',
+                        ])->sum('cost');
+
+        return view('user.trips.helicopters.completed', compact('sum', 'trips', 'pagetitle'));
+    }
+
+    public function helisPending() {
+
+        $pageTitle = "Helicopter Trips Pending || ". env('APP_NAME');
+
+        $id = auth(['web'])->id();
+
+        $trips = Trips::where([
+                        'type' => 'helicopter',
+                        'user_id'=> $id,
+                        'status' => 'unused',
+                        ])->get();
+
+        $sum = Trips::where([
+                        'type' => 'helicopter',
+                        'user_id'=> $id,
+                        'status' => 'unused',
+                        ])->sum('cost');
+
+        return view('user.trips.helicopters.pending', compact('sum', 'trips', 'pagetitle'));
+    }
+
+    public function yachtsCompleted() {
+
+        $pageTitle = "Yacht Trips Completed || ". env('APP_NAME');
+
+        $id = auth(['web'])->id();
+
+        $trips = Trips::where([
+                        'type' => 'yacht',
+                        'user_id'=> $id,
+                        'status' => 'used',
+                        ])->get();
+
+        $sum = Trips::where([
+                        'type' => 'yacht',
+                        'user_id'=> $id,
+                        'status' => 'used',
+                        ])->sum('cost');
+
+        return view('user.trips.yachts.completed', compact('sum', 'trips', 'pagetitle'));
+    }
+
+    public function yachtsPending() {
+
+        $pageTitle = "Yacht Trips Pending || ". env('APP_NAME');
+
+        $id = auth(['web'])->id();
+
+        $trips = Trips::where([
+                        'type' => 'yacht',
+                        'user_id'=> $id,
+                        'status' => 'unused',
+                        ])->get();
+
+        $sum = Trips::where([
+                        'type' => 'yacht',
+                        'user_id'=> $id,
+                        'status' => 'unused',
+                        ])->sum('cost');
+
+        return view('user.trips.yachts.pending', compact('sum', 'trips', 'pagetitle'));
+    }
+
     public function bookingsView() {
 
         $pageTitle = "Bookings Overview || ". env('APP_NAME');

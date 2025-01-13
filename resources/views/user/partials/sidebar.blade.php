@@ -50,6 +50,7 @@
               <span class="pc-arrow"><i data-feather="chevron-right"></i></span>
             </a>
             <ul class="pc-submenu">
+                <li class="pc-item @if(Route::is('user.trips.all.view')) active @endif"><a class="pc-link" href="{{ route('user.trips.all.view') }}">Overview</a></li>
                 <li class="pc-item pc-hasmenu @if (Request::is('user.trips') || Request::is('user/trips/*')) pc-trigger active @endif">
                     <a class="pc-link" href="javascript:void(0);"
                       >Hotels<span class="pc-arrow"><i data-feather="chevron-right"></i></span
@@ -60,24 +61,22 @@
                         <li class="pc-item @if(Route::is('user.trips.pending.view')) active @endif"><a class="pc-link" href="{{ route('user.trips.pending.view') }}">Pending</a></li>
                     </ul>
                 </li>
-                <li class="pc-item pc-hasmenu @if (Request::is('user.trips') || Request::is('user/trips/*')) pc-trigger active @endif">
+                <li class="pc-item pc-hasmenu @if (Request::is('user.trips.flights') || Request::is('user/trips/flights/*')) pc-trigger active @endif">
                     <a class="pc-link" href="javascript:void(0);"
                       >Flights<span class="pc-arrow"><i data-feather="chevron-right"></i></span
                     ></a>
                     <ul class="pc-submenu">
-                        <li class="pc-item @if(Route::is('user.trips.all.view')) active @endif"><a class="pc-link" href="{{ route('user.trips.all.view') }}">Overview</a></li>
-                        <li class="pc-item @if(Route::is('user.trips.completed.view')) active @endif"><a class="pc-link" href="{{ route('user.trips.completed.view') }}">Completed</a></li>
-                        <li class="pc-item @if(Route::is('user.trips.pending.view')) active @endif"><a class="pc-link" href="{{ route('user.trips.pending.view') }}">Pending</a></li>
+                        <li class="pc-item @if(Route::is('user.trips.flights.completed.view')) active @endif"><a class="pc-link" href="{{ route('user.trips.flights.completed.view') }}">Completed</a></li>
+                        <li class="pc-item @if(Route::is('user.trips.flights.pending.view')) active @endif"><a class="pc-link" href="{{ route('user.trips.flights.pending.view') }}">Pending</a></li>
                     </ul>
                 </li>
-                <li class="pc-item pc-hasmenu @if (Request::is('user.trips') || Request::is('user/trips/*')) pc-trigger active @endif">
+                <li class="pc-item pc-hasmenu @if (Request::is('user.trips.yachts') || Request::is('user/trips/yachts/*')) pc-trigger active @endif">
                     <a class="pc-link" href="javascript:void(0);"
                       >Yachts<span class="pc-arrow"><i data-feather="chevron-right"></i></span
                     ></a>
                     <ul class="pc-submenu">
-                        <li class="pc-item @if(Route::is('user.trips.all.view')) active @endif"><a class="pc-link" href="{{ route('user.trips.all.view') }}">Overview</a></li>
-                        <li class="pc-item @if(Route::is('user.trips.completed.view')) active @endif"><a class="pc-link" href="{{ route('user.trips.completed.view') }}">Completed</a></li>
-                        <li class="pc-item @if(Route::is('user.trips.pending.view')) active @endif"><a class="pc-link" href="{{ route('user.trips.pending.view') }}">Pending</a></li>
+                        <li class="pc-item @if(Route::is('user.trips.yachts.completed.view')) active @endif"><a class="pc-link" href="{{ route('user.trips.yachts.completed.view') }}">Completed</a></li>
+                        <li class="pc-item @if(Route::is('user.trips.yachts.pending.view')) active @endif"><a class="pc-link" href="{{ route('user.trips.yachts.pending.view') }}">Pending</a></li>
                     </ul>
                 </li>
                 <li class="pc-item pc-hasmenu @if (Request::is('user.trips') || Request::is('user/trips/*')) pc-trigger active @endif">
@@ -85,9 +84,8 @@
                       >Helicopters<span class="pc-arrow"><i data-feather="chevron-right"></i></span
                     ></a>
                     <ul class="pc-submenu">
-                        <li class="pc-item @if(Route::is('user.trips.all.view')) active @endif"><a class="pc-link" href="{{ route('user.trips.all.view') }}">Overview</a></li>
-                        <li class="pc-item @if(Route::is('user.trips.completed.view')) active @endif"><a class="pc-link" href="{{ route('user.trips.completed.view') }}">Completed</a></li>
-                        <li class="pc-item @if(Route::is('user.trips.pending.view')) active @endif"><a class="pc-link" href="{{ route('user.trips.pending.view') }}">Pending</a></li>
+                        <li class="pc-item @if(Route::is('user.trips.helicopters.completed.view')) active @endif"><a class="pc-link" href="{{ route('user.trips.helicopters.completed.view') }}">Completed</a></li>
+                        <li class="pc-item @if(Route::is('user.trips.helicopters.pending.view')) active @endif"><a class="pc-link" href="{{ route('user.trips.helicopters.pending.view') }}">Pending</a></li>
                     </ul>
                 </li>
             </ul>
