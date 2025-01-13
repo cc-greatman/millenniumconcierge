@@ -57,8 +57,6 @@
                     ></a>
                     <ul class="pc-submenu">
                         <li class="pc-item @if(Route::is('user.trips.all.view')) active @endif"><a class="pc-link" href="{{ route('user.trips.all.view') }}">Overview</a></li>
-                        <li class="pc-item @if(Route::is('user.trips.completed.view')) active @endif"><a class="pc-link" href="{{ route('user.trips.completed.view') }}">Completed</a></li>
-                        <li class="pc-item @if(Route::is('user.trips.pending.view')) active @endif"><a class="pc-link" href="{{ route('user.trips.pending.view') }}">Pending</a></li>
                     </ul>
                 </li>
                 <li class="pc-item pc-hasmenu @if (Request::is('user.trips.flights') || Request::is('user/trips/flights/*')) pc-trigger active @endif">
