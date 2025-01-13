@@ -49,7 +49,7 @@
                 ]);
             @endphp
             <!-- support-section start -->
-            <div class="col-xl-4 col-md-6">
+            <div class="{{ $loop->last ? 'col-xl-6 col-md-6' : 'col-xl-4 col-md-6' }}">
                 <div class="card support-bar">
                     <div class="card-body pb-0">
                         <h2 class="m-0">{{ $data['total_trips'] }}</h2>
