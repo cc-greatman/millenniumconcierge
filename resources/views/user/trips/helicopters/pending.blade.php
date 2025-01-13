@@ -14,13 +14,13 @@
             <div class="col-md-12">
               <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('user.dashboard') }}">Home</a></li>
-                <li class="breadcrumb-item"><a href="javascript: void(0)">Trips</a></li>
+                <li class="breadcrumb-item"><a href="javascript: void(0)">Heli Flights</a></li>
                 <li class="breadcrumb-item" aria-current="page">Pending</li>
               </ul>
             </div>
             <div class="col-md-12">
               <div class="page-header-title">
-                <h2 class="mb-0">Pending Trips</h2>
+                <h2 class="mb-0">Pending Heli Flights</h2>
               </div>
             </div>
           </div>
@@ -71,22 +71,16 @@
                     @foreach ($trips as $trip)
                         <tr>
                             <td>
-                                @if($trip->type === "jet")
-                                    Private
-                                @elseif($trip->type === "flight")
-                                    Commercial
-                                @else
-                                    {{ $trip->type }}
-                                @endif
+                                Helicopter
                             </td>
                             <td>${{ number_format($trip->cost, 2) }}</td>
                             <td>{{ $trip->departure }}</td>
                             <td>{{ $trip->destination }}</td>
                             <td>{{ $trip->seats }}</td>
                             @if ($trip->status === "used")
-                                <td><span class="badge text-bg-success">Used</span></td>
+                                <td><span class="badge text-bg-success">Completed</span></td>
                             @elseif ($trip->status === "unused")
-                                <td><span class="badge text-bg-warning">Unused</span></td>
+                                <td><span class="badge text-bg-warning">Pending</span></td>
                             @endif
                         </tr>
                     @endforeach
@@ -95,8 +89,6 @@
               </div>
             </div>
         </div>
-      </div>
-      <!-- [ Main Content ] end -->
     </div>
 </div>
 

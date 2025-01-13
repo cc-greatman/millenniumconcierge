@@ -14,13 +14,13 @@
             <div class="col-md-12">
               <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('user.dashboard') }}">Home</a></li>
-                <li class="breadcrumb-item"><a href="javascript: void(0)">Trips</a></li>
+                <li class="breadcrumb-item"><a href="javascript: void(0)">Flights</a></li>
                 <li class="breadcrumb-item" aria-current="page">Pending</li>
               </ul>
             </div>
             <div class="col-md-12">
               <div class="page-header-title">
-                <h2 class="mb-0">Pending Trips</h2>
+                <h2 class="mb-0">Pending Flights</h2>
               </div>
             </div>
           </div>
@@ -53,7 +53,7 @@
         <div class="col-sm-12">
             <div class="card">
               <div class="card-header">
-                <h5>All Pending Trips</h5>
+                <h5>All Pending Flights</h5>
               </div>
               <div class="card-body">
                 <table id="res-config" class="display table table-striped table-hover dt-responsive nowrap" style="width: 100%">
@@ -71,9 +71,9 @@
                     @foreach ($trips as $trip)
                         <tr>
                             <td>
-                                @if($trip->type === "jet")
+                                @if($trip->type === "private")
                                     Private
-                                @elseif($trip->type === "flight")
+                                @elseif($trip->type === "commercial")
                                     Commercial
                                 @else
                                     {{ $trip->type }}
@@ -84,9 +84,9 @@
                             <td>{{ $trip->destination }}</td>
                             <td>{{ $trip->seats }}</td>
                             @if ($trip->status === "used")
-                                <td><span class="badge text-bg-success">Used</span></td>
+                                <td><span class="badge text-bg-success">Completed</span></td>
                             @elseif ($trip->status === "unused")
-                                <td><span class="badge text-bg-warning">Unused</span></td>
+                                <td><span class="badge text-bg-warning">Pending</span></td>
                             @endif
                         </tr>
                     @endforeach
@@ -95,7 +95,6 @@
               </div>
             </div>
         </div>
-      </div>
       <!-- [ Main Content ] end -->
     </div>
 </div>

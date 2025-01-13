@@ -63,11 +63,11 @@
                         <div class="row text-center">
                             <div class="col border-end">
                                 <h4 class="m-0 text-white">{{ $data['used_tickets'] }}</h4>
-                                <span>Pending</span>
+                                <span>Completed</span>
                             </div>
                             <div class="col border-end">
                                 <h4 class="m-0 text-white">{{ $data['unused_tickets'] }}</h4>
-                                <span>Completed</span>
+                                <span>Pending</span>
                             </div>
                         </div>
                     </div>

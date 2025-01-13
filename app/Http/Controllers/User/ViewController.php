@@ -119,62 +119,50 @@ class ViewController extends Controller
         return view('user.trips.all', compact('pageTitle', 'tripData'));
     }
 
-    public function completedTrips() {
+    public function flightsCompleted() {
 
-        $pageTitle = "Completed Trips || ". env('APP_NAME');
+        $pageTitle = "Flights Completed || ". env('APP_NAME');
 
-        $id = auth()->guard('web')->id();
-
-        $user = User::findOrFail($id);
+        $id = auth(['web'])->id();
 
         $trips = Trips::where([
-                            'user_id'=> $id,
-                            'status' => 'used',
-                            ])->get();
+                        'type' => 'commercial',
+                        'type' => 'private',
+                        'user_id'=> $id,
+                        'status' => 'used',
+                        ])->get();
+
         $sum = Trips::where([
-                    'user_id'=> $id,
-                    'status' => 'used',
-                    ])->sum('cost');
+                        'type' => 'commercial',
+                        'type' => 'private',
+                        'user_id'=> $id,
+                        'status' => 'used',
+                        ])->sum('cost');
 
-        $tripData = \App\Models\Trips::where('user_id', $id)
-        ->where('status', 'used') // Filter only trips with 'used' status
-        ->select('type')
-        ->selectRaw('COUNT(*) as total_trips') // This will now count only 'used' trips
-        ->selectRaw('SUM(cost) as total_cost') // Calculate total cost for each type
-        ->groupBy('type')
-        ->get()
-        ->keyBy('type'); // Key the collection by type for easier access
-
-        return view('user.trips.completed', compact('pageTitle', 'tripData', 'sum'));
+        return view('user.trips.flights.completed', compact('sum', 'trips', 'pagetitle'));
     }
 
-    public function pendingTrips() {
+    public function flightsPending() {
 
-        $pageTitle = "Pending Trips || ". env('APP_NAME');
+        $pageTitle = "Flights Pending || ". env('APP_NAME');
 
-        $id = auth()->guard('web')->id();
-
-        $user = User::findOrFail($id);
+        $id = auth(['web'])->id();
 
         $trips = Trips::where([
-                            'user_id'=> $id,
-                            'status' => 'unused',
-                            ])->get();
+                        'type' => 'commercial',
+                        'type' => 'private',
+                        'user_id'=> $id,
+                        'status' => 'unused',
+                        ])->get();
+
         $sum = Trips::where([
-                    'user_id'=> $id,
-                    'status' => 'unused',
-                    ])->sum('cost');
+                        'type' => 'commercial',
+                        'type' => 'private',
+                        'user_id'=> $id,
+                        'status' => 'unused',
+                        ])->sum('cost');
 
-        $tripData = \App\Models\Trips::where('user_id', $id)
-                ->where('status', 'used') // Filter only trips with 'used' status
-                ->select('type')
-                ->selectRaw('COUNT(*) as total_trips') // This will now count only 'used' trips
-                ->selectRaw('SUM(cost) as total_cost') // Calculate total cost for each type
-                ->groupBy('type')
-                ->get()
-                ->keyBy('type'); // Key the collection by type for easier access
-
-        return view('user.trips.pending', compact('pageTitle', 'trips', 'sum', 'tripData'));
+        return view('user.trips.flights.pending', compact('sum', 'trips', 'pagetitle'));
     }
 
     public function bookingsView() {

@@ -93,8 +93,12 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
                         //-- All Trips Route
                         Route::name('trips.')->prefix('trips')->group(function () {
                             Route::get('overview', 'User\ViewController@tripsView')->name('all.view');
-                            Route::get('completed', 'User\ViewController@completedTrips')->name('completed.view');
-                            Route::get('pending', 'User\ViewController@pendingTrips')->name('pending.view');
+
+                            //-- All Flights Route
+                            Route::name('flights.')->prefix('flights')->group(function() {
+                                Route::get('completed', 'User\ViewController@flightsCompleted')->name('completed.view');
+                                Route::get('pending', 'User\ViewController@flightsPending')->name('pending.view');
+                            });
                         });
 
                         //-- All Booking Route
