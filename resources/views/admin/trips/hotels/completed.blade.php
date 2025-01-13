@@ -59,6 +59,7 @@
                 <table id="res-config" class="display table table-striped table-hover dt-responsive nowrap" style="width: 100%">
                   <thead>
                     <tr>
+                      <th>User</th>
                       <th>Hotel</th>
                       <th>Cost</th>
                       <th>Check In</th>
@@ -71,6 +72,7 @@
                   <tbody>
                     @foreach ($bookings as $trip)
                         <tr>
+                            <td>{{ $trip->user->first_name }} {{ $trip->user->last_name }}</td>
                             <td>{{ $trip->hotel }}</td>
                             <td>${{ number_format($trip->cost, 2) }}</td>
                             <td>{{ \Carbon\Carbon::parse($trip->check_in)->format('d F, Y') }}</td>

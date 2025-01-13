@@ -59,6 +59,7 @@
                 <table id="res-config" class="display table table-striped table-hover dt-responsive nowrap" style="width: 100%">
                   <thead>
                     <tr>
+                      <th>User</th>
                       <th>Type</th>
                       <th>Cost</th>
                       <th>Departure</th>
@@ -70,6 +71,7 @@
                   <tbody>
                     @foreach ($trips as $trip)
                         <tr>
+                            <td>{{ $trip->user->first_name }} {{ $trip->user->last_name }}</td>
                             <td>
                                 Yacht
                             </td>
