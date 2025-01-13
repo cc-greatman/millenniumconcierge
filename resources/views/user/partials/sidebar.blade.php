@@ -77,7 +77,7 @@
                         <li class="pc-item @if(Route::is('user.trips.yachts.pending.view')) active @endif"><a class="pc-link" href="{{ route('user.trips.yachts.pending.view') }}">Pending</a></li>
                     </ul>
                 </li>
-                <li class="pc-item pc-hasmenu @if (Request::is('user.trips') || Request::is('user/trips/*')) pc-trigger active @endif">
+                <li class="pc-item pc-hasmenu @if (Request::is('user.trips.helicopters') || Request::is('user/trips/helicopters/*')) pc-trigger active @endif">
                     <a class="pc-link" href="javascript:void(0);"
                       >Helicopters<span class="pc-arrow"><i data-feather="chevron-right"></i></span
                     ></a>
