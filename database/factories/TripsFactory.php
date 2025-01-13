@@ -18,7 +18,7 @@ class TripsFactory extends Factory
     {
         return [
             'user_id' => \App\Models\User::factory(),
-            'type' => $this->faker->randomElement(['jet', 'flight', 'yacht']),
+            'type' => $this->faker->randomElement(['private', 'commercial', 'yacht', 'helicopter']),
             'destination' => $this->faker->city,
             'departure' => $this->faker->city,
             'cost' => $this->faker->randomFloat(2, 100, 10000),

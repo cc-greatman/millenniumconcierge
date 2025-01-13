@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('trips', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->enum('type', ['jet', 'flight', 'yacht']);
+            $table->enum('type', ['private', 'commercial', 'yacht', 'helicopter']);
             $table->decimal('cost', 50, 2)->default(0.00);
             $table->string('departure');
             $table->string('destination');

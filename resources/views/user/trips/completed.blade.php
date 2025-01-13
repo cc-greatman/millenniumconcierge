@@ -53,9 +53,10 @@
       <!-- [ Main Content ] end -->
         @php
             $tripTypes = [
-                'jet' => ['label' => 'Private Jet Trips', 'color' => 'text-info'],
-                'flight' => ['label' => 'Flight Trips', 'color' => 'text-primary'],
-                'yacht' => ['label' => 'Yacht Trips', 'color' => 'text-success'],
+                'private' => ['label' => 'Private Flight', 'color' => 'text-info'],
+                'commercial' => ['label' => 'Commercial Flight', 'color' => 'text-primary'],
+                'yacht' => ['label' => 'Yacht', 'color' => 'text-success'],
+                'helicopter' => ['label' => 'Helicopter', 'color' => 'text-info'],
             ];
         @endphp
         @foreach ($tripTypes as $type => $details)

@@ -33,9 +33,10 @@
       <div class="row">
         @php
             $tripTypes = [
-                'jet' => ['label' => 'Private Jet Trips', 'color' => 'text-info'],
-                'flight' => ['label' => 'Flight Trips', 'color' => 'text-primary'],
-                'yacht' => ['label' => 'Yacht Trips', 'color' => 'text-success'],
+                'private' => ['label' => 'Private Flight', 'color' => 'text-info'],
+                'commercial' => ['label' => 'Commercial Flight', 'color' => 'text-primary'],
+                'yacht' => ['label' => 'Yacht', 'color' => 'text-success'],
+                'helicopter' => ['label' => 'Helicopter', 'color' => 'text-info'],
             ];
         @endphp
         @foreach ($tripTypes as $type => $details)
@@ -52,7 +53,7 @@
                 <div class="card support-bar">
                     <div class="card-body pb-0">
                         <h2 class="m-0">{{ $data['total_trips'] }}</h2>
-                        <a href="http://">
+                        <a href="vascript:void(0);">
                             <span class="{{ $details['color'] }}">{{ $details['label'] }}</span>
                         </a>
                         <p class="mb-3 mt-3">Total number of trips taken through {{ strtolower($details['label']) }}.</p>
@@ -62,11 +63,11 @@
                         <div class="row text-center">
                             <div class="col border-end">
                                 <h4 class="m-0 text-white">{{ $data['used_tickets'] }}</h4>
-                                <span>Used Tickets</span>
+                                <span>Pending</span>
                             </div>
                             <div class="col border-end">
                                 <h4 class="m-0 text-white">{{ $data['unused_tickets'] }}</h4>
-                                <span>Unused Tickets</span>
+                                <span>Completed</span>
                             </div>
                         </div>
                     </div>
