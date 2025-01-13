@@ -100,6 +100,124 @@ class ViewController extends Controller
         return view('admin.trips.completed', compact('pageTitle', 'trips', 'sum', 'hotelData'));
     }
 
+    public function flightsCompleted() {
+
+        $pageTitle = "Flights Completed || ". env('APP_NAME');
+
+        $id = auth()->guard('web')->id();
+
+        $trips = Trips::where([
+                        'type' => 'commercial',
+                        'type' => 'private',
+                        'status' => 'used',
+                        ])->get();
+
+        $sum = Trips::where([
+                        'type' => 'commercial',
+                        'type' => 'private',
+                        'status' => 'used',
+                        ])->sum('cost');
+
+        return view('admin.trips.flights.completed', compact('sum', 'trips', 'pageTitle'));
+    }
+
+    public function flightsPending() {
+
+        $pageTitle = "Flights Pending || ". env('APP_NAME');
+
+        $id = auth()->guard('web')->id();
+
+        $trips = Trips::where([
+                        'type' => 'commercial',
+                        'type' => 'private',
+                        'status' => 'unused',
+                        ])->get();
+
+        $sum = Trips::where([
+                        'type' => 'commercial',
+                        'type' => 'private',
+                        'status' => 'unused',
+                        ])->sum('cost');
+
+        return view('admin.trips.flights.pending', compact('sum', 'trips', 'pageTitle'));
+    }
+
+    public function helisCompleted() {
+
+        $pageTitle = "Helicopter Trips Completed || ". env('APP_NAME');
+
+        $id = auth()->guard('web')->id();
+
+        $trips = Trips::where([
+                        'type' => 'helicopter',
+                        'status' => 'used',
+                        ])->get();
+
+        $sum = Trips::where([
+                        'type' => 'helicopter',
+                        'status' => 'used',
+                        ])->sum('cost');
+
+        return view('admin.trips.helicopters.completed', compact('sum', 'trips', 'pageTitle'));
+    }
+
+    public function helisPending() {
+
+        $pageTitle = "Helicopter Trips Pending || ". env('APP_NAME');
+
+        $id = auth()->guard('web')->id();
+
+        $trips = Trips::where([
+                        'type' => 'helicopter',
+                        'status' => 'unused',
+                        ])->get();
+
+        $sum = Trips::where([
+                        'type' => 'helicopter',
+                        'status' => 'unused',
+                        ])->sum('cost');
+
+        return view('admin.trips.helicopters.pending', compact('sum', 'trips', 'pageTitle'));
+    }
+
+    public function yachtsCompleted() {
+
+        $pageTitle = "Yacht Trips Completed || ". env('APP_NAME');
+
+        $id = auth()->guard('web')->id();
+
+        $trips = Trips::where([
+                        'type' => 'yacht',
+                        'status' => 'used',
+                        ])->get();
+
+        $sum = Trips::where([
+                        'type' => 'yacht',
+                        'status' => 'used',
+                        ])->sum('cost');
+
+        return view('admin.trips.yachts.completed', compact('sum', 'trips', 'pageTitle'));
+    }
+
+    public function yachtsPending() {
+
+        $pageTitle = "Yacht Trips Pending || ". env('APP_NAME');
+
+        $id = auth()->guard('web')->id();
+
+        $trips = Trips::where([
+                        'type' => 'yacht',
+                        'status' => 'unused',
+                        ])->get();
+
+        $sum = Trips::where([
+                        'type' => 'yacht',
+                        'status' => 'unused',
+                        ])->sum('cost');
+
+        return view('admin.trips.yachts.pending', compact('sum', 'trips', 'pageTitle'));
+    }
+
     public function editTrip($id) {
 
         $pageTitle = "Edit Trip || ". env('APP_NAME');

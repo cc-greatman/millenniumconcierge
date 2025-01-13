@@ -162,11 +162,33 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
                     Route::get('user/delete/{id}', 'Admin\UserController@deleteUser')->name('user.delete');
                 });
 
-                Route::name('trips.')->prefix('trips')->group(function() {
-                    //--Trips Route
-                    Route::get('view/all', 'Admin\ViewController@tripsView')->name('all.view');
-                    Route::get('completed/all', 'Admin\ViewController@completedTrips')->name('completed.view');
-                    Route::get('edit/view/{id}', 'Admin\ViewController@editTrip')->name('edit.view');
+                //-- All Trips Route
+                Route::name('trips.')->prefix('trips')->group(function () {
+                    Route::get('overview', 'Admin\ViewController@tripsView')->name('all.view');
+
+                    //-- All Flights Route
+                    Route::name('flights.')->prefix('flights')->group(function() {
+                        Route::get('completed', 'Admin\ViewController@flightsCompleted')->name('completed.view');
+                        Route::get('pending', 'Admin\ViewController@flightsPending')->name('pending.view');
+                    });
+
+                    //-- All Helicopters Route
+                    Route::name('helicopters.')->prefix('helicopters')->group(function() {
+                        Route::get('completed', 'Admin\ViewController@helisCompleted')->name('completed.view');
+                        Route::get('pending', 'Admin\ViewController@helisPending')->name('pending.view');
+                    });
+
+                    //-- All Yachts Route
+                    Route::name('yachts.')->prefix('yachts')->group(function() {
+                        Route::get('completed', 'Admin\ViewController@yachtsCompleted')->name('completed.view');
+                        Route::get('pending', 'Admin\ViewController@yachtsPending')->name('pending.view');
+                    });
+
+                    //-- All Hotel Routes
+                    Route::name('hotels.')->prefix('hotels')->group(function() {
+                        Route::get('completed', 'Admin\ViewController@completedBookings')->name('completed.view');
+                        Route::get('pending', 'Admin\ViewController@pendingBookings')->name('pending.view');
+                    });
                 });
             });
         });
