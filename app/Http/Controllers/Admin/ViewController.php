@@ -73,31 +73,30 @@ class ViewController extends Controller
         return view('admin.trips.all', compact('pageTitle', 'tripData', 'hotelData'));
     }
 
-    public function completedTrips() {
+    public function personalReport($id) {
 
-        $pageTitle = "Completed Trips || ". env('APP_NAME');
+        $pageTitle = "Trips Overview || ". env('APP_NAME');
 
-        $tripData = \App\Models\Trips::select('type')
-        ->selectRaw('
-            COUNT(*) as total_trips,
-            SUM(CASE WHEN status = "used" THEN 1 ELSE 0 END) as used_tickets,
-            SUM(CASE WHEN status = "unused" THEN 1 ELSE 0 END) as unused_tickets,
-            SUM(cost) as total_cost
-        ') // Aggregated fields combined for clarity
+        $user  = User::findOrFail($id);
+
+        $tripData = \App\Models\Trips::where('user_id', $id)
+        ->select('type')
+        ->selectRaw('COUNT(*) as total_trips')
+        ->selectRaw('SUM(CASE WHEN status = "used" THEN 1 ELSE 0 END) as used_tickets')
+        ->selectRaw('SUM(CASE WHEN status = "unused" THEN 1 ELSE 0 END) as unused_tickets')
+        ->selectRaw('SUM(cost) as total_cost') // Calculate total cost for each type
         ->groupBy('type')
         ->get()
         ->keyBy('type'); // Key the collection by type for easier access
 
-        $hotelData = Bookings::selectRaw('
-            SUM(cost) as total_cost,
-            COUNT(*) as total_count,
-            SUM(CASE WHEN status = "unused" THEN 1 ELSE 0 END) as pending_count,
-            SUM(CASE WHEN status = "used" THEN 1 ELSE 0 END) as completed_count
-        ')
-        ->first()
-        ->toArray();
+        $hotelData = [
+            'sum' => Bookings::where('user_id', $id)->sum('cost'),
+            'count' => Bookings::where('user_id', $id)->count(),
+            'pending' => Bookings::where('user_id', $id)->where('status','unused')->count(),
+            'completed' => Bookings::where('user_id', $id)->where('status','used')->count(),
+        ];
 
-        return view('admin.trips.completed', compact('pageTitle', 'trips', 'sum', 'hotelData'));
+        return view('admin.user.report', compact('pageTitle', 'tripData', 'sum', 'hotelData', 'user'));
     }
 
     public function flightsCompleted() {

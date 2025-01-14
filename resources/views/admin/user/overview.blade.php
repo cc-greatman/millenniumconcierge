@@ -49,16 +49,24 @@
                     <tbody>
                         @foreach ($users as $user)
                         <tr>
-                            <td>
-                                <div class="d-inline-block align-middle">
-                                    <div class="d-inline-block">
-                                        <h6 class="m-b-0">{{ $user->first_name }} {{ $user->last_name }}</h6>
+                            <a href="{{ route('admin.manage.user.report.view', $user->id) }}">
+                                <td>
+                                    <div class="d-inline-block align-middle">
+                                        <div class="d-inline-block">
+                                            <h6 class="m-b-0">{{ $user->first_name }} {{ $user->last_name }}</h6>
+                                        </div>
                                     </div>
-                                </div>
-                            </td>
-                            <td>{{ $user->email }}</td>
-                            <td>{{ $user->phone }}</td>
-                            <td>{{ $user->getMembershipType() }}</td>
+                                </td>
+                            </a>
+                            <a href="{{ route('admin.manage.user.report.view', $user->id) }}">
+                                <td>{{ $user->email }}</td>
+                            </a>
+                            <a href="{{ route('admin.manage.user.report.view', $user->id) }}">
+                                <td>{{ $user->phone }}</td>
+                            </a>
+                            <a href="{{ route('admin.manage.user.report.view', $user->id) }}">
+                                <td>{{ $user->getMembershipType() }}</td>
+                            </a>
                             <td>
                                 <span class="badge bg-light-success">Active</span>
                                 <div class="overlay-edit">

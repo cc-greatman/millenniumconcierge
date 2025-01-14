@@ -154,6 +154,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
                     Route::get('user/view', 'Admin\ViewController@manageUsers')->name('users.view');
                     Route::get('user/view/{id}', 'Admin\UserController@viewUser')->name('person.view');
                     Route::get('user/create', 'Admin\ViewController@createUser')->name('users.create');
+                    Route::get('user/report/{id}', 'Admin\ViewController@personalReport')->name('user.report.view');
                     Route::post('user/create/new', 'Admin\UserController@createUser')->name('new.create');
                     Route::post('user/edit/{id}', 'Admin\UserController@editUser')->name('user.edit');
                     Route::post('user/password/{id}', 'Admin\UserController@editUserPwd')->name('user.pwd.edit');
