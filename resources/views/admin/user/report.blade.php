@@ -33,10 +33,10 @@
       <div class="row">
         @php
             $tripTypes = [
-                'private' => ['label' => 'Private Flights', 'color' => 'text-info'],
-                'commercial' => ['label' => 'Commercial Flights', 'color' => 'text-primary'],
-                'yacht' => ['label' => 'Yacht Trips', 'color' => 'text-success'],
-                'helicopter' => ['label' => 'Helicopter Trips', 'color' => 'text-info'],
+                'private' => ['label' => 'Private Flights', 'color' => 'text-info', 'link' => {{ route('admin.trips.user.flights.view', $user->id) }}],
+                'commercial' => ['label' => 'Commercial Flights', 'color' => 'text-primary', 'link' => {{ route('admin.trips.user.flights.view', $user->id) }}],
+                'yacht' => ['label' => 'Yacht Trips', 'color' => 'text-success', 'link' => {{ route('admin.trips.user.yachts.view', $user->id) }}],
+                'helicopter' => ['label' => 'Helicopter Trips', 'color' => 'text-info', 'link' => {{ route('admin.trips.user.helicopters.view', $user->id) }}],
             ];
         @endphp
         @foreach ($tripTypes as $type => $details)
@@ -86,7 +86,7 @@
                     </a>
                     <p class="mb-3 mt-3">Total number of times we've booked a hotel room for {{ $user->first_name }}.</p>
                     <p>
-                        <a href=""><strong>View All</strong></a>
+                        <a href="{{ route('admin.trips.user.hotels.view', $user->id) }}"><strong>View All</strong></a>
                     </p>
                 </div>
                 <div class="card-footer bg-brand-color-3 text-white">

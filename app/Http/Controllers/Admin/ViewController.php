@@ -241,6 +241,99 @@ class ViewController extends Controller
         return view('admin.trips.hotel.pending', compact('pageTitle', 'bookings', 'sum'));
     }
 
+    public function userPrivateFlightsView($id) {
+
+        $user = User::findOrFail($id);
+
+        $pageTitle = $user->first_name."'s Private Flight Trips || ". env('APP_NAME');
+
+        $trips = Trips::where([
+                        'user_id' => $id,
+                        'type' => 'private',
+                        ])->get();
+
+        $sum = Trips::where([
+                            'user_id' => $id,
+                            'type' => 'private',
+                            ])->sum();
+
+        return view('admin.trips.flights.user', compact('user', 'trips', 'pageTitle', 'sum'));
+    }
+
+    public function userCommercialFlightsView($id) {
+
+        $user = User::findOrFail($id);
+
+        $pageTitle = $user->first_name."'s Commercial Flight Trips || ". env('APP_NAME');
+
+        $trips = Trips::where([
+                        'user_id' => $id,
+                        'type' => 'commercial',
+                        ])->get();
+
+        $sum = Trips::where([
+                            'user_id' => $id,
+                            'type' => 'commercial',
+                            ])->sum();
+
+        return view('admin.trips.flights.user', compact('user', 'trips', 'pageTitle', 'sum'));
+    }
+
+    public function userHelisView($id) {
+
+        $user = User::findOrFail($id);
+
+        $pageTitle = $user->first_name."'s Helicopter Trips || ". env('APP_NAME');
+
+        $trips = Trips::where([
+                        'user_id' => $id,
+                        'type' => 'helicopter',
+                        ])->get();
+
+        $sum = Trips::where([
+                            'user_id' => $id,
+                            'type' => 'helicopter',
+                            ])->sum();
+
+        return view('admin.trips.helicopters.user', compact('user', 'trips', 'pageTitle', 'sum'));
+    }
+
+    public function userYachtsView($id) {
+
+        $user = User::findOrFail($id);
+
+        $pageTitle = $user->first_name."'s Yacht Trips || ". env('APP_NAME');
+
+        $trips = Trips::where([
+                        'user_id' => $id,
+                        'type' => 'yacht',
+                        ])->get();
+
+        $sum = Trips::where([
+                            'user_id' => $id,
+                            'type' => 'yacht',
+                            ])->sum();
+
+        return view('admin.trips.yachts.user', compact('user', 'trips', 'pageTitle', 'sum'));
+    }
+
+    public function userHotelsView($id) {
+
+        $user = User::findOrFail($id);
+
+        $pageTitle = $user->first_name."'s Hotel Trips || ". env('APP_NAME');
+
+        $bookings = Bookings::where([
+                        'user_id' => $id,
+                        ])->get();
+
+        $sum = Bookings::where([
+                            'user_id' => $id,
+                            ])->sum();
+
+        return view('admin.trips.hotels.user', compact('user', 'bookings', 'pageTitle', 'sum'));
+    }
+
     public function editTrip($id) {
 
         $pageTitle = "Edit Trip || ". env('APP_NAME');
