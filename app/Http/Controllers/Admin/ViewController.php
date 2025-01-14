@@ -96,7 +96,7 @@ class ViewController extends Controller
             'completed' => Bookings::where('user_id', $id)->where('status','used')->count(),
         ];
 
-        return view('admin.user.report', compact('pageTitle', 'tripData', 'sum', 'hotelData', 'user'));
+        return view('admin.user.report', compact('pageTitle', 'tripData', 'hotelData', 'user'));
     }
 
     public function flightsCompleted() {

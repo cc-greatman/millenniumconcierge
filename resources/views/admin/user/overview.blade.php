@@ -52,13 +52,13 @@
                             <td>
                                 <div class="d-inline-block align-middle">
                                     <div class="d-inline-block">
-                                        <h6 class="m-b-0"><a href="{{ route('admin.manage.user.report.view', $user->id) }}">{{ $user->first_name }} {{ $user->last_name }}</a></h6>
+                                        <h6 class="m-b-0"><a href="{{ route('admin.manage.user.report.view', $user->id) }}" style="color: #bfbfbf;">{{ $user->first_name }} {{ $user->last_name }}</a></h6>
                                     </div>
                                 </div>
                             </td>
-                            <td><a href="{{ route('admin.manage.user.report.view', $user->id) }}">{{ $user->email }}</a></td>
-                            <td><a href="{{ route('admin.manage.user.report.view', $user->id) }}">{{ $user->phone }}</a></td>
-                            <td><a href="{{ route('admin.manage.user.report.view', $user->id) }}">{{ $user->getMembershipType() }}</a></td>
+                            <td><a href="{{ route('admin.manage.user.report.view', $user->id) }}" style="color: #bfbfbf;">{{ $user->email }}</a></td>
+                            <td><a href="{{ route('admin.manage.user.report.view', $user->id) }}" style="color: #bfbfbf;">{{ $user->phone }}</a></td>
+                            <td><a href="{{ route('admin.manage.user.report.view', $user->id) }}" style="color: #bfbfbf;">{{ $user->getMembershipType() }}</a></td>
                             <td>
                                 <span class="badge bg-light-success">Active</span>
                                 <div class="overlay-edit">
