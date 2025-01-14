@@ -58,7 +58,7 @@
                         </a>
                         <p class="mb-3 mt-3">Total number of trips taken through {{ strtolower($details['label']) }}.</p>
                         <p>
-                            <a href="{{ $data['link'] }}"><strong>View All</strong></a>
+                            <a href="{{ $details['link'] }}"><strong>View All</strong></a>
                         </p>
                     </div>
                     <div class="card-footer bg-brand-color-3 text-white">
