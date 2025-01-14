@@ -49,24 +49,16 @@
                     <tbody>
                         @foreach ($users as $user)
                         <tr>
-                            <a href="{{ route('admin.manage.user.report.view', $user->id) }}">
-                                <td>
-                                    <div class="d-inline-block align-middle">
-                                        <div class="d-inline-block">
-                                            <h6 class="m-b-0">{{ $user->first_name }} {{ $user->last_name }}</h6>
-                                        </div>
+                            <td>
+                                <div class="d-inline-block align-middle">
+                                    <div class="d-inline-block">
+                                        <h6 class="m-b-0"><a href="{{ route('admin.manage.user.report.view', $user->id) }}">{{ $user->first_name }} {{ $user->last_name }}</a></h6>
                                     </div>
-                                </td>
-                            </a>
-                            <a href="{{ route('admin.manage.user.report.view', $user->id) }}">
-                                <td>{{ $user->email }}</td>
-                            </a>
-                            <a href="{{ route('admin.manage.user.report.view', $user->id) }}">
-                                <td>{{ $user->phone }}</td>
-                            </a>
-                            <a href="{{ route('admin.manage.user.report.view', $user->id) }}">
-                                <td>{{ $user->getMembershipType() }}</td>
-                            </a>
+                                </div>
+                            </td>
+                            <td><a href="{{ route('admin.manage.user.report.view', $user->id) }}">{{ $user->email }}</a></td>
+                            <td><a href="{{ route('admin.manage.user.report.view', $user->id) }}">{{ $user->phone }}</a></td>
+                            <td><a href="{{ route('admin.manage.user.report.view', $user->id) }}">{{ $user->getMembershipType() }}</a></td>
                             <td>
                                 <span class="badge bg-light-success">Active</span>
                                 <div class="overlay-edit">
