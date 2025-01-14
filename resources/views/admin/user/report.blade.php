@@ -33,10 +33,10 @@
       <div class="row">
         @php
             $tripTypes = [
-                'private' => ['label' => 'Private Flights', 'color' => 'text-info', 'link' =>' {{ route('admin.trips.user.flights.view', $user->id) }}'],
-                'commercial' => ['label' => 'Commercial Flights', 'color' => 'text-primary', 'link' => '{{ route('admin.trips.user.flights.view', $user->id) }}'],
-                'yacht' => ['label' => 'Yacht Trips', 'color' => 'text-success', 'link' => '{{ route('admin.trips.user.yachts.view', $user->id) }}'],
-                'helicopter' => ['label' => 'Helicopter Trips', 'color' => 'text-info', 'link' => '{{ route('admin.trips.user.helicopters.view', $user->id) }}'],
+                'private' => ['label' => 'Private Flights', 'color' => 'text-info', 'link' => route('admin.trips.user.flights.view', $user->id) ],
+                'commercial' => ['label' => 'Commercial Flights', 'color' => 'text-primary', 'link' => route('admin.trips.user.flights.view', $user->id) ],
+                'yacht' => ['label' => 'Yacht Trips', 'color' => 'text-success', 'link' => route('admin.trips.user.yachts.view', $user->id) ],
+                'helicopter' => ['label' => 'Helicopter Trips', 'color' => 'text-info', 'link' => route('admin.trips.user.helicopters.view', $user->id) ],
             ];
         @endphp
         @foreach ($tripTypes as $type => $details)
