@@ -255,7 +255,7 @@ class ViewController extends Controller
         $sum = Trips::where([
                             'user_id' => $id,
                             'type' => 'private',
-                            ])->sum();
+                            ])->sum('cost');
 
         return view('admin.trips.flights.user', compact('user', 'trips', 'pageTitle', 'sum'));
     }
@@ -274,7 +274,7 @@ class ViewController extends Controller
         $sum = Trips::where([
                             'user_id' => $id,
                             'type' => 'commercial',
-                            ])->sum();
+                            ])->sum('cost');
 
         return view('admin.trips.flights.user', compact('user', 'trips', 'pageTitle', 'sum'));
     }
@@ -293,7 +293,7 @@ class ViewController extends Controller
         $sum = Trips::where([
                             'user_id' => $id,
                             'type' => 'helicopter',
-                            ])->sum();
+                            ])->sum('cost');
 
         return view('admin.trips.helicopters.user', compact('user', 'trips', 'pageTitle', 'sum'));
     }
@@ -312,7 +312,7 @@ class ViewController extends Controller
         $sum = Trips::where([
                             'user_id' => $id,
                             'type' => 'yacht',
-                            ])->sum();
+                            ])->sum('cost');
 
         return view('admin.trips.yachts.user', compact('user', 'trips', 'pageTitle', 'sum'));
     }
@@ -329,7 +329,7 @@ class ViewController extends Controller
 
         $sum = Bookings::where([
                             'user_id' => $id,
-                            ])->sum();
+                            ])->sum('cost');
 
         return view('admin.trips.hotels.user', compact('user', 'bookings', 'pageTitle', 'sum'));
     }
