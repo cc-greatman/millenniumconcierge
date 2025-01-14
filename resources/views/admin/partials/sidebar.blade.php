@@ -86,17 +86,6 @@
             </li>
             </ul>
           </li>
-          <li class="pc-item pc-hasmenu  @if (Request::is('user.bookings') || Request::is('user/bookings/*')) pc-trigger active @endif">
-            <a href="javascript:void(0);" class="pc-link">
-              <span class="pc-micon">
-                <i class="ph-duotone ph-backpack"></i>
-              </span>
-              <span class="pc-mtext">Bookings</span>
-              <span class="pc-arrow"><i data-feather="chevron-right"></i></span>
-            </a>
-            <ul class="pc-submenu">
-            </ul>
-          </li>
           <li class="pc-item pc-hasmenu  @if (Request::is('user.account') || Request::is('user/account/*')) pc-trigger active @endif">
             <a href="javascript:void(0);" class="pc-link">
               <span class="pc-micon">
