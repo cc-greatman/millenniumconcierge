@@ -58,7 +58,7 @@
                         </a>
                         <p class="mb-3 mt-3">Total number of trips taken through {{ strtolower($details['label']) }}.</p>
                         <p>
-                            <a><strong>View All</strong></a>
+                            <a href=""><strong>View All</strong></a>
                         </p>
                     </div>
                     <div class="card-footer bg-brand-color-3 text-white">
@@ -86,7 +86,7 @@
                     </a>
                     <p class="mb-3 mt-3">Total number of times we've booked a hotel room for {{ $user->first_name }}.</p>
                     <p>
-                        <a><strong>View All</strong></a>
+                        <a href=""><strong>View All</strong></a>
                     </p>
                 </div>
                 <div class="card-footer bg-brand-color-3 text-white">
