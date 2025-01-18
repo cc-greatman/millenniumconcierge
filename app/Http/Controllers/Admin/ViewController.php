@@ -347,7 +347,7 @@ class ViewController extends Controller
 
         $pageTitle = "Create Trip || ".env('APP_NAME');
 
-        $user = User::all();
+        $users = User::all();
 
         return view('admin.trips.view', compact('pageTitle', 'users'));
     }
