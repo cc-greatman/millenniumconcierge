@@ -340,7 +340,9 @@ class ViewController extends Controller
 
         $trip = Trips::where('id', $id);
 
-        return view('admin.trips.edit', compact('trip', 'pageTitle'));
+        $user = User::findOrFail($trip->user_id);
+
+        return view('admin.trips.edit', compact('trip', 'pageTitle', 'user'));
     }
 
     public function createTrip() {
