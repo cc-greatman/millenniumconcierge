@@ -13,7 +13,7 @@ class Trips extends Model
         'user_id',
         'airline',
         'ticket_type',
-        'departue_date',
+        'departure_date',
         'arrival_date',
         'baggage_allowance',
         'type',
