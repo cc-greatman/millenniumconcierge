@@ -11,12 +11,18 @@ class Trips extends Model
 
     protected $fillable = [
         'user_id',
+        'airline',
+        'ticket_type',
+        'departue_date',
+        'arrival_date',
+        'baggage_allowance',
         'type',
         'cost',
         'depature',
         'destination',
         'seats',
         'status',
+        'extra_comments'
 
     ];
 
