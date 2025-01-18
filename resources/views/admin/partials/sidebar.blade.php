@@ -34,8 +34,8 @@
               <span class="pc-arrow"><i data-feather="chevron-right"></i></span>
             </a>
             <ul class="pc-submenu">
-              <li class="pc-item @if(Route::is('admin.manage.users.view')) active @endif"><a class="pc-link" href="{{ route('admin.manage.users.view') }}">Manage</a></li>
               <li class="pc-item @if(Route::is('admin.manage.users.create')) active @endif"><a class="pc-link" href="{{ route('admin.manage.users.create') }}">Create</a></li>
+              <li class="pc-item @if(Route::is('admin.manage.users.view')) active @endif"><a class="pc-link" href="{{ route('admin.manage.users.view') }}">Manage</a></li>
             </ul>
           </li>
           <li class="pc-item pc-hasmenu  @if (Request::is('admin.trips') || Request::is('admin/trips/*')) pc-trigger active @endif">
