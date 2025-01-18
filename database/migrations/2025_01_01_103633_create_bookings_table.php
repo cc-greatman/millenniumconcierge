@@ -15,11 +15,12 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('hotel');
+            $table->string('room_type');
             $table->integer('room_qty')->default(1);
             $table->decimal('cost', 50, 2)->default('0.00');
             $table->date('check_in');
             $table->date('check_out');
-            $table->text('details');
+            $table->longText('details');
             $table->enum('status', ['used', 'unused']);
             $table->timestamps();
 

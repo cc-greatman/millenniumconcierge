@@ -19,6 +19,7 @@ class BookingsFactory extends Factory
         return [
             'user_id' => \App\Models\User::factory(),
             'hotel' => $this->faker->company,
+            'room_type' => $this->faker->randomElement(['Executive Suite', 'Penthouse', 'Single Room']),
             'room_qty' => $this->faker->numberBetween(1, 10),
             'cost' => $this->faker->randomFloat(2, 50, 1000),
             'check_in' => $this->faker->dateTimeBetween('now', '+1 week')->format('Y-m-d'),

@@ -15,11 +15,17 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->enum('type', ['private', 'commercial', 'yacht', 'helicopter']);
+            $table->string('airline');
+            $table->string('ticket_type');
+            $table->string('departure_date');
+            $table->string('arrival_date');
+            $table->string('baggage_allowance');
             $table->decimal('cost', 50, 2)->default(0.00);
             $table->string('departure');
             $table->string('destination');
             $table->string('seats')->default(1);
             $table->enum('status', ['used', 'unused']);
+            $table->longText('extra_comments');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
