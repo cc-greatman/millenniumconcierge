@@ -74,7 +74,7 @@
                     <div class="col-lg-6">
                         <div class="mb-3">
                             <label class="form-label">Ticket Type:</label>
-                            <input type="text" name="ticket_type" class="form-control" placeholder="e.g., Economy, Business, First Class" required />
+                            <input type="text" name="ticket_type" class="form-control" placeholder="e.g, Round Trip, Single Trip, Multi-City Trip" required />
                             <small class="form-text text-muted">Enter the ticket type for the trip.</small>
                         </div>
                     </div>
