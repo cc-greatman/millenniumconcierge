@@ -170,6 +170,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
                     //-- Create New Trips Route
                     Route::get('create', 'Admin\ViewController@createTrip')->name('create');
                     Route::get('create/new/{id}', 'Admin\ViewController@createTripView')->name('create.new');
+                    Route::post('create/new', 'Admin\TripController@create')->name('create.process');
 
                     //-- All Flights Route
                     Route::name('flights.')->prefix('flights')->group(function() {

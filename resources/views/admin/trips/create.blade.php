@@ -41,7 +41,7 @@
               <h5>Create New Trip</h5>
             </div>
             <div class="card-body">
-              <form action="{{ route() }}" method="POST">
+              <form action="{{ route('admin.trips.create.process') }}" method="POST">
                 @csrf
                 <input type="hidden" name="user" value="{{ $user->id }}">
                 <div class="row">

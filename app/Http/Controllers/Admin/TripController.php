@@ -11,11 +11,11 @@ class TripController extends Controller
     /**
      * Store a newly created trip in storage.
      */
-    public function store(Request $request)
+    public function create(Request $request)
     {
         // Validate the request data
         $validated = $request->validate([
-            'user_id' => 'required|exists:users,id',
+            'user' => 'required|exists:users,id',
             'type' => 'required|in:private,commercial,yacht,helicopter',
             'airline' => 'required|string|max:255',
             'ticket_type' => 'required|string|max:255',
