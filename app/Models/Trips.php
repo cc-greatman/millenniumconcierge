@@ -18,7 +18,7 @@ class Trips extends Model
         'baggage_allowance',
         'type',
         'cost',
-        'depature',
+        'departure',
         'destination',
         'seats',
         'status',
