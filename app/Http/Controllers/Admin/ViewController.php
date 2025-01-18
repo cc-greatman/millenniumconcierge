@@ -338,7 +338,7 @@ class ViewController extends Controller
 
         $pageTitle = "Edit Trip || ". env('APP_NAME');
 
-        $trip = Trips::findOrFail('id', $id);
+        $trip = Trips::findOrFail($id);
 
         $user = User::findOrFail($trip->user_id);
 
