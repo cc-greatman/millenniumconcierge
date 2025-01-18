@@ -168,9 +168,17 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
                     Route::get('overview', 'Admin\ViewController@tripsView')->name('all.view');
 
                     //-- Create New Trips Route
-                    Route::get('create', 'Admin\ViewController@createTrip')->name('create');
-                    Route::get('create/new/{id}', 'Admin\ViewController@createTripView')->name('create.new');
-                    Route::post('create/new/process', 'Admin\TripController@create')->name('create.process');
+                    Route::name('create.')->prefix('create')->group(function () {
+                        Route::get('/', 'Admin\ViewController@createTrip')->name('index');
+                        Route::get('new/{id}', 'Admin\ViewController@createTripView')->name('new');
+                        Route::post('new/process', 'Admin\TripController@create')->name('process');
+                    });
+
+                    Route::name('edit.')->prefix('edit')->group(function() {
+                        Route::get('/{id}', 'Admin\ViewController@editTrip')->name('index');
+                    });
+
+                    Route::delete('delete/{trip}', 'Admin\TripController@destroy')->name('destroy');
 
                     //-- All Flights Route
                     Route::name('flights.')->prefix('flights')->group(function() {

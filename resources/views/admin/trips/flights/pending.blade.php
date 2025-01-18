@@ -8,6 +8,9 @@
 <div class="pc-container">
     <div class="pc-content">
       <!-- [ breadcrumb ] start -->
+      @include('admin.alerts.success')
+      @include('admin.alerts.error')
+      @include('admin.alerts.error-lists')
       <div class="page-header">
         <div class="page-block">
           <div class="row align-items-center">
@@ -72,6 +75,7 @@
                             <th>Status</th>
                             <th>Baggage</th>
                             <th>Comments</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -113,6 +117,22 @@
                                 </td>
                                 <td>{{ $trip->baggage_allowance }}</td>
                                 <td>{{ $trip->extra_comments }}</td>
+                                <td>
+                                    <span class="">Action</span>
+                                    <div class="overlay-edit">
+                                      <ul class="list-inline mb-0">
+                                        <li class="list-inline-item m-0"
+                                          ><a href="{{ route('admin.trips.edit.index', $trip->id) }}" class="avtar avtar-s btn btn-primary"><i class="ti ti-pencil f-18"></i></a
+                                        ></li>
+                                        <li class="list-inline-item m-0">
+                                            <form action="{{ route('admin.trips.destroy', $trip->id) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" onclick="return confirm('This action cannot be undone')" class="avtar avtar-s btn bg-white btn-link-danger"><i class="ti ti-trash f-18"></i></button>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

@@ -34,6 +34,18 @@ class TripController extends Controller
         $trip = Trips::create($validated);
 
         // Redirect to a success page or the trips list
-        return redirect()->route('admin.trips.create')->with('success', 'Trip created successfully.');
+        return redirect()->route('admin.trips.create.index')->with('success', 'Trip created successfully.');
+    }
+
+    /**
+     * Delete the specified trip from storage.
+     */
+    public function destroy(Trips $trip)
+    {
+        // Delete the trip
+        $trip->delete();
+
+        // Redirect to a success page or the trips list
+        return redirect()->route('admin.trips.all.view')->with('success', 'Trip deleted successfully.');
     }
 }

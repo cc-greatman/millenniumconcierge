@@ -8,6 +8,9 @@
 <div class="pc-container">
     <div class="pc-content">
       <!-- [ breadcrumb ] start -->
+      @include('admin.alerts.success')
+      @include('admin.alerts.error')
+      @include('admin.alerts.error-lists')
       <div class="page-header">
         <div class="page-block">
           <div class="row align-items-center">

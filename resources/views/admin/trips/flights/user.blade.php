@@ -57,40 +57,79 @@
               </div>
               <div class="card-body">
                 <table id="res-config" class="display table table-striped table-hover dt-responsive nowrap" style="width: 100%">
-                  <thead>
-                    <tr>
-                      <th>Type</th>
-                      <th>Cost</th>
-                      <th>Departure</th>
-                      <th>Destination</th>
-                      <th>No of Seats</th>
-                      <th>Status</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    @foreach ($trips as $trip)
+                    <thead>
                         <tr>
-                            <td>
-                                @if($trip->type === "private")
-                                    Private
-                                @elseif($trip->type === "commercial")
-                                    Commercial
-                                @else
-                                    {{ $trip->type }}
-                                @endif
-                            </td>
-                            <td>${{ number_format($trip->cost, 2) }}</td>
-                            <td>{{ $trip->departure }}</td>
-                            <td>{{ $trip->destination }}</td>
-                            <td>{{ $trip->seats }}</td>
-                            @if ($trip->status === "used")
-                                <td><span class="badge text-bg-success">Completed</span></td>
-                            @elseif ($trip->status === "unused")
-                                <td><span class="badge text-bg-warning">Pending</span></td>
-                            @endif
+                            <th>User</th>
+                            <th>Type</th>
+                            <th>Ticket Type</th>
+                            <th>Airline</th>
+                            <th>Cost</th>
+                            <th>Departure</th>
+                            <th>Departure Time</th>
+                            <th>Destination</th>
+                            <th>Arrival Time</th>
+                            <th>Seats</th>
+                            <th>Status</th>
+                            <th>Baggage</th>
+                            <th>Comments</th>
+                            <th>Action</th>
                         </tr>
-                    @endforeach
-                  </tbody>
+                    </thead>
+                    <tbody>
+                        @foreach ($trips as $trip)
+                            <tr>
+                                <td>{{ $trip->user->first_name }} {{ $trip->user->last_name }}</td>
+                                <td>
+                                    @switch($trip->type)
+                                        @case('private')
+                                            Private Flight
+                                            @break
+                                        @case('commercial')
+                                            Commercial Flight
+                                            @break
+                                        @case('yacht')
+                                            Yacht Trip
+                                            @break
+                                        @case('helicopter')
+                                            Helicopter Trip
+                                            @break
+                                        @default
+                                            {{ ucfirst($trip->type) }}
+                                    @endswitch
+                                </td>
+                                <td>{{ $trip->ticket_type }}</td>
+                                <td>{{ $trip->airline }}</td>
+                                <td>${{ number_format($trip->cost, 2) }}</td>
+                                <td>{{ $trip->departure }}</td>
+                                <td>{{ \Carbon\Carbon::parse($trip->departure_date)->format('Y-m-d H:i:s') }}</td>
+                                <td>{{ $trip->destination }}</td>
+                                <td>{{ \Carbon\Carbon::parse($trip->arrival_date)->format('Y-m-d H:i:s') }}</td>
+                                <td>{{ $trip->seats }}</td>
+                                <td>
+                                    @if ($trip->status === 'used')
+                                        <span class="badge text-bg-success">Completed</span>
+                                    @else
+                                        <span class="badge text-bg-warning">Pending</span>
+                                    @endif
+                                </td>
+                                <td>{{ $trip->baggage_allowance }}</td>
+                                <td>{{ $trip->extra_comments }}</td>
+
+                                <td>
+                                    <span class="">Action</span>
+                                    <div class="overlay-edit">
+                                      <ul class="list-inline mb-0">
+                                        <li class="list-inline-item m-0"
+                                          ><a href="{{ route('admin.manage.person.view', $user->id) }}" class="avtar avtar-s btn btn-primary"><i class="ti ti-pencil f-18"></i></a
+                                        ></li>
+                                        <li class="list-inline-item m-0"><a href="{{ route('admin.manage.user.delete', $user->id) }}" onclick="return confirm('This action cannot be undone')" class="avtar avtar-s btn bg-white btn-link-danger"><i class="ti ti-trash f-18"></i></a
+                                        ></li>
+                                      </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
                 </table>
               </div>
             </div>
