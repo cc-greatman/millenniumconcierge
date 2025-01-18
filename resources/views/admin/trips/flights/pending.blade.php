@@ -98,9 +98,9 @@
                                 <td>{{ $trip->airline }}</td>
                                 <td>${{ number_format($trip->cost, 2) }}</td>
                                 <td>{{ $trip->departure }}</td>
-                                <td>{{ \Carbon\Carbon::parse($trip->departure_date)->format('H:i A') }}</td>
+                                <td>{{ \Carbon\Carbon::parse($trip->departure_date)->format('Y-m-d H:i:s') }}</td>
                                 <td>{{ $trip->destination }}</td>
-                                <td>{{ \Carbon\Carbon::parse($trip->arrival_date)->format('H:i A') }}</td>
+                                <td>{{ \Carbon\Carbon::parse($trip->arrival_date)->format('Y-m-d H:i:s') }}</td>
                                 <td>{{ $trip->seats }}</td>
                                 <td>
                                     @if ($trip->status === 'used')
