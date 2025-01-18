@@ -15,7 +15,7 @@ class TripController extends Controller
     {
         // Validate the request data
         $validated = $request->validate([
-            'user' => 'required|exists:users,id',
+            'user_id' => 'required|exists:users,id',
             'type' => 'required|in:private,commercial,yacht,helicopter',
             'airline' => 'required|string|max:255',
             'ticket_type' => 'required|string|max:255',

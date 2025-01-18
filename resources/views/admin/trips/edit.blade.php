@@ -23,7 +23,7 @@
             </div>
             <div class="col-md-12">
               <div class="page-header-title">
-                <h2 class="mb-0">Edit Trip</h2>
+                <h2 class="mb-0">Edit Trip for {{ $user->first_name }}</h2>
               </div>
             </div>
           </div>
@@ -38,70 +38,140 @@
         <div class="col-lg-12">
           <div class="card">
             <div class="card-header">
-              <h5>Edit Trip</h5>
+              <h5>Create New Trip for {{ $user->first_name }}</h5>
             </div>
             <div class="card-body">
-              <form action="{{ route('admin.manage.new.create') }}" method="POST">
+              <form action="{{ route('admin.trips.create.process') }}" method="POST">
                 @csrf
+                <input type="hidden" name="user_id" value="{{ $user->id }}">
                 <div class="row">
-                  <div class="col-lg-6">
-                    <div class="mb-3">
-                        @if ($trip->type === "jet" || $trip->type === "flight")
-                        <label class="form-label">Type of Flight</label>
-                        <div class="col-md-8 col-sm-12">
-                          <select class="form-control" name="type">
-                            <option disabled selected>Select flight type</option>
-                            <option value="jet">Private Flight</option>
-                            <option value="flight">Commercial Flight</option>
-                          </select>
-                        </div>
-                        @endif
-                    </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="mb-3">
-                      <label class="form-label">Last Name:</label>
-                      <input type="text" name="last_name" class="form-control" placeholder="Last Name" />
-                      <small class="form-text text-muted">Enter user's last name</small>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-lg-6">
-                    <div class="mb-3">
-                      <label class="form-label">Password:</label>
-                        <div class="input-group">
-                            <input type="password" name="password" class="form-control" id="password" placeholder="Password" value="{{ old('password') }}">
-                            <button aria-label="button" class="btn btn-primary" onclick="createpassword('password',this)" type="button" id="button-addon2"><i class="ri-eye-off-line align-middle"></i></button>
-                        </div>
-                      <small class="form-text text-muted">Please enter Password</small>
-                    </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <div class="mb-3">
-                      <label class="form-label">Email:</label>
-                      <div class="input-group search-form">
-                        <input type="text" name="email" class="form-control" placeholder="Email Address" />
-                        <span class="input-group-text bg-transparent"><i class="feather icon-link"></i></span>
-                      </div>
-                      <small class="form-text text-muted">Please enter user's email address</small>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
+                    <!-- Flight Type -->
                     <div class="col-lg-6">
                         <div class="mb-3">
-                          <label class="form-label">Phone:</label>
-                          <div class="input-group search-form">
-                            <input type="text" name="phone" class="form-control" placeholder="07010001000 (digits only)" />
-                            <span class="input-group-text bg-transparent"><i class="feather icon-link"></i></span>
-                          </div>
-                          <small class="form-text text-muted">Please enter user's phone number</small>
+                            <label class="form-label">Trip Type:</label>
+                            <select class="form-control" name="type" required>
+                                <option value="{{ $trip->type }}" selected>{{ $trip->type }}</option>
+                            </select>
+                            <small class="form-text text-muted">Select the type of trip.</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Airline -->
+                    <div class="col-lg-6">
+                        <div class="mb-3">
+                            <label class="form-label">Airline:</label>
+                            <input type="text" name="airline" value="{{ $trip->airline }}" class="form-control" placeholder="Airline Name" required />
+                            <small class="form-text text-muted">Enter the airline for the trip.</small>
+                        </div>
+                    </div>
+
+                    <!-- Ticket Type -->
+                    <div class="col-lg-6">
+                        <div class="mb-3">
+                            <label class="form-label">Ticket Type:</label>
+                            <input type="text" value="{{ $trip->ticket_type }}" name="ticket_type" class="form-control" placeholder="e.g, Round Trip, Single Trip, Multi-City Trip" required />
+                            <small class="form-text text-muted">Enter the ticket type for the trip.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Departure Date -->
+                    <div class="col-lg-6">
+                        <div class="mb-3">
+                            <label class="form-label">Departure Date:</label>
+                            <input type="datetime-local" value="{{ $trip->departure_date }}" name="departure_date" class="form-control" required />
+                            <small class="form-text text-muted">Select the departure date and time.</small>
+                        </div>
+                    </div>
+
+                    <!-- Arrival Date -->
+                    <div class="col-lg-6">
+                        <div class="mb-3">
+                            <label class="form-label">Arrival Date:</label>
+                            <input type="datetime-local" value="{{ $trip->arrival_date }}" name="arrival_date" class="form-control" required />
+                            <small class="form-text text-muted">Select the arrival date and time.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Baggage Allowance -->
+                    <div class="col-lg-6">
+                        <div class="mb-3">
+                            <label class="form-label">Baggage Allowance:</label>
+                            <input type="text" name="baggage_allowance" value="{{ $trip->baggage_allowance }}" class="form-control" placeholder="e.g., 20 kg" required />
+                            <small class="form-text text-muted">Enter baggage allowance for the trip.</small>
+                        </div>
+                    </div>
+
+                    <!-- Cost -->
+                    <div class="col-lg-6">
+                        <div class="mb-3">
+                            <label class="form-label">Cost:</label>
+                            <input type="number" value="{{ $trip->cost }}" name="cost" class="form-control" placeholder="e.g., 1000.00" step="0.01" required />
+                            <small class="form-text text-muted">Enter the cost of the trip.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Departure -->
+                    <div class="col-lg-6">
+                        <div class="mb-3">
+                            <label class="form-label">Departure Location:</label>
+                            <input type="text" value="{{ $trip->departure }}" name="departure" class="form-control" placeholder="Departure City" required />
+                            <small class="form-text text-muted">Enter the departure location.</small>
+                        </div>
+                    </div>
+
+                    <!-- Destination -->
+                    <div class="col-lg-6">
+                        <div class="mb-3">
+                            <label class="form-label">Destination:</label>
+                            <input type="text" value="{{ $trip->destination }}" name="destination" class="form-control" placeholder="Destination City" required />
+                            <small class="form-text text-muted">Enter the destination.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Seats -->
+                    <div class="col-lg-6">
+                        <div class="mb-3">
+                            <label class="form-label">Seats:</label>
+                            <input type="number"value="{{ $trip->seats }}"  name="seats" class="form-control" placeholder="Number of Seats" min="1" required />
+                            <small class="form-text text-muted">Enter the number of seats.</small>
+                        </div>
+                    </div>
+
+                    <!-- Status -->
+                    <div class="col-lg-6">
+                        <div class="mb-3">
+                            <label class="form-label">Status:</label>
+                            <select class="form-control" name="status" required>
+                                <option disabled selected>Select Status</option>
+                                <option value="used">Used</option>
+                                <option value="unused">Unused</option>
+                            </select>
+                            <small class="form-text text-muted">Select the status of the trip.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Extra Comments -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="mb-3">
+                            <label class="form-label">Extra Comments:</label>
+                            <textarea name="extra_comments" class="form-control" placeholder="Additional notes about the trip" rows="4">{{ $trip->extra_comments }}</textarea>
+                            <small class="form-text text-muted">Provide any additional details about the trip.</small>
                         </div>
                     </div>
                 </div>
                 <div class="text-end btn-page">
-                    <button name="submit" type="submit" class="btn btn-primary">Create User</button>
+                    <button name="submit" type="submit" class="btn btn-primary">Edit Trip</button>
                 </div>
               </form>
             </div>

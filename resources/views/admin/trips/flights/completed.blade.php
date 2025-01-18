@@ -61,6 +61,7 @@
                         <tr>
                             <th>User</th>
                             <th>Type</th>
+                            <th>Ticket Type</th>
                             <th>Airline</th>
                             <th>Cost</th>
                             <th>Departure</th>
@@ -96,6 +97,7 @@
                                     @endswitch
                                 </td>
                                 <td>{{ $trip->airline }}</td>
+                                <td>{{ $trip->ticket_type }}</td>
                                 <td>${{ number_format($trip->cost, 2) }}</td>
                                 <td>{{ $trip->departure }}</td>
                                 <td>{{ \Carbon\Carbon::parse($trip->departure_date)->format('Y-m-d H:i:s') }}</td>

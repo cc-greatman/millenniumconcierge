@@ -43,14 +43,14 @@
             <div class="card-body">
               <form action="{{ route('admin.trips.create.process') }}" method="POST">
                 @csrf
-                <input type="hidden" name="user" value="{{ $user->id }}">
+                <input type="hidden" name="user_id" value="{{ $user->id }}">
                 <div class="row">
                     <!-- Flight Type -->
                     <div class="col-lg-6">
                         <div class="mb-3">
-                            <label class="form-label">Flight Type:</label>
+                            <label class="form-label">Trip Type:</label>
                             <select class="form-control" name="type" required>
-                                <option disabled selected>Select flight type</option>
+                                <option disabled selected>Select trip type</option>
                                 <option value="private">Private Flight</option>
                                 <option value="commercial">Commercial Flight</option>
                                 <option value="yacht">Yacht Trip</option>
@@ -175,7 +175,7 @@
                     </div>
                 </div>
                 <div class="text-end btn-page">
-                    <button name="submit" type="submit" class="btn btn-primary">Create User</button>
+                    <button name="submit" type="submit" class="btn btn-primary">Create New Trip</button>
                 </div>
               </form>
             </div>
