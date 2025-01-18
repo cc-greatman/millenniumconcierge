@@ -43,6 +43,7 @@
             <div class="card-body">
               <form action="{{ route('admin.manage.new.trip.create') }}" method="POST">
                 @csrf
+                <input type="hidden" name="user" value="{{ $user->id }}">
                 <div class="row">
                     <!-- Flight Type -->
                     <div class="col-lg-6">
