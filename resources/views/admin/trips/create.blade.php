@@ -23,7 +23,7 @@
             </div>
             <div class="col-md-12">
               <div class="page-header-title">
-                <h2 class="mb-0">Create New Trip</h2>
+                <h2 class="mb-0">Create New Trip for {{ $user->first_name }}</h2>
               </div>
             </div>
           </div>
@@ -38,7 +38,7 @@
         <div class="col-lg-12">
           <div class="card">
             <div class="card-header">
-              <h5>Create New Trip</h5>
+              <h5>Create New Trip for {{ $user->first_name }}</h5>
             </div>
             <div class="card-body">
               <form action="{{ route('admin.trips.create.process') }}" method="POST">
