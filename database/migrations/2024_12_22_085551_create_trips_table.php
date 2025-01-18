@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('destination');
             $table->string('seats')->default(1);
             $table->enum('status', ['used', 'unused']);
-            $table->longText('extra_comments');
+            $table->longText('extra_comments')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
