@@ -171,7 +171,10 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
                     Route::name('create.')->prefix('create')->group(function () {
                         Route::get('/', 'Admin\ViewController@createTrip')->name('index');
                         Route::get('new/{id}', 'Admin\ViewController@createTripView')->name('new');
+                        Route::get('new/hotel', 'Admin\ViewController@createHotel')->name('hotel');
+                        Route::get('new/hotel/{id}', 'Admin\ViewController@createBookingView')->name('hotel.new');
                         Route::post('new/process', 'Admin\TripController@create')->name('process');
+                        Route::post('new/hotel/process', 'Admin\TripController@createHotel')->name('hotel.process');
                     });
 
                     Route::name('edit.')->prefix('edit')->group(function() {

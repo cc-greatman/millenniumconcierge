@@ -345,6 +345,17 @@ class ViewController extends Controller
         return view('admin.trips.edit', compact('trip', 'pageTitle', 'user'));
     }
 
+    public function editHotel($id) {
+
+        $pageTitle = "Edit Trip || ". env('APP_NAME');
+
+        $trip = Bookings::findOrFail($id);
+
+        $user = User::findOrFail($trip->user_id);
+
+        return view('admin.trips.edit-hotel', compact('trip', 'pageTitle', 'user'));
+    }
+
     public function createTrip() {
 
         $pageTitle = "Create Trip || ".env('APP_NAME');
@@ -354,6 +365,15 @@ class ViewController extends Controller
         return view('admin.trips.view', compact('pageTitle', 'users'));
     }
 
+    public function createHotel() {
+
+        $pageTitle = "Create Hotel Trip || ".env('APP_NAME');
+
+        $users = User::all();
+
+        return view('admin.trips.hotel', compact('pageTitle', 'users'));
+    }
+
     public function createTripView($id) {
 
         $pageTitle = "Create a New Trip || ". env('APP_NAME');
@@ -361,5 +381,14 @@ class ViewController extends Controller
         $user = User::findOrFail($id);
 
         return view('admin.trips.create', compact('pageTitle', 'user'));
+    }
+
+    public function createBookingView($id) {
+
+        $pageTitle = "Create a New Trip || ". env('APP_NAME');
+
+        $user = User::findOrFail($id);
+
+        return view('admin.trips.booking', compact('pageTitle', 'user'));
     }
 }
