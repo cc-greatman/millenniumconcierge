@@ -43,6 +43,7 @@
             <div class="card-body">
               <form action="{{ route('admin.trips.create.process') }}" method="POST">
                 @csrf
+                @method('PUT')
                 <input type="hidden" name="user_id" value="{{ $user->id }}">
                 <div class="row">
                     <!-- Flight Type -->
