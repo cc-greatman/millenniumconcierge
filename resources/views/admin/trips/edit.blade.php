@@ -41,7 +41,7 @@
               <h5>Edit Trip for {{ $user->first_name }}</h5>
             </div>
             <div class="card-body">
-              <form action="{{ route('admin.trips.create.process') }}" method="POST">
+              <form action="{{ route('admin.trips.edit.update.process', $trip->id) }}" method="POST">
                 @csrf
                 @method('PUT')
                 <input type="hidden" name="user_id" value="{{ $user->id }}">
