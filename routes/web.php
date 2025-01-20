@@ -179,7 +179,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
 
                     Route::name('edit.')->prefix('edit')->group(function() {
                         Route::get('/{id}', 'Admin\ViewController@editTrip')->name('index');
-                        Route::put('/update/{id}', 'Admin\ViewController@update')->name('update.process');
+                        Route::put('/update/{id}', 'Admin\TripController@update')->name('update.process');
                     });
 
                     Route::delete('delete/{trip}', 'Admin\TripController@destroy')->name('destroy');
