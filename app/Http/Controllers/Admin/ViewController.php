@@ -221,7 +221,7 @@ class ViewController extends Controller
         return view('admin.trips.hotels.completed', compact('pageTitle', 'bookings', 'sum'));
     }
 
-    public function pendingBooking() {
+    public function pendingBookings() {
 
         $pageTitle = "Pending Hotel Trips || ". env('APP_NAME');
 
