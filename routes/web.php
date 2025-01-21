@@ -205,7 +205,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
                     //-- All Hotel Routes
                     Route::name('hotels.')->prefix('hotels')->group(function() {
                         Route::get('completed', 'Admin\ViewController@completedBookings')->name('completed.view');
-                        Route::get('pending', 'Admin\ViewController@pendingBookings')->name('pending.view');
+                        Route::get('pending', 'Admin\ViewController@pendingBooking')->name('pending.view');
                     });
 
                     //-- User Report Generated Views
