@@ -238,7 +238,7 @@ class ViewController extends Controller
                     'status' => 'unused',
                     ])->sum('cost');
 
-        return view('admin.trips.hotels.pending', compact('pageTitle', 'bookings', 'sum'));
+        return view('admin.trips.hotels.completed', compact('pageTitle', 'bookings', 'sum'));
     }
 
     public function userPrivateFlightsView($id) {
