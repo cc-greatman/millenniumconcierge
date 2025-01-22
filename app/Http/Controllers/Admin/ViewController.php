@@ -355,10 +355,12 @@ class ViewController extends Controller
     }
 
     public function createHotel() {
- 
+
         $pageTitle = "Create Hotel Trip || ".env('APP_NAME');
 
         $users = User::all();
+
+        dd($pageTitle, $users);
 
         return view('admin.trips.hotel', compact('pageTitle', 'users'));
     }
