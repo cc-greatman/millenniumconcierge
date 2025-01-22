@@ -358,8 +358,6 @@ class ViewController extends Controller
 
         $pageTitle = "Create Hotel Trip || ".env('APP_NAME');
 
-        $users = User::all();
-
         return view('admin.trips.hotel', compact('pageTitle', 'users'));
     }
 
