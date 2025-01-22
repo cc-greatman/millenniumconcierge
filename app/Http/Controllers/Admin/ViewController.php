@@ -227,18 +227,15 @@ class ViewController extends Controller
 
         $id = auth()->guard('web')->id();
 
-        $user = User::findOrFail($id);
-
         $bookings = Bookings::where([
-                            'user_id'=> $id,
                             'status' => 'unused',
                             ])->get();
+
         $sum = Bookings::where([
-                    'user_id'=> $id,
                     'status' => 'unused',
                     ])->sum('cost');
 
-        return view('admin.trips.hotels.completed', compact('pageTitle', 'bookings', 'sum'));
+        return view('admin.trips.hotels.pending', compact('pageTitle', 'bookings', 'sum'));
     }
 
     public function userPrivateFlightsView($id) {
