@@ -103,17 +103,13 @@ class ViewController extends Controller
 
         $pageTitle = "Flights Completed || ". env('APP_NAME');
 
-        $trips = Trips::where([
-                        'type' => 'commercial',
-                        'type' => 'private',
-                        'status' => 'used',
-                        ])->get();
+        $trips = Trips::whereIn('type', ['commercial', 'private'])
+                        ->where('status', 'used')
+                        ->get();
 
-        $sum = Trips::where([
-                        'type' => 'commercial',
-                        'type' => 'private',
-                        'status' => 'used',
-                        ])->sum('cost');
+        $sum = Trips::whereIn('type', ['commercial', 'private'])
+                    ->where('status', 'used')
+                    ->sum('cost');
 
         return view('admin.trips.flights.completed', compact('sum', 'trips', 'pageTitle'));
     }
@@ -122,17 +118,13 @@ class ViewController extends Controller
 
         $pageTitle = "Flights Pending || ". env('APP_NAME');
 
-        $trips = Trips::where([
-                        'type' => 'commercial',
-                        'type' => 'private',
-                        'status' => 'unused',
-                        ])->get();
+        $trips = Trips::whereIn('type', ['commercial', 'private'])
+                        ->where('status', 'unused')
+                        ->get();
 
-        $sum = Trips::where([
-                        'type' => 'commercial',
-                        'type' => 'private',
-                        'status' => 'unused',
-                        ])->sum('cost');
+        $sum = Trips::whereIn('type', ['commercial', 'private'])
+                    ->where('status', 'unused')
+                    ->sum('cost');
 
         return view('admin.trips.flights.pending', compact('sum', 'trips', 'pageTitle'));
     }
