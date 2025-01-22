@@ -356,7 +356,7 @@ class ViewController extends Controller
 
     public function createHotel() {
 
-        $pageTitle = "Create Hotel Trip || ".env('APP_NAME');
+        $pageTitle = "Create Hotel Trip";
 
         $users = User::all();
 
