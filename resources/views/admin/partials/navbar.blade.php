@@ -40,7 +40,8 @@
                     aria-haspopup="false"
                     aria-expanded="false"
                 >
-                    <i class="ph-duotone ph-diamonds-four"></i>
+                    <i class="material-icons-two-tone">swap_vertical_circle</i>
+                    Currency
                 </a>
                 <div class="dropdown-menu dropdown-menu-end pc-h-dropdown">
                     <form action="{{ route('currency.change') }}" method="POST" id="currency-form">
