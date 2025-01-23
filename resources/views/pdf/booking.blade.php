@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{{ $trip->user->first_name }}'s Monthly Hotel Trips</title>
+    <title>{{ $user->first_name }}'s Monthly Hotel Trips</title>
 
     <!-- [Meta] -->
     <meta charset="utf-8">
