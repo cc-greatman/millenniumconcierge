@@ -30,10 +30,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
     //-- Currency Converter Route
     Route::post('/change-currency', 'CurrencyController@changeCurrency')->name('currency.change');
 
-    Route::get('/test-session', function (Request $request) {
-        $request->session()->put('test_key', 'test_value');
-        return $request->session()->get('test_key', 'not_set');
-    });
+    Route::get('/test-middleware', function (Request $request) {
+        return 'Currency: ' . session('currency');
+    })->middleware(\App\Http\Middleware\CurrencyMiddleware::class);
 
 
     Route::group(['middleware' => ['guest']], function() {
