@@ -129,7 +129,9 @@ class TripController extends Controller
 
     public function sendBookingsToUsers() {
 
-        $user = User::where('id', 1); // Get all users
+        $user = User::where('id', 1)->first(); // Fetch the specific user
+
+        if ($user) {
             // Fetch bookings for the user
             $bookings = $user->bookings()->get();
 
@@ -141,7 +143,8 @@ class TripController extends Controller
 
             // Send email with PDF
             Mail::to('blessedgreatman96@gmail.com')->send(new AllHotelTripsPDF($pdf->output(), $user));
-
-        return response()->json(['message' => 'PDFs sent to all users']);
+        } else {
+            return response()->json(['error' => 'User not found'], 404);
+        }
     }
 }
