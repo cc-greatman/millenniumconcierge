@@ -15,7 +15,7 @@ use PHPUnit\Framework\Attributes\Group;
 |
 */
 
-Route::middleware(['web'])->group(['namespace' => 'App\Http\Controllers'], function() {
+Route::group(['namespace' => 'App\Http\Controllers'], function() {
 
     //Email Verify Action Route
     Route::get('user/email/verify/{token}/{email}', 'Auth\EmailVerifyController@verifyAccount')->name('user.email.verify.perform');

@@ -39,9 +39,6 @@ class LogoutController extends Controller
 
         Auth::guard('admin')->logout();
 
-        session()->invalidate();
-        session()->regenerateToken();
-
         return redirect()->route('admin.auth.login.show');
     }
 }
