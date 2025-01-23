@@ -370,8 +370,6 @@ class ViewController extends Controller
         $pageTitle = "Create a New Trip || ". env('APP_NAME');
 
         $user = User::findOrFail($id);
-
-        return view('admin.trips.create', compact('pageTitle', 'user'));
     }
 
     public function createBookingView($id) {
