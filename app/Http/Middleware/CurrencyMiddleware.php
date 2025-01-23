@@ -15,11 +15,11 @@ class CurrencyMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // Check if a currency is selected
-        if (!$request->session()->has('currency')) {
-            $request->session()->put('currency', 'USD'); // Default currency
+        $validCurrencies = ['USD', 'EUR', 'GBP', 'NGN']; // Add more currencies as needed
+
+        if (!$request->session()->has('currency') || !in_array($request->session()->get('currency'), $validCurrencies)) {
+            $request->session()->put('currency', 'USD'); // Default to USD
         }
-        
         return $next($request);
     }
 }
