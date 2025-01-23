@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('currency_rates', function (Blueprint $table) {
             $table->id();
+            $table->string('symbol')->unique();
+            $table->decimal('exchange_rate', 15, 8);
             $table->timestamps();
         });
     }
