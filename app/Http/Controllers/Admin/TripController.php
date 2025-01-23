@@ -131,9 +131,8 @@ class TripController extends Controller
 
         $user = User::where('id', 1)->first();
 
+
         if ($user) {
-            $name = $user->first_name; // Fetch the specific user
-            
             // Fetch bookings for the user
             $bookings = $user->bookings()->get();
             $sum = $user->bookings()->sum('cost');
@@ -146,7 +145,7 @@ class TripController extends Controller
             ]);
 
             // Send email with PDF
-            Mail::to('blessedgreatman96@gmail.com')->send(new AllHotelTripsPDF($pdf->output(), $name));
+            Mail::to('blessedgreatman96@gmail.com')->send(new AllHotelTripsPDF($pdf->output(), $user));
         } else {
             return response()->json(['error' => 'User not found'], 404);
         }
