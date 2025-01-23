@@ -25,7 +25,7 @@ class AllHotelTripsPDF extends Mailable
     public function build() {
 
         return $this->subject('All Hotel Trips PDF')
-                    ->view('emails.booking')
+                    ->view('emails.allHotelTripsPdf')
                     ->attachData($this->pdfContent, 'allHotelTrips.pdf', [
                         'mime' => 'application/pdf',
                     ]);
