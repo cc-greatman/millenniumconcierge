@@ -21200,7 +21200,7 @@ pre[class*=language-] > code {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
+  width: 54px;
   height: 44px;
   border-radius: 8px;
   color: var(--pc-header-color);
@@ -21267,7 +21267,7 @@ pre[class*=language-] > code {
   z-index: 9;
 }
 .pc-header .pc-head-link .pc-h-badge.dots {
-  width: 9px;
+  width: 54px;
   height: 9px;
   top: 7px;
   right: 16px;
