@@ -45,7 +45,7 @@
                 <div class="dropdown-menu dropdown-menu-end pc-h-dropdown">
                     <form action="{{ route('currency.change') }}" method="POST" id="currency-form">
                         @csrf
-                        <div>
+                        <div style="margin-top: 10px !important; margin-left: 5px !important;">
                             <i class="ph-duotone ph-currency-dollar"></i>
                             <label for="currency" style="margin-left: 10px;">Select Currency</label>
                         </div>
