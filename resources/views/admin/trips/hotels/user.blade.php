@@ -81,7 +81,7 @@
                             <td>{{ $trip->hotel }}</td>
                             @php
                                 $currencyService = app(App\Services\CurrencyService::class);
-                                $converted = $currencyService->convert($cost, 'USD', session('currency', 'USD'));
+                                $converted = $currencyService->convert($trip->cost, 'USD', session('currency', 'USD'));
                                 $currencySymbol = currencySymbol(session('currency', 'USD'));
                             @endphp
                             <td>{{ $currencySymbol }}{{ number_format($converted, 2) }}</td>
