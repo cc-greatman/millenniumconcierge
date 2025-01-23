@@ -129,25 +129,29 @@ class TripController extends Controller
 
     public function sendBookingsToUsers() {
 
-        $user = User::where('id', 1)->first();
-        $name = $user->first_name; // Fetch the specific user
+        try {
+            $user = User::where('id', 1)->first();
+            $name = $user->first_name ?? ''; // Fetch the specific user
 
-        if ($user) {
-            // Fetch bookings for the user
-            $bookings = $user->bookings()->get();
-            $sum = $user->bookings()->sum('cost');
+            if ($user) {
+                // Fetch bookings for the user
+                $bookings = $user->bookings()->get();
+                $sum = $user->bookings()->sum('cost');
 
-            // Generate PDF
-            $pdf = Pdf::loadView('pdf.booking', [
-                'bookings' => $bookings, // Pass empty if no bookings
-                'user' => $user,
-                'sum' => $sum,
-            ]);
+                // Generate PDF
+                $pdf = Pdf::loadView('pdf.booking', [
+                    'bookings' => $bookings, // Pass empty if no bookings
+                    'user' => $user,
+                    'sum' => $sum,
+                ]);
 
-            // Send email with PDF
-            Mail::to('blessedgreatman96@gmail.com')->send(new AllHotelTripsPDF($pdf->output(), $name));
-        } else {
-            return response()->json(['error' => 'User not found'], 404);
+                // Send email with PDF
+                Mail::to('blessedgreatman96@gmail.com')->send(new AllHotelTripsPDF($pdf->output(), $name));
+            } else {
+                return response()->json(['error' => 'User not found'], 404);
+            }
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Something went wrong'], 500);
         }
     }
 }
