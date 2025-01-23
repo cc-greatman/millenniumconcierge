@@ -120,6 +120,6 @@ class TripController extends Controller
         ]);
 
         // Redirect with a success message
-        return redirect()->route('admin.trips.create.hotel')->with('success', 'Booking created successfully.');
+        return redirect()->route('admin.trips.create.hotel.view')->with('success', 'Booking created successfully.');
     }
 }
