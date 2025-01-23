@@ -28,8 +28,8 @@ class CurrencyService
             throw new \Exception("Amount is null");
         }
 
-        $fromRate = CurrencyRates::where('currency_code', $fromCurrency)->value('exchange_rate');
-        $toRate = CurrencyRates::where('currency_code', $toCurrency)->value('exchange_rate');
+        $fromRate = CurrencyRates::where('symbol', $fromCurrency)->value('exchange_rate');
+        $toRate = CurrencyRates::where('symbol', $toCurrency)->value('exchange_rate');
 
         if ($fromRate === null || $toRate === null) {
             throw new \Exception("Exchange rate not found.");
