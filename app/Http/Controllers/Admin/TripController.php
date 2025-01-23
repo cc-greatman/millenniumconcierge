@@ -130,9 +130,10 @@ class TripController extends Controller
     public function sendBookingsToUsers() {
 
         $user = User::where('id', 1)->first();
-        $name = $user->first_name; // Fetch the specific user
 
         if ($user) {
+            $name = $user->first_name; // Fetch the specific user
+            
             // Fetch bookings for the user
             $bookings = $user->bookings()->get();
             $sum = $user->bookings()->sum('cost');
