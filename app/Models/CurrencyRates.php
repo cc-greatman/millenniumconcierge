@@ -9,5 +9,5 @@ class CurrencyRates extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['currency_code', 'exchange_rate'];
+    protected $fillable = ['symbol', 'exchange_rate'];
 }
