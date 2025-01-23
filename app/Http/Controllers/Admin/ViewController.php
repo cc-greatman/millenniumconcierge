@@ -362,7 +362,7 @@ class ViewController extends Controller
 
         dd($pageTitle, $users);
 
-        return view('admin.trips.hotel', compact('pageTitle', 'users'));
+        return view('admin.trips.edit-hotel', compact('pageTitle', 'users'));
     }
 
     public function createTripView($id) {
