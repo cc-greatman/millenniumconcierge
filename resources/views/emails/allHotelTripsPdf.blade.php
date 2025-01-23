@@ -95,11 +95,11 @@
                             </tr>
                             <tr>
                                 <td style="padding: 0 30px 20px; color:#999 !important;">
-                                    <p style="margin-bottom: 10px;">Dear {{ $user->first_name }},</p>
+                                    <p style="margin-bottom: 10px;">Dear {{ $name }},</p>
                                     <p style="margin-bottom: 10px;">We hope you are enjoying all the benefits being a part of our Millennium Family brings to you. <br><br> Welcome once again to the Millennium Family💃💃! <br><br> You are receiving this email because you have just registered an account with us on our website and it's that time of the month to check how well we worked together.</p>
                                     <p style="margin-bottom: 25px;">This link will expire in 15 minutes and can only be used once.</p>
                                     <p>Please find attached a PDF Report containing your Hotel Trips with us.</p>
-                                    <p>Best regards,<br>Team</p>
+                                    <p>Best regards,<br>Millennium Concierge</p>
                                 </td>
                             </tr>
                             <tr>
