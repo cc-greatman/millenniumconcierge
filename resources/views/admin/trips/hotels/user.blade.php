@@ -43,7 +43,12 @@
                 <div>
                   <p class="text-muted mb-0">Total Amount Spent</p>
                   <div class="d-flex align-items-end">
-                    <h2 class="mb-0 f-w-500">${{ number_format($sum, 2) }}</h2>
+                    @php
+                        $currencyService = app(App\Services\CurrencyService::class);
+                        $convertedPrice = $currencyService->convert($sum, 'USD', session('currency', 'USD'));
+                        $currencySymbol = currencySymbol(session('currency', 'USD'));
+                    @endphp
+                    <h2 class="mb-0 f-w-500">{{ $currencySymbol }}{{ number_format($convertedPrice, 2) }}</h2>
                   </div>
                 </div>
               </div>
@@ -74,7 +79,12 @@
                         <tr>
                             <td>Hotel</td>
                             <td>{{ $trip->hotel }}</td>
-                            <td>${{ number_format($trip->cost, 2) }}</td>
+                            @php
+                                $currencyService = app(App\Services\CurrencyService::class);
+                                $converted = $currencyService->convert($cost, 'USD', session('currency', 'USD'));
+                                $currencySymbol = currencySymbol(session('currency', 'USD'));
+                            @endphp
+                            <td>{{ $currencySymbol }}{{ number_format($converted, 2) }}</td>
                             <td>{{ \Carbon\Carbon::parse($trip->check_in)->format('d F, Y') }}</td>
                             <td>{{ \Carbon\Carbon::parse($trip->check_in)->format('d F, Y') }}</td>
                             <td>{{ $trip->details }}</td>
