@@ -10,7 +10,7 @@ class CurrencyService
     protected $apiKey;
 
     public function __construct() {
-        
+
         $this->apiUrl = 'https://v6.exchangerate-api.com/v6'; // Example API
         $this->apiKey = env('CURRENCY_API_KEY'); // Store in .env
     }
@@ -21,7 +21,14 @@ class CurrencyService
             'apiKey' => $this->apiKey,
         ]);
 
-        return $response->successful() ? $response->json()['conversion_rates'] : [];
+        $responseData = $response->json();
+
+        if(isset($responseData['result']) && $responseData['result'] === 'success') {
+
+            return $responseData['conversion_rates'];
+        }
+
+        return [];
     }
 
     public function convert($amount, $from, $to) {

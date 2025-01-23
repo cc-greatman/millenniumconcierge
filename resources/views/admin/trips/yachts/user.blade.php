@@ -78,7 +78,7 @@
                             <td>
                                 Yacht
                             </td>
-                            <td data-price="{{ $trip->cost }}">{{ formatPrice($trip->cost) }}</td>
+                            <td class="cost" data-price="{{ $trip->cost }}">{{ formatPrice($trip->cost) }}</td>
                             <td>{{ $trip->departure }}</td>
                             <td>{{ $trip->destination }}</td>
                             <td>{{ $trip->seats }}</td>
@@ -98,26 +98,20 @@
 </div>
 
 <script>
-  function convertAllPrices(selectedCurrency) {
-    let tableRows = document.querySelectorAll('#res-config tbody tr');
+    function convertAllPrices(selectedCurrency) {
+        let tableRows = document.querySelectorAll('#res-config tbody tr');
 
-      let prices = [];
+        let prices = Array.from(tableRows).map(row => row.getAttribute('data-price'));
 
-      // Collect all original prices from the table rows
-      tableRows.forEach(row => {
-          prices.push(row.getAttribute('data-price'));
-      });
-
-      // Send AJAX request to the backend to get the converted prices
-      fetch(`/convert-prices?currency=${selectedCurrency}&prices=${JSON.stringify(prices)}`)
-          .then(response => response.json())
-          .then(data => {
-              // Update the price displays in the table
-              tableRows.forEach((row, index) => {
-                  row.querySelector('.price-display').innerHTML = `${selectedCurrency} ${data.convertedPrices[index]}`;
-              });
-          });
-  }
+        fetch(`/convert-prices?currency=${selectedCurrency}&prices=${JSON.stringify(prices)}`)
+            .then(response => response.json())
+            .then(data => {
+                tableRows.forEach((row, index) => {
+                    let costCell = row.querySelector('td:nth-child(2)'); // Assuming the "Cost" column is the second column
+                    costCell.textContent = `${data.currencySymbol} ${data.convertedPrices[index]}`;
+                });
+            });
+    }
 </script>
 
 <script>

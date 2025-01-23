@@ -53,6 +53,4 @@ class CurrencyController extends Controller
             'convertedPrices' => array_map(fn($price) => number_format($price, 2), $convertedPrices),
         ]);
     }
-
-
 }
