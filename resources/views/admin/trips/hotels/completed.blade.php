@@ -43,7 +43,12 @@
                 <div>
                   <p class="text-muted mb-0">Total Amount Spent</p>
                   <div class="d-flex align-items-end">
-                    <h2 class="mb-0 f-w-500">${{ number_format($sum, 2) }}</h2>
+                    @php
+                        $currencyService = app(App\Services\CurrencyService::class);
+                        $convertedPrice = $currencyService->convert($sum, 'USD', session('currency', 'USD'));
+                        $currencySymbol = currencySymbol(session('currency', 'USD'));
+                    @endphp
+                    <h2 class="mb-0 f-w-500">{{ $currencySymbol }}{{ number_format($convertedPrice, 2) }}</h2>
                   </div>
                 </div>
               </div>
@@ -74,7 +79,7 @@
                         <tr>
                             <td>{{ $trip->user->first_name }} {{ $trip->user->last_name }}</td>
                             <td>{{ $trip->hotel }}</td>
-                            <td>${{ number_format($trip->cost, 2) }}</td>
+                            <td class="cost" data-price="{{ $trip->cost }}">{{ formatPrice($trip->cost) }}</td>
                             <td>{{ \Carbon\Carbon::parse($trip->check_in)->format('d F, Y') }}</td>
                             <td>{{ \Carbon\Carbon::parse($trip->check_in)->format('d F, Y') }}</td>
                             <td>{{ $trip->details }}</td>
@@ -95,5 +100,22 @@
       <!-- [ Main Content ] end -->
     </div>
 </div>
+
+<script>
+    function convertAllPrices(selectedCurrency) {
+        let tableRows = document.querySelectorAll('#res-config tbody tr');
+
+        let prices = Array.from(tableRows).map(row => row.getAttribute('data-price'));
+
+        fetch(`/convert-prices?currency=${selectedCurrency}&prices=${JSON.stringify(prices)}`)
+            .then(response => response.json())
+            .then(data => {
+                tableRows.forEach((row, index) => {
+                    let costCell = row.querySelector('td:nth-child(2)'); // Assuming the "Cost" column is the second column
+                    costCell.textContent = `${data.currencySymbol} ${data.convertedPrices[index]}`;
+                });
+            });
+    }
+</script>
 
 @include('admin.partials.footer')

@@ -57,7 +57,12 @@
                             <span class="{{ $details['color'] }}">{{ $details['label'] }}</span>
                         </a>
                         <p class="mb-3 mt-3">Total number of trips taken through {{ strtolower($details['label']) }}.</p>
-                        <p><strong>Amount Spent:</strong> ${{ number_format($data['total_cost'], 2) }}</p>
+                        @php
+                        $currencyService = app(App\Services\CurrencyService::class);
+                        $convertedPrice = $currencyService->convert($data['total_cost'], 'USD', session('currency', 'USD'));
+                        $currencySymbol = currencySymbol(session('currency', 'USD'));
+                    @endphp
+                    <p><strong>Amount Spent:</strong> {{ $currencySymbol }}{{ number_format($convertedPrice, 2) }}</p>
                     </div>
                     <div class="card-footer bg-brand-color-3 text-white">
                         <div class="row text-center">
@@ -83,7 +88,12 @@
                         <span class="text-info">Hotel Trips</span>
                     </a>
                     <p class="mb-3 mt-3">Total number of times we've booked a hotel room.</p>
-                    <p><strong>Amount Spent:</strong> ${{ number_format($hotelData['sum'], 2) }}</p>
+                    @php
+                        $currencyService = app(App\Services\CurrencyService::class);
+                        $convertedPrice = $currencyService->convert($hotelData['sum'], 'USD', session('currency', 'USD'));
+                        $currencySymbol = currencySymbol(session('currency', 'USD'));
+                    @endphp
+                    <p><strong>Amount Spent:</strong> {{ $currencySymbol }}{{ number_format($convertedPrice, 2) }}</p>
                 </div>
                 <div class="card-footer bg-brand-color-3 text-white">
                     <div class="row text-center">
@@ -104,6 +114,7 @@
     </div>
 </div>
 <!-- [ Main Content ] end -->
+
 
 @include('admin.partials.footer')
 
