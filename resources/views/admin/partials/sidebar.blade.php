@@ -53,7 +53,7 @@
                   >Hotels<span class="pc-arrow"><i data-feather="chevron-right"></i></span
                 ></a>
                 <ul class="pc-submenu">
-                    <li class="pc-item @if(Route::is('admin.trips.create.hotel')) active @endif"><a class="pc-link" href="{{ route('admin.trips.create.hotel') }}">Create</a></li>
+                    <li class="pc-item @if(Route::is('admin.trips.create.hotel.view')) active @endif"><a class="pc-link" href="{{ route('admin.trips.create.hotel.view') }}">Create</a></li>
                     <li class="pc-item @if(Route::is('admin.trips.hotels.completed.view')) active @endif"><a class="pc-link" href="{{ route('admin.trips.hotels.completed.view') }}">Completed</a></li>
                     <li class="pc-item @if(Route::is('admin.trips.hotels.pending.view')) active @endif"><a class="pc-link" href="{{ route('admin.trips.hotels.pending.view') }}">Pending</a></li>
                 </ul>

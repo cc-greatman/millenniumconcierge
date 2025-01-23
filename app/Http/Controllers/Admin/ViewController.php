@@ -354,13 +354,11 @@ class ViewController extends Controller
         return view('admin.trips.view', compact('pageTitle', 'users'));
     }
 
-    public function createHotel() {
+    public function createHotelView() {
 
         $pageTitle = "Create Hotel Trip || ".env('APP_NAME');
 
         $users = User::all();
-
-        dd($pageTitle, $users);
 
         return view('admin.trips.edit-hotel', compact('pageTitle', 'users'));
     }
