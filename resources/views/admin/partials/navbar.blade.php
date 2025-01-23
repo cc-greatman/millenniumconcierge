@@ -31,6 +31,35 @@
       <!-- [Mobile Media Block end] -->
       <div class="ms-auto">
         <ul class="list-unstyled">
+            <li class="dropdown pc-h-item">
+                <a
+                    class="pc-head-link dropdown-toggle arrow-none me-0"
+                    data-bs-toggle="dropdown"
+                    href="#"
+                    role="button"
+                    aria-haspopup="false"
+                    aria-expanded="false"
+                >
+                    <i class="ph-duotone ph-diamonds-four"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end pc-h-dropdown">
+                    <form action="{{ route('currency.change') }}" method="POST" id="currency-form">
+                        @csrf
+                        <div class="dropdown-item">
+                            <i class="ph-duotone ph-currency-dollar"></i>
+                            <label for="currency" style="margin-left: 10px;">Select Currency</label>
+                        </div>
+                        <div class="dropdown-item">
+                            <select name="currency" id="currency" onchange="document.getElementById('currency-form').submit();" class="form-select" style="width: 100%;">
+                                <option value="USD" {{ session('currency') == 'USD' ? 'selected' : '' }}>USD</option>
+                                <option value="EUR" {{ session('currency') == 'EUR' ? 'selected' : '' }}>EUR</option>
+                                <option value="GBP" {{ session('currency') == 'GBP' ? 'selected' : '' }}>GBP</option>
+                                <!-- Add more currencies as needed -->
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </li>
           <li class="dropdown pc-h-item header-user-profile">
             <a
               class="pc-head-link dropdown-toggle arrow-none me-0"

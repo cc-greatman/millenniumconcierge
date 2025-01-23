@@ -26,6 +26,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
     Route::get('enquiry', 'FrontendController@contact')->name('contact');
     Route::get('gallery', 'FrontendController@gallery')->name('gallery');
 
+    //-- Currency Converter Route
+    Route::post('/change-currency', 'CurrencyController@changeCurrency')->name('currency.change');
+
 
     Route::group(['middleware' => ['guest']], function() {
 
