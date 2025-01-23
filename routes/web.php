@@ -29,10 +29,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
 
     //-- Currency Converter Route
     Route::post('/change-currency', 'CurrencyController@changeCurrency')->name('currency.change');
-
-    Route::get('/test-middleware', function (Request $request) {
-        return 'Currency: ' . session('currency');
-    })->middleware(\App\Http\Middleware\CurrencyMiddleware::class);
+    Route::get('/convert-prices', 'CurrencyController@convertPrices')->name('currency.convert');
+    Route::get('/convert-single-price', 'CurrencyController@convertSinglePrice')->name('currency.convert');
 
 
     Route::group(['middleware' => ['guest']], function() {

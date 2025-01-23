@@ -48,7 +48,7 @@
                         $convertedPrice = $currencyService->convert($sum, 'USD', session('currency', 'USD'));
                         $currencySymbol = currencySymbol(session('currency', 'USD'));
                     @endphp
-                    <h2 class="mb-0 f-w-500">{{ $currencySymbol }}{{ number_format($convertedPrice, 2) }}</h2>
+                    <h2 class="mb-0 f-w-500" id="price-display">{{ $currencySymbol }}{{ number_format($convertedPrice, 2) }}</h2>
                   </div>
                 </div>
               </div>
@@ -78,12 +78,7 @@
                             <td>
                                 Yacht
                             </td>
-                            @php
-                                $currencyService = app(App\Services\CurrencyService::class);
-                                $converted = $currencyService->convert($trip->cost, 'USD', session('currency', 'USD'));
-                                $currencySymbol = currencySymbol(session('currency', 'USD'));
-                            @endphp
-                            <td>{{ $currencySymbol }}{{ number_format($converted, 2) }}</td>
+                            <td data-price="{{ $trip->cost }}">{{ formatPrice($trip->cost) }}</td>
                             <td>{{ $trip->departure }}</td>
                             <td>{{ $trip->destination }}</td>
                             <td>{{ $trip->seats }}</td>
@@ -101,5 +96,43 @@
         </div>
     </div>
 </div>
+
+<script>
+  function convertAllPrices(selectedCurrency) {
+    let tableRows = document.querySelectorAll('#res-config tbody tr');
+
+      let prices = [];
+
+      // Collect all original prices from the table rows
+      tableRows.forEach(row => {
+          prices.push(row.getAttribute('data-price'));
+      });
+
+      // Send AJAX request to the backend to get the converted prices
+      fetch(`/convert-prices?currency=${selectedCurrency}&prices=${JSON.stringify(prices)}`)
+          .then(response => response.json())
+          .then(data => {
+              // Update the price displays in the table
+              tableRows.forEach((row, index) => {
+                  row.querySelector('.price-display').innerHTML = `${selectedCurrency} ${data.convertedPrices[index]}`;
+              });
+          });
+  }
+</script>
+
+<script>
+    function convertCurrency(selectedCurrency) {
+        // Assuming the price you want to convert is stored in a variable or HTML element
+        let price = 100; // Example price, you can dynamically update this
+
+        // Make the AJAX call to convert the price
+        fetch(`/convert-single-price?currency=${selectedCurrency}&price=${price}`)
+            .then(response => response.json())
+            .then(data => {
+                // Update the price on the page
+                document.getElementById('price-display').innerHTML = `Price: ${selectedCurrency} ${data.convertedPrice}`;
+            });
+    }
+</script>
 
 @include('admin.partials.footer')

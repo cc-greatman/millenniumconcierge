@@ -20,6 +20,10 @@ class CurrencyMiddleware
         if (!$request->session()->has('currency') || !in_array($request->session()->get('currency'), $validCurrencies)) {
             $request->session()->put('currency', 'USD'); // Default to USD
         }
+
+        // Pass the selected currency to the view
+        view()->share('selectedCurrency', session('currency'));
+        
         return $next($request);
     }
 }

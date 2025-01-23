@@ -104,12 +104,7 @@
                                 </td>
                                 <td>{{ $trip->ticket_type }}</td>
                                 <td>{{ $trip->airline }}</td>
-                                @php
-                                    $currencyService = app(App\Services\CurrencyService::class);
-                                    $converted = $currencyService->convert($trip->cost, 'USD', session('currency', 'USD'));
-                                    $currencySymbol = currencySymbol(session('currency', 'USD'));
-                                @endphp
-                                <td>{{ $currencySymbol }}{{ number_format($converted, 2) }}</td>
+                                <td data-price="{{ $trip->cost }}">{{ formatPrice($trip->cost) }}</td>
                                 <td>{{ $trip->departure }}</td>
                                 <td>{{ \Carbon\Carbon::parse($trip->departure_date)->format('Y-m-d H:i:s') }}</td>
                                 <td>{{ $trip->destination }}</td>
@@ -146,5 +141,27 @@
         </div>
     </div>
 </div>
+
+<script>
+    function convertAllPrices(selectedCurrency) {
+        let tableRows = document.querySelectorAll('#price-table tbody tr');
+        let prices = [];
+
+        // Collect all original prices from the table rows
+        tableRows.forEach(row => {
+            prices.push(row.getAttribute('data-price'));
+        });
+
+        // Send AJAX request to the backend to get the converted prices
+        fetch(`/convert-price?currency=${selectedCurrency}&prices=${JSON.stringify(prices)}`)
+            .then(response => response.json())
+            .then(data => {
+                // Update the price displays in the table
+                tableRows.forEach((row, index) => {
+                    row.querySelector('.price-display').innerHTML = `${selectedCurrency} ${data.convertedPrices[index]}`;
+                });
+            });
+    }
+</script>
 
 @include('admin.partials.footer')

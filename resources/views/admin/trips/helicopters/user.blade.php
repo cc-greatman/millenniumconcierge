@@ -104,12 +104,7 @@
                                 </td>
                                 <td>{{ $trip->ticket_type }}</td>
                                 <td>{{ $trip->airline }}</td>
-                                @php
-                                    $currencyService = app(App\Services\CurrencyService::class);
-                                    $converted = $currencyService->convert($trip->cost, 'USD', session('currency', 'USD'));
-                                    $currencySymbol = currencySymbol(session('currency', 'USD'));
-                                @endphp
-                                <td>{{ $currencySymbol }}{{ number_format($converted, 2) }}</td>
+                                <td data-price="{{ $trip->cost }}">{{ formatPrice($trip->cost) }}</td>
                                 <td>{{ $trip->departure }}</td>
                                 <td>{{ \Carbon\Carbon::parse($trip->departure_date)->format('Y-m-d H:i:s') }}</td>
                                 <td>{{ $trip->destination }}</td>
