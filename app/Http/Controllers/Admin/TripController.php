@@ -134,11 +134,13 @@ class TripController extends Controller
         if ($user) {
             // Fetch bookings for the user
             $bookings = $user->bookings()->get();
+            $sum = $user->bookings()->sum('cost');
 
             // Generate PDF
             $pdf = Pdf::loadView('pdf.booking', [
                 'bookings' => $bookings, // Pass empty if no bookings
                 'user' => $user,
+                'sum' => $sum,
             ]);
 
             // Send email with PDF
