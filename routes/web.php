@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 use PHPUnit\Framework\Attributes\Group;
 
@@ -28,6 +29,11 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
 
     //-- Currency Converter Route
     Route::post('/change-currency', 'CurrencyController@changeCurrency')->name('currency.change');
+
+    Route::get('/test-session', function (Request $request) {
+        $request->session()->put('test_key', 'test_value');
+        return $request->session()->get('test_key', 'not_set');
+    });
 
 
     Route::group(['middleware' => ['guest']], function() {
