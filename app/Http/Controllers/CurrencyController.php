@@ -10,25 +10,41 @@ class CurrencyController extends Controller
 {
     protected $currencyService;
 
-    public function __construct(CurrencyService $currencyService) {
-
+    // Dependency Injection for CurrencyService
+    public function __construct(CurrencyService $currencyService)
+    {
         $this->currencyService = $currencyService;
     }
 
-    public function changeCurrency(Request $request) {
-
+    /**
+     * Change the session currency.
+     */
+    public function changeCurrency(Request $request)
+    {
         $request->validate(['currency' => 'required|string']);
-        Session::put('currency', $request->currency);
+
+        // Store the selected currency in the session
+        $currency = $request->currency;
+        Session::put('currency', $currency);
 
         return back(); // Redirect to the previous page
     }
 
-    public function convertSinglePrice(Request $request) {
+    /**
+     * Convert a single price to the selected currency.
+     */
+    public function convertSinglePrice(Request $request)
+    {
+        $request->validate([
+            'price' => 'required|numeric',
+            'currency' => 'required|string'
+        ]);
 
         $price = $request->price;
         $fromCurrency = 'USD'; // Base currency
         $toCurrency = $request->currency;
 
+        // Convert the price using the CurrencyService
         $convertedPrice = $this->currencyService->convert($price, $fromCurrency, $toCurrency);
 
         return response()->json([
@@ -36,17 +52,25 @@ class CurrencyController extends Controller
         ]);
     }
 
+    /**
+     * Convert an array of prices to the selected currency.
+     */
     public function convertPrices(Request $request) {
+        
+        $request->validate([
+            'prices' => 'required|array',
+            'currency' => 'required|string'
+        ]);
 
         $prices = $request->prices; // Array of prices
         $fromCurrency = 'USD'; // Base currency
         $toCurrency = $request->currency;
 
         $convertedPrices = [];
-        $currencyService = app(\App\Services\CurrencyService::class);
 
+        // Iterate over each price and convert it
         foreach ($prices as $price) {
-            $convertedPrices[] = $currencyService->convert($price, $fromCurrency, $toCurrency);
+            $convertedPrices[] = $this->currencyService->convert($price, $fromCurrency, $toCurrency);
         }
 
         return response()->json([

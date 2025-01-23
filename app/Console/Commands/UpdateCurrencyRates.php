@@ -2,38 +2,43 @@
 
 namespace App\Console\Commands;
 
-use App\Services\CurrencyService;
+use App\Models\CurrencyRate;
+use App\Models\CurrencyRates;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Cache;
 
-class UpdateCurrencyRates extends Command
+class UpdateExchangeRates extends Command
 {
+    protected $signature = 'exchange-rates:update';
+
+    protected $description = 'Update currency exchange rates from API';
+
     /**
-     * The name and signature of the console command.
+     * Fetches the latest currency exchange rates from an external API and updates the database.
      *
-     * @var string
-     */
-    protected $signature = 'currency:update-rates';
-
-    /**
-     * The console command description.
+     * This method retrieves exchange rates from the ExchangeRate-API service. It parses the response
+     * and updates the `CurrencyRates` model in the database with the latest rates. If the API request
+     * is successful, a success message is logged to the console. Otherwise, an error message is logged.
      *
-     * @var string
+     * @return void
      */
-    protected $description = 'Update currency exchange rates';
-
-    public function __construct()
+    public function handle()
     {
-        parent::__construct();
-    }
+        $apiUrl = 'https://v6.exchangerate-api.com/v6/YOUR-API-KEY/latest/USD';
+        $response = file_get_contents($apiUrl);
+        $data = json_decode($response, true);
 
-    /**
-     * Execute the console command.
-     */
-    public function handle(CurrencyService $currencyService)
-    {
-        $rates = $currencyService->getRates();
-        Cache::put('currency_rates', $rates, 86400); // Store rates for 24 hours
-        $this->info('Currency rates updated successfully.');
+        if ($data['result'] === 'success') {
+            foreach ($data['conversion_rates'] as $symbol => $rate) {
+                CurrencyRates::updateOrCreate(
+                    ['symbol' => $symbol],
+                    ['exchange_rate' => $rate]
+                );
+            }
+
+            $this->info('Exchange rates updated successfully.');
+        } else {
+            $this->error('Failed to fetch exchange rates.');
+        }
     }
 }
+

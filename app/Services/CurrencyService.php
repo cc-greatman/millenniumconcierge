@@ -2,44 +2,40 @@
 
 namespace App\Services;
 
+use App\Models\CurrencyRates;
 use Illuminate\Support\Facades\Http;
 
 class CurrencyService
 {
-    protected $apiUrl;
-    protected $apiKey;
+    /**
+     * Converts a given amount of money from one currency to another
+     *
+     * @param float $amount The amount of money to convert
+     * @param string $fromCurrency The currency code of the original currency
+     * @param string $toCurrency The currency code of the currency to convert to
+     *
+     * @throws \Exception If the exchange rate for the given currencies is not found
+     *
+     * @return float The converted amount of money
+     */
+    public function convert($amount, $fromCurrency, $toCurrency) {
 
-    public function __construct() {
-
-        $this->apiUrl = 'https://v6.exchangerate-api.com/v6'; // Example API
-        $this->apiKey = env('CURRENCY_API_KEY'); // Store in .env
-    }
-
-    public function getRates($base = 'USD') {
-
-        $response = Http::get("{$this->apiUrl}/latest/{$base}", [
-            'apiKey' => $this->apiKey,
-        ]);
-
-        $responseData = $response->json();
-
-        if(isset($responseData['result']) && $responseData['result'] === 'success') {
-
-            return $responseData['conversion_rates'];
+        if ($fromCurrency === $toCurrency) {
+            return $amount;
         }
 
-        return [];
-    }
-
-    public function convert($amount, $from, $to) {
-
-        $rates = $this->getRates($from);
-
-        if (isset($rates[$to])) {
-            return $amount * $rates[$to];
+        if ($amount === null) {
+            throw new \Exception("Amount is null");
         }
 
-        return $amount; // Fallback to the original amount
+        $fromRate = CurrencyRates::where('currency_code', $fromCurrency)->value('exchange_rate');
+        $toRate = CurrencyRates::where('currency_code', $toCurrency)->value('exchange_rate');
+
+        if ($fromRate === null || $toRate === null) {
+            throw new \Exception("Exchange rate not found.");
+        }
+
+        return ($amount / $fromRate) * $toRate;
     }
 
 }
