@@ -114,19 +114,4 @@
     }
 </script>
 
-<script>
-    function convertCurrency(selectedCurrency) {
-        // Assuming the price you want to convert is stored in a variable or HTML element
-        let price = 100; // Example price, you can dynamically update this
-
-        // Make the AJAX call to convert the price
-        fetch(`/convert-single-price?currency=${selectedCurrency}&price=${price}`)
-            .then(response => response.json())
-            .then(data => {
-                // Update the price on the page
-                document.getElementById('price-display').innerHTML = `Price: ${selectedCurrency} ${data.convertedPrice}`;
-            });
-    }
-</script>
-
 @include('admin.partials.footer')

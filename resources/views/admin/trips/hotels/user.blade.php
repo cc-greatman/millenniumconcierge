@@ -79,7 +79,7 @@
                         <tr>
                             <td>Hotel</td>
                             <td>{{ $trip->hotel }}</td>
-                            <td data-price="{{ $trip->cost }}">{{ formatPrice($trip->cost) }}</td>
+                            <td class="cost" data-price="{{ $trip->cost }}">{{ formatPrice($trip->cost) }}</td>
                             <td>{{ \Carbon\Carbon::parse($trip->check_in)->format('d F, Y') }}</td>
                             <td>{{ \Carbon\Carbon::parse($trip->check_in)->format('d F, Y') }}</td>
                             <td>{{ $trip->details }}</td>
@@ -98,5 +98,22 @@
         </div>
     </div>
 </div>
+
+<script>
+    function convertAllPrices(selectedCurrency) {
+        let tableRows = document.querySelectorAll('#res-config tbody tr');
+
+        let prices = Array.from(tableRows).map(row => row.getAttribute('data-price'));
+
+        fetch(`/convert-prices?currency=${selectedCurrency}&prices=${JSON.stringify(prices)}`)
+            .then(response => response.json())
+            .then(data => {
+                tableRows.forEach((row, index) => {
+                    let costCell = row.querySelector('td:nth-child(2)'); // Assuming the "Cost" column is the second column
+                    costCell.textContent = `${data.currencySymbol} ${data.convertedPrices[index]}`;
+                });
+            });
+    }
+</script>
 
 @include('admin.partials.footer')
