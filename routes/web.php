@@ -27,8 +27,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
     Route::get('enquiry', 'FrontendController@contact')->name('contact');
     Route::get('gallery', 'FrontendController@gallery')->name('gallery');
 
-    //-- Cron Currency Rates
+    //-- Cron Routes
     Route::get('currency-rates', 'CronController@handle')->name('currency.rates');
+    Route::get('/send-bookings', 'Admin\TripController@sendBookingsToUsers');
 
     //-- Currency Converter Route
     Route::post('/change-currency', 'CurrencyController@changeCurrency')->name('currency.change');

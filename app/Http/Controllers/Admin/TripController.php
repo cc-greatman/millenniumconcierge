@@ -3,9 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Mail\AllHotelTripsPDF;
 use App\Models\Bookings;
 use App\Models\Trips;
+use App\Models\User;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class TripController extends Controller
 {
@@ -120,6 +124,24 @@ class TripController extends Controller
         ]);
 
         // Redirect with a success message
-        return redirect()->route('admin.trips.create.hotel.view')->with('success', 'Booking created successfully.');
+        return redirect()->back()->with('success', 'Booking created successfully.');
+    }
+
+    public function sendBookingsToUsers() {
+
+        $user = User::where('id', 1); // Get all users
+            // Fetch bookings for the user
+            $bookings = $user->bookings()->get();
+
+            // Generate PDF
+            $pdf = Pdf::loadView('pdf.booking', [
+                'bookings' => $bookings, // Pass empty if no bookings
+                'user' => $user,
+            ]);
+
+            // Send email with PDF
+            Mail::to('blessedgreatman96@gmail.com')->send(new AllHotelTripsPDF($pdf->output(), $user));
+
+        return response()->json(['message' => 'PDFs sent to all users']);
     }
 }
