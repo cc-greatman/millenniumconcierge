@@ -51,7 +51,7 @@
                         </div>
                         <div class="dropdown-item">
                             <select name="currency" id="currency" onchange="document.getElementById('currency-form').submit();" class="form-select" style="width: 100%;">
-                                <option value="NGN" {{ session('currency') == 'GBP' ? 'selected' : '' }}>NGN</option>
+                                <option value="NGN" {{ session('currency') == 'NGN' ? 'selected' : '' }}>NGN</option>
                                 <option value="USD" {{ session('currency') == 'USD' ? 'selected' : '' }}>USD</option>
                                 <option value="EUR" {{ session('currency') == 'EUR' ? 'selected' : '' }}>EUR</option>
                                 <option value="GBP" {{ session('currency') == 'GBP' ? 'selected' : '' }}>GBP</option>
