@@ -20,7 +20,7 @@
 <body>
     <h2>Hotel Bookings for {{ $user->first_name }} {{ $user->last_name }}</h2>
     <br><br>
-    <h3>Amount Spent: {{ $sum }}</h3>
+    <h3>Amount Spent: ${{ $sum }}</h3>
     <br><br>
     <table>
         <thead>

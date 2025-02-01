@@ -66,19 +66,28 @@ class CryptoController extends Controller {
         return redirect()->route('membership.setting.view')->with('error', 'Unable to process payment.');
     }
 
+    /**
+     * Handles the callback from NowPayments when a payment is made.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function handleCallback(Request $request)
     {
         $paymentId = $request->input('payment_id');
 
         try {
+            // Get the payment status from NowPayments
             $paymentStatus = $this->nowPayments->getPaymentStatus($paymentId);
 
+            // Get the payment record from the database
             $payment = Payments::where('payment_id', $paymentId)->firstOrFail();
 
+            // Update the payment status
             if ($paymentStatus['payment_status'] === 'finished') {
                 $payment->update(['status' => 'completed']);
 
-                // Update user membership
+                // Update the user's membership
                 $user = $payment->user; // Assuming Payment has a `user` relationship
                 $type = $payment->membership_type;
 
@@ -97,12 +106,15 @@ class CryptoController extends Controller {
                     ]
                 );
 
+                // Return a success message
                 return redirect()->route('membership.setting.view')->with('success', 'Payment successful. Welcome to ' . ucfirst($type) . ' Membership!');
             }
 
+            // Update the payment status to failed
             $payment->update(['status' => 'failed']);
             return redirect()->route('membership.setting.view')->with('error', 'Payment not completed yet.');
         } catch (\Exception $e) {
+            // Return an error message if an exception is thrown
             return redirect()->route('membership.setting.view')->with('error', $e->getMessage());
         }
     }
