@@ -31,7 +31,7 @@ class CronController extends Controller
                 );
             }
 
-            $this->info('Exchange rates updated successfully.');
+            $this->info('Exchange currency rates updated successfully.');
         } else {
             $this->error('Failed to fetch exchange rates.');
         }
