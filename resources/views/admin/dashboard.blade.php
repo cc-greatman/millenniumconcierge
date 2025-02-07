@@ -24,7 +24,7 @@
               </div>
             </div>
             <div class="col-md-3">
-                <a href="" class="btn btn-primary"><i class="ti ti-pencil f-18"></i> Create Trip </a>
+                <a href="" class="btn btn-primary"><i class="ti ti-pencil f-18"></i> Create a New Trip </a>
             </div>
           </div>
         </div>
