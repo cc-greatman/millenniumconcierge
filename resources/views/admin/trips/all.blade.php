@@ -33,8 +33,8 @@
       <div class="row">
         @php
             $tripTypes = [
-                'private' => ['label' => 'Private Flights', 'color' => 'text-info'],
                 'commercial' => ['label' => 'Commercial Flights', 'color' => 'text-primary'],
+                'private' => ['label' => 'Private Flights', 'color' => 'text-info'],
                 'yacht' => ['label' => 'Yacht Trips', 'color' => 'text-success'],
                 'helicopter' => ['label' => 'Helicopter Trips', 'color' => 'text-info'],
             ];
