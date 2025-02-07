@@ -18,10 +18,13 @@
                 <li class="breadcrumb-item" aria-current="page">Report</li>
               </ul>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-9">
               <div class="page-header-title">
                 <h2 class="mb-0">{{ $user->first_name }}'s Trips Report</h2>
               </div>
+            </div>
+            <div class="col-md-3">
+                <a href="" class="btn btn-primary"><i class="ti ti-pencil f-18"></i> Create a New Trip </a>
             </div>
           </div>
         </div>
