@@ -28,8 +28,7 @@
                     <form action="{{ route('currency.change') }}" method="POST" id="currency-form">
                         @csrf
                         <div style="margin-top: 10px !important; margin-left: 5px !important; margin-bottom:5px !important;">
-                            <i class="ph-duotone ph-currency-dollar"></i>
-                            <label for="currency" style="margin-left: 10px;">Create a New Trip</label>
+                            <label for="currency">Create a New Trip</label>
                         </div>
                         <div class="dropdown-item">
                             <select name="trip_type" id="trip_type" onchange="document.getElementById('trip-type-form').submit();" class="form-select" style="width: 100%;">
