@@ -96,16 +96,16 @@
                     </div>
                     </div>
                     <div class="col-md-12 col-xl-4">
-                    <div class="card shadow-none border mb-0">
-                        <div class="card-body">
-                        <h6 class="mb-3 fw-medium">Renewal Date</h6>
-                        <h4 class="mb-3 fw-normal text-muted">{{ \Carbon\Carbon::parse(optional($user->memberships)->end_date)->format('d F, Y') }}</h4>
-                        <a class="link-primary">
-                            @php
-                                $daysRemaining = \Carbon\Carbon::now()->diffInDays(\Carbon\Carbon::parse(optional($user->memberships)->end_date), false);
-                            @endphp
-                            {{ $daysRemaining > 0 ? "$daysRemaining days till renewal" : "Membership expired" }}
-                        </a>
+                        <div class="card shadow-none border mb-0">
+                            <div class="card-body">
+                            <h6 class="mb-3 fw-medium">Renewal Date</h6>
+                            <h4 class="mb-3 fw-normal text-muted">{{ \Carbon\Carbon::parse(optional($user->memberships)->end_date)->format('d F, Y') }}</h4>
+                            <a class="link-primary">
+                                @php
+                                    $daysRemaining = \Carbon\Carbon::now()->diffInDays(\Carbon\Carbon::parse(optional($user->memberships)->end_date), false);
+                                @endphp
+                                {{ $daysRemaining > 0 ? "$daysRemaining days till renewal" : "Membership expired" }}
+                            </a>
                         </div>
                     </div>
                 </div>
