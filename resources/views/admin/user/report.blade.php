@@ -24,7 +24,24 @@
               </div>
             </div>
             <div class="col-md-3">
-                <a href="" class="btn btn-primary"><i class="ti ti-pencil f-18"></i> Create a New Trip </a>
+                <div class="btn btn-primary dropdown-menu dropdown-menu-end pc-h-dropdown">
+                    <form action="{{ route('currency.change') }}" method="POST" id="currency-form">
+                        @csrf
+                        <div style="margin-top: 10px !important; margin-left: 5px !important;">
+                            <i class="ph-duotone ph-currency-dollar"></i>
+                            <label for="currency" style="margin-left: 10px;">Select Currency</label>
+                        </div>
+                        <div class="dropdown-item">
+                            <select name="currency" id="currency" onchange="document.getElementById('currency-form').submit();" class="form-select" style="width: 100%;">
+                                <option value="NGN" {{ session('currency') == 'NGN' ? 'selected' : '' }}>NGN</option>
+                                <option value="USD" {{ session('currency') == 'USD' ? 'selected' : '' }}>USD</option>
+                                <option value="EUR" {{ session('currency') == 'EUR' ? 'selected' : '' }}>EUR</option>
+                                <option value="GBP" {{ session('currency') == 'GBP' ? 'selected' : '' }}>GBP</option>
+                                <!-- Add more currencies as needed -->
+                            </select>
+                        </div>
+                    </form>
+                </div>
             </div>
           </div>
         </div>
