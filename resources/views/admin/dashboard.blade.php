@@ -18,10 +18,13 @@
                 <li class="breadcrumb-item" aria-current="page">Overview</li>
               </ul>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-9">
               <div class="page-header-title">
                 <h2 class="mb-0">Staff Dashboard</h2>
               </div>
+            </div>
+            <div class="col-md-3">
+                <a href="" class="avtar avtar-s btn btn-primary"><i class="ti ti-pencil f-18"></i> Create Trip </a>
             </div>
           </div>
         </div>
@@ -43,7 +46,7 @@
             </div>
           </div>
         </div>
-        <div class="col-sm-6 col-xl-4">
+        <div class="col-sm-12">
           <div class="card">
             <div class="card-header d-flex align-items-center justify-content-between py-3">
               <h5>Total Silver Members</h5>
@@ -56,7 +59,7 @@
             </div>
           </div>
         </div>
-        <div class="col-sm-6 col-xl-4">
+        <div class="col-sm-12">
           <div class="card">
             <div class="card-header d-flex align-items-center justify-content-between py-3">
               <h5>Total Gold Members</h5>
@@ -69,7 +72,7 @@
             </div>
           </div>
         </div>
-        <div class="col-sm-6 col-xl-4">
+        <div class="col-sm-12">
             <div class="card">
               <div class="card-header d-flex align-items-center justify-content-between py-3">
                 <h5>Total Platinum Members</h5>

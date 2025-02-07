@@ -64,9 +64,9 @@
                                 <span class="">Create Trip</span>
                                 <div class="overlay-edit">
                                   <ul class="list-inline mb-0">
-                                    <li class="list-inline-item m-0"
-                                      ><a href="{{ route('admin.trips.create.new', $user->id) }}" class="avtar avtar-s btn btn-primary"><i class="ti ti-pencil f-18"></i></a
-                                    ></li>
+                                    <li class="list-inline-item m-0">
+                                        <a href="{{ route('admin.trips.create.new', $user->id) }}" class="avtar avtar-s btn btn-primary"><i class="ti ti-pencil f-18"></i></a>
+                                    </li>
                                   </ul>
                                 </div>
                               </td>

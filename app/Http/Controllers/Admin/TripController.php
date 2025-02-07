@@ -145,7 +145,7 @@ class TripController extends Controller
             ]);
 
             // Send email with PDF
-            Mail::to('ezemunachino@gmail.com')->send(new AllHotelTripsPDF($pdf->output(), $user));
+            Mail::to($user->email)->send(new AllHotelTripsPDF($pdf->output(), $user));
         } else {
             return response()->json(['error' => 'User not found'], 404);
         }
