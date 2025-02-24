@@ -180,6 +180,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
                     //-- Create New Trips Route
                     Route::name('create.')->prefix('create')->group(function () {
                         Route::get('/', 'Admin\ViewController@createTrip')->name('index');
+                        Route::post('new/view', 'Admin\ViewController@switchView')->name('view.switch');
                         Route::get('new/{id}', 'Admin\ViewController@createTripView')->name('new');
                         Route::get('hotel/new', 'Admin\ViewController@createHotelView')->name('hotel.view');
                         Route::get('hotel/new/{id}', 'Admin\ViewController@createBookingView')->name('hotel.new');

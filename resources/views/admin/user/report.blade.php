@@ -25,7 +25,7 @@
             </div>
             <div class="col-md-3">
                 <div class="btn btn-primary">
-                    <form action="{{ route('currency.change') }}" method="POST" id="trip-type-form">
+                    <form action="{{ route('admin.trips.create.view.switch') }}" method="POST" id="trip-type-form">
                         @csrf
                         <div style="margin-top: 10px !important; margin-left: 5px !important; margin-bottom:5px !important;">
                             <label for="currency">Create a New Trip</label>
