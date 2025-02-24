@@ -48,7 +48,4 @@
 
 <body data-pc-preset="preset-1" data-pc-sidebar-theme="dark" data-pc-sidebar-caption="false" data-pc-direction="ltr" data-pc-theme="dark" style="background: #101010;">
 
-    @php
-        $currencyService = app(App\Services\CurrencyService::class);
-        $convertedPrice = $currencyService->convert($price, 'USD', session('currency', 'USD'));
-    @endphp
+    
