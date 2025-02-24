@@ -52,15 +52,15 @@
       <!-- [ Main Content ] start -->
       <div class="row">
         <div class="col-xl-12 col-md-12">
-            <div class="card shadow-none border mb-0">
+            <div class="card shadow-none border">
                 <div class="card-body">
-                <h6 class="mb-3 fw-medium">Renewal Date</h6>
+                <h6 class="mb-3 fw-medium">Membership End Date</h6>
                 <h4 class="mb-3 fw-normal text-muted">{{ \Carbon\Carbon::parse(optional($user->memberships)->end_date)->format('d F, Y') }}</h4>
                 <a class="link-primary">
                     @php
                         $daysRemaining = \Carbon\Carbon::now()->diffInDays(\Carbon\Carbon::parse(optional($user->memberships)->end_date), false);
                     @endphp
-                    {{ $daysRemaining > 0 ? "$daysRemaining days till renewal" : "Membership expired" }}
+                    {{ $daysRemaining > 0 ? "$daysRemaining days till expected renewal" : "Membership expired" }}
                 </a>
             </div>
         </div>
