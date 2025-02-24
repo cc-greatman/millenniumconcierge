@@ -25,12 +25,13 @@
             </div>
             <div class="col-md-3">
                 <div class="btn btn-primary">
-                    <form action="{{ route('currency.change') }}" method="POST" id="currency-form">
+                    <form action="{{ route('currency.change') }}" method="POST" id="trip-type-form">
                         @csrf
                         <div style="margin-top: 10px !important; margin-left: 5px !important; margin-bottom:5px !important;">
                             <label for="currency">Create a New Trip</label>
                         </div>
                         <div class="dropdown-item">
+                            <input type="hidden" name="user" value="{{ $user->id }}">
                             <select name="trip_type" id="trip_type" onchange="document.getElementById('trip-type-form').submit();" class="form-select" style="width: 100%;">
                                 <option value="Commercial">Commercial Trip</option>
                                 <option value="Private Flight">Private Flight Trip</option>

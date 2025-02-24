@@ -380,4 +380,30 @@ class ViewController extends Controller
 
         return view('admin.trips.booking', compact('pageTitle', 'user'));
     }
+
+    public function switchView(Request $request) {
+
+        $validatedData = $request->validate([
+            'trip_type' => 'required',
+            'user' => 'required'
+        ]);
+
+        $trip_type = $validatedData['trip_type'];
+        $user = $validatedData['user'];
+
+        switch($trip_type) {
+            case 'Commercial':
+                return redirect()->route('admin.trips.create.new', $user);
+            case 'Private Flight':
+                return redirect()->route('admin.trips.create.new', $user);
+            case 'Yatch':
+                return redirect()->route('admin.trips.create.new', $user);
+            case 'Helicopter':
+                return redirect()->route('admin.trips.create.new', $user);
+            case 'Hotel':
+                return redirect()->route('admin.trips.create.hotel.new', $user);
+                default:
+                return redirect()->route('admin.dashboard.show');
+        }
+    }
 }
