@@ -8,8 +8,8 @@
         <!-- The opacity on the image is made with "data-overlay-dark="number". You can change it using the numbers 0-9. -->
         <div class="video-fullscreen-video" data-overlay-dark="6">
             <video playsinline="" autoplay="" loop="" muted="">
-                <source src="../video.mp4" type="video/mp4" autoplay="" loop="" muted="">
-                <source src="../video.webm" type="video/webm" autoplay="" loop="" muted="">
+                <source src="./frontend/videos/video.mp4" type="video/mp4" autoplay="" loop="" muted="">
+                <source src="./frontend/videos/video.webm" type="video/webm" autoplay="" loop="" muted="">
             </video>
         </div>
         <div class="v-middle caption overlay">
