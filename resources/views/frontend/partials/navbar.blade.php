@@ -21,7 +21,7 @@
                             <li><a href="{{ route('society') }}" class="dropdown-item @if(Route::is('society')) active @endif"><span>Millennium Society</span></a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link @if(Route::is('gallery')) active @endif" href="{{ route('gallery') }}">Calendar</a></li>
+                    <li class="nav-item"><a class="nav-link @if(Route::is('calendar')) active @endif" href="{{ route('calendar') }}">Calendar</a></li>
                     <li class="nav-item"><a class="nav-link @if(Route::is('contact')) active @endif" href="{{ route('contact') }}">Enquiry</a></li>
                 </ul>
                 <div class="butn-dark mt-20 mb-20"> <a href="{{ route('auth.login.show') }}"><span>Secure Access</span></a> </div>

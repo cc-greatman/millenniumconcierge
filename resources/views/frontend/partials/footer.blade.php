@@ -21,7 +21,7 @@
                             <li><a href="{{ route('home') }}">Home</a></li>
                             <li><a href="{{ route('about') }}">About</a></li>
                             <li><a href="{{ route('services') }}">Services</a></li>
-                            <li><a href="{{ route('gallery') }}">Gallery</a></li>
+                            <li><a href="{{ route('calendar') }}">Calendar</a></li>
                             <li><a href="{{ route('membership') }}">Membership</a></li>
                             <li><a href="{{ route('contact') }}">Enquiry</a></li>
                         </ul>
