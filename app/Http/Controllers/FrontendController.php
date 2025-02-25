@@ -48,10 +48,10 @@ class FrontendController extends Controller
         return view('frontend.enquiry', compact('pageTitle'));
     }
 
-    public function gallery() {
+    public function calendar() {
 
-        $pageTitle = "Picture Story || ". env('APP_NAME');
+        $pageTitle = "Events Calendar || ". env('APP_NAME');
 
-        return view('frontend.gallery', compact('pageTitle'));
+        return view('frontend.calendar', compact('pageTitle'));
     }
 }
