@@ -23,6 +23,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
     Route::get('/', 'FrontendController@index')->name('home');
     Route::get('about', 'FrontendController@about')->name('about');
     Route::get('services', 'FrontendController@services')->name('services');
+    Route::get('society', 'FrontendController@society')->name('society');
     Route::get('membership', 'FrontendController@membership')->name('membership');
     Route::get('enquiry', 'FrontendController@contact')->name('contact');
     Route::get('gallery', 'FrontendController@gallery')->name('gallery');

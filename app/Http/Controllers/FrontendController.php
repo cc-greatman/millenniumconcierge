@@ -27,6 +27,13 @@ class FrontendController extends Controller
         return view('frontend.services', compact('pageTitle'));
     }
 
+    public function society () {
+
+        $pageTitle = "Millennium Society";
+
+        return view('frontend.society', compact('pageTitle'));
+    }
+
     public function membership() {
 
         $pageTitle = "Membership || ". env('APP_NAME');
