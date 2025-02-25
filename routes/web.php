@@ -26,7 +26,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
     Route::get('society', 'FrontendController@society')->name('society');
     Route::get('membership', 'FrontendController@membership')->name('membership');
     Route::get('enquiry', 'FrontendController@contact')->name('contact');
-    Route::get('gallery', 'FrontendController@calendar')->name('calendar');
+    Route::get('calendar', 'FrontendController@calendar')->name('calendar');
 
     //-- Cron Routes
     Route::get('currency-rates', 'CronController@handle')->name('currency.rates');
