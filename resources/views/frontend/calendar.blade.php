@@ -30,7 +30,7 @@
             <div class="col-md-12">
                 <div class="owl-carousel owl-theme">
                     <div class="item">
-                        <div class="position-re o-hidden"> <img src="./frontend/img/news/1.jpg" alt="">
+                        <div class="position-re o-hidden"> <img src="{{ asset("../frontend/img/news/1.jpg") }}" alt="">
                             <div class="date">
                                 <a href="post.html"> <span>Dec</span> <i>02</i> </a>
                             </div>
@@ -42,7 +42,7 @@
                         </div>
                     </div>
                     <div class="item">
-                        <div class="position-re o-hidden"> <img src="./frontend/img/news/2.jpg" alt="">
+                        <div class="position-re o-hidden"> <img src="{{ asset("../frontend/img/news/2.jpg") }}" alt="">
                             <div class="date">
                                 <a href="post.html"> <span>Dec</span> <i>04</i> </a>
                             </div>
@@ -54,7 +54,7 @@
                         </div>
                     </div>
                     <div class="item">
-                        <div class="position-re o-hidden"> <img src="./frontend/img/news/3.jpg" alt="">
+                        <div class="position-re o-hidden"> <img src="{{ asset("../frontend/img/news/3.jpg") }}" alt="">
                             <div class="date">
                                 <a href="post.html"> <span>Dec</span> <i>06</i> </a>
                             </div>
@@ -66,7 +66,7 @@
                         </div>
                     </div>
                     <div class="item">
-                        <div class="position-re o-hidden"> <img src="./frontend/img/news/4.jpg" alt="">
+                        <div class="position-re o-hidden"> <img src="{{ asset("../frontend/img/news/4.jpg") }}" alt="">
                             <div class="date">
                                 <a href="post.html"> <span>Dec</span> <i>08</i> </a>
                             </div>
@@ -80,7 +80,7 @@
                     </div>
 
                     <div class="item">
-                        <div class="position-re o-hidden"> <img src="./frontend/img/news/6.jpg" alt="">
+                        <div class="position-re o-hidden"> <img src="{{ asset("../frontend/img/news/6.jpg") }}" alt="">
                             <div class="date">
                                 <a href="post.html"> <span>Dec</span> <i>08</i> </a>
                             </div>
@@ -92,7 +92,7 @@
                         </div>
                     </div>
                     <div class="item">
-                        <div class="position-re o-hidden"> <img src="./frontend/img/news/5.jpg" alt="">
+                        <div class="position-re o-hidden"> <img src="{{ asset("../frontend/img/news/5.jpg") }}" alt="">
                             <div class="date">
                                 <a href="post.html"> <span>Dec</span> <i>08</i> </a>
                             </div>
