@@ -30,7 +30,7 @@
             <div class="col-md-12">
                 <div class="owl-carousel owl-theme">
                     <div class="item">
-                        <div class="position-re o-hidden"> <img src="{{ asset("../frontend/img/news/1.jpg") }}" alt="">
+                        <div class="position-re"> <img src="{{ asset("../frontend/img/news/1.jpg") }}" alt="">
                             <div class="date">
                                 <a href="post.html"> <span>Dec</span> <i>02</i> </a>
                             </div>
