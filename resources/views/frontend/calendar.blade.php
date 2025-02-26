@@ -112,9 +112,7 @@
                 <!-- Pagination -->
                 <ul class="news-pagination-wrap align-center mb-30 mt-30">
                     <li><a href="news.html#"><i class="ti-angle-left"></i></a></li>
-                    <li><a href="news.html#">1</a></li>
-                    <li><a href="news.html#" class="active">2</a></li>
-                    <li><a href="news.html#">3</a></li>
+                    <li><a href="news.html#" class="active">1</a></li>
                     <li><a href="news.html#"><i class="ti-angle-right"></i></a></li>
                 </ul>
             </div>

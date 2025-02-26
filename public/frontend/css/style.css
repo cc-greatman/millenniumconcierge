@@ -464,6 +464,52 @@ blockquote cite:before {
     font-size: 20px;
 }
 
+/* pagination */
+.news-pagination-wrap {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+.news-pagination-wrap li {
+    display: inline-block;
+    margin: 0 5px;
+}
+.news-pagination-wrap li a {
+    background: transparent;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 37px;
+    text-align: center;
+    color: rgba(255,255,255,0.5);
+    font-weight: 400;
+    border: 1px solid rgba(102,102,102,0.1);
+    font-family: 'Barlow', sans-serif;
+    font-size: 16px;
+    border-radius: 100%;
+}
+.news-pagination-wrap li a i {
+    font-size: 11px;
+}
+.news-pagination-wrap li a:hover {
+    opacity: 1;
+    text-decoration: none;
+    background: transparent;
+    border: 1px solid #aa8453;
+    color: #aa8453;
+}
+.news-pagination-wrap li a.active {
+    background-color: transparent;
+    border: 1px solid #aa8453;
+    color: #aa8453;
+}
+@media screen and (max-width: 768px) {
+    .news-pagination-wrap {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+}
 
 /* ======= Helper style ======= */
 .mt-0 {
