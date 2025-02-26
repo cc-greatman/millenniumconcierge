@@ -15,7 +15,7 @@
         <div class="v-middle caption overlay">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-10 offset-md-1">
+                        <div class="col-md-10 offset-md-1" style="margin-top: 20px;">
                             <h4>The Millennium Society - for the one percent of the one percent</h4>
                             <h1 class="society">A curated world of luxury, privilege, and unparalleled access offering a gateway to a life of distinction and global prestige</h1>
                             <div class="butn-dark"> <a href="#" data-scroll-nav="1"><span>Apply for Membership</span></a> </div>

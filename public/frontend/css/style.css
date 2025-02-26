@@ -5955,6 +5955,9 @@ font-size: 15px;
         font-size: 45px;
         margin-bottom: 15px;
     }
+    .header .caption h1.society {
+        font-size: 11.5vw;
+    }
     .header .caption h3 {
         font-size: 30px;
         margin-bottom: 15px;
