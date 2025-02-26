@@ -51,10 +51,10 @@
                 </div>
             </div>
             <div class="col col-md-3 animate-box" data-animate-effect="fadeInUp">
-                <img src="img/rooms/8.jpg" alt="" class="mt-90 mb-30">
+                <img src="{{ asset("../frontend/img/rooms/8.jpg") }}" alt="" class="mt-90 mb-30">
             </div>
             <div class="col col-md-3 animate-box" data-animate-effect="fadeInUp">
-                <img src="img/rooms/2.jpg" alt="">
+                <img src="{{ asset("../frontend/img/rooms/2.jpg") }}" alt="">
             </div>
         </div>
     </div>
