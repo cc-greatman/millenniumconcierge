@@ -110,64 +110,7 @@
         </div>
     </div>
 </section>
-<!-- Video Gallery -->
-<section class="section-padding bg-darkblack">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-subtitle">Videos</div>
-                <div class="section-title">Video Story</div>
-            </div>
-            <!-- 2 columns -->
-            <div class="col-md-6">
-                <div class="vid-area mb-30">
-                    <div class="vid-icon"> <img src="{{ asset("../frontend/img/slider/2.jpg") }}" alt="YouTube">
-                        <a class="video-gallery-button vid" href="https://youtu.be/xh4GnTKFQso"> <span class="video-gallery-polygon">
-                                <i class="ti-control-play"></i>
-                            </span> </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="vid-area mb-30">
-                    <div class="vid-icon"> <img src="{{ asset("../frontend/img/slider/3.jpg") }}" alt="Vimeo">
-                        <a class="video-gallery-button vid" href="https://youtu.be/xh4GnTKFQso"> <span class="video-gallery-polygon">
-                                <i class="ti-control-play"></i>
-                            </span> </a>
-                    </div>
-                </div>
-            </div>
-            <!-- 3 columns -->
-            <div class="col-md-4">
-                <div class="vid-area mb-30">
-                    <div class="vid-icon"> <img src="{{ asset("../frontend/img/slider/4.jpg") }}" alt="YouTube">
-                        <a class="video-gallery-button vid" href="https://youtu.be/xh4GnTKFQso"> <span class="video-gallery-polygon">
-                                <i class="ti-control-play"></i>
-                            </span> </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="vid-area mb-30">
-                    <div class="vid-icon"> <img src="{{ asset("../frontend/img/slider/7.jpg") }}" alt="YouTube">
-                        <a class="video-gallery-button vid" href="https://youtu.be/xh4GnTKFQso"> <span class="video-gallery-polygon">
-                                <i class="ti-control-play"></i>
-                            </span> </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="vid-area mb-30">
-                    <div class="vid-icon"> <img src="{{ asset("../frontend/img/slider/1.jpg") }}" alt="YouTube">
-                        <a class="video-gallery-button vid" href="https://youtu.be/xh4GnTKFQso"> <span class="video-gallery-polygon">
-                                <i class="ti-control-play"></i>
-                            </span> </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+
 <!-- Booking Search -->
 <section class="section-padding bg-img bg-fixed" data-overlay-dark="3" data-background="{{ asset("../frontend/img/rooms/18.jpg") }}">
     <div class="container">
