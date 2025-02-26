@@ -304,6 +304,59 @@ blockquote cite:before {
     color: #aa8453;
 }
 
+/* ======= Facilties style ======= */
+.facilties .single-facility {
+    background: transparent;
+    padding: 30px 20px;
+    -webkit-transition: .5s;
+    transition: .5s;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 30px;
+    line-height: 1;
+    border: 1px solid #2b2b2b;
+}
+.facilties .single-facility h5 {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.facilties .single-facility:hover h5 {
+  color: #fff;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+/*
+.facilties .facility-shape:hover span {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+*/
+.facilties .single-facility span {
+  font-size: 45px;
+  color: #aa8453;
+  line-height: 1;
+  margin-bottom: 20px;
+  display: inline-block;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+.facilties .single-facility p {
+    margin: 0;
+    color: rgba(255,255,255,0.5);
+}
+.facilties .single-facility .facility-shape {
+    position: absolute;
+    opacity: 0.02;
+    z-index: -1;
+    bottom: 15px;
+    left: 120px;
+}
+.facilties .single-facility .facility-shape span {
+  font-size: 140px;
+  color: #222;
+}
+
 
 /* ======= Helper style ======= */
 .mt-0 {
