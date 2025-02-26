@@ -51,7 +51,7 @@
                 </div>
             </div>
             <div class="col col-md-6 animate-box" data-animate-effect="fadeInUp">
-                <img src="{{ asset("../frontend/img/about-5.jpg") }}" alt="">
+                <img src="{{ asset("../frontend/img/about-9.jpg") }}" alt="">
             </div>
         </div>
     </div>
