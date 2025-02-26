@@ -480,84 +480,142 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="owl-carousel owl-theme">
-                    <div class="item">
-                        <div class="position-re o-hidden"> <img src="img/news/1.jpg" alt="">
-                            <div class="date">
-                                <a href="post.html"> <span>Dec</span> <i>02</i> </a>
+                <div class="owl-carousel owl-theme owl-loaded owl-drag">
+                    <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-966px, 0px, 0px); transition: all; width: 3864px;"><div class="owl-item cloned" style="width: 292px; margin-right: 30px;"><div class="item">
+                            <div class="position-re o-hidden"> <img src="img/news/4.jpg" alt="">
+                                <div class="date">
+                                    <a href="post.html"> <span>Dec</span> <i>08</i> </a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="con"> <span class="category">
-                                <a href="news.html">Restaurant</a>
-                            </span>
-                            <h5><a href="post.html">Historic restaurant renovated</a></h5>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="position-re o-hidden"> <img src="img/news/2.jpg" alt="">
-                            <div class="date">
-                                <a href="post.html"> <span>Dec</span> <i>04</i> </a>
+                            <div class="con"> 
+                                <span class="category">
+                                    <a href="news.html">Health</a>
+                                </span>
+                                <h5><a href="post.html">Weight Loss with Fitness Health Club</a></h5>
                             </div>
-                        </div>
-                        <div class="con"> <span class="category">
-                                <a href="news.html">Spa</a>
-                            </span>
-                            <h5><a href="post.html">Benefits of Spa Treatments</a></h5>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="position-re o-hidden"> <img src="img/news/3.jpg" alt="">
-                            <div class="date">
-                                <a href="post.html"> <span>Dec</span> <i>06</i> </a>
+                        </div></div><div class="owl-item cloned" style="width: 292px; margin-right: 30px;"><div class="item">
+                            <div class="position-re o-hidden"> <img src="img/news/6.jpg" alt="">
+                                <div class="date">
+                                    <a href="post.html"> <span>Dec</span> <i>08</i> </a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="con"> <span class="category">
-                                <a href="news.html">Bathrooms</a>
-                            </span>
-                            <h5><a href="post.html">Hotel Bathroom Collections</a></h5>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="position-re o-hidden"> <img src="img/news/4.jpg" alt="">
-                            <div class="date">
-                                <a href="post.html"> <span>Dec</span> <i>08</i> </a>
+                            <div class="con"> <span class="category">
+                                    <a href="news.html">Design</a>
+                                </span>
+                                <h5><a href="post.html">Retro Lighting Design in The Hotels</a></h5>
                             </div>
-                        </div>
-                        <div class="con">
-                            <span class="category">
-                                <a href="news.html">Health</a>
-                            </span>
-                            <h5><a href="post.html">Weight Loss with Fitness Health Club</a></h5>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="position-re o-hidden"> <img src="img/news/6.jpg" alt="">
-                            <div class="date">
-                                <a href="post.html"> <span>Dec</span> <i>08</i> </a>
+                        </div></div><div class="owl-item cloned" style="width: 292px; margin-right: 30px;"><div class="item">
+                            <div class="position-re o-hidden"> <img src="img/news/5.jpg" alt="">
+                                <div class="date">
+                                    <a href="post.html"> <span>Dec</span> <i>08</i> </a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="con"> <span class="category">
-                                <a href="news.html">Design</a>
-                            </span>
-                            <h5><a href="post.html">Retro Lighting Design in The Hotels</a></h5>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="position-re o-hidden"> <img src="img/news/5.jpg" alt="">
-                            <div class="date">
-                                <a href="post.html"> <span>Dec</span> <i>08</i> </a>
+                            <div class="con"> <span class="category">
+                                    <a href="news.html">Health</a>
+                                </span>
+                                <h5><a href="post.html">Benefits of Swimming for Your Health</a></h5>
                             </div>
-                        </div>
-                        <div class="con"> <span class="category">
-                                <a href="news.html">Health</a>
-                            </span>
-                            <h5><a href="post.html">Benefits of Swimming for Your Health</a></h5>
-                        </div>
-                    </div>
-
-
-                </div>
+                        </div></div><div class="owl-item active" style="width: 292px; margin-right: 30px;"><div class="item">
+                            <div class="position-re o-hidden"> <img src="img/news/1.jpg" alt="">
+                                <div class="date">
+                                    <a href="post.html"> <span>Dec</span> <i>02</i> </a>
+                                </div>
+                            </div>
+                            <div class="con"> <span class="category">
+                                    <a href="news.html">Restaurant</a>
+                                </span>
+                                <h5><a href="post.html">Historic restaurant renovated</a></h5>
+                            </div>
+                        </div></div><div class="owl-item active" style="width: 292px; margin-right: 30px;"><div class="item">
+                            <div class="position-re o-hidden"> <img src="img/news/2.jpg" alt="">
+                                <div class="date">
+                                    <a href="post.html"> <span>Dec</span> <i>04</i> </a>
+                                </div>
+                            </div>
+                            <div class="con"> <span class="category">
+                                    <a href="news.html">Spa</a>
+                                </span>
+                                <h5><a href="post.html">Benefits of Spa Treatments</a></h5>
+                            </div>
+                        </div></div><div class="owl-item active" style="width: 292px; margin-right: 30px;"><div class="item">
+                            <div class="position-re o-hidden"> <img src="img/news/3.jpg" alt="">
+                                <div class="date">
+                                    <a href="post.html"> <span>Dec</span> <i>06</i> </a>
+                                </div>
+                            </div>
+                            <div class="con"> <span class="category">
+                                    <a href="news.html">Bathrooms</a>
+                                </span>
+                                <h5><a href="post.html">Hotel Bathroom Collections</a></h5>
+                            </div>
+                        </div></div><div class="owl-item" style="width: 292px; margin-right: 30px;"><div class="item">
+                            <div class="position-re o-hidden"> <img src="img/news/4.jpg" alt="">
+                                <div class="date">
+                                    <a href="post.html"> <span>Dec</span> <i>08</i> </a>
+                                </div>
+                            </div>
+                            <div class="con"> 
+                                <span class="category">
+                                    <a href="news.html">Health</a>
+                                </span>
+                                <h5><a href="post.html">Weight Loss with Fitness Health Club</a></h5>
+                            </div>
+                        </div></div><div class="owl-item" style="width: 292px; margin-right: 30px;"><div class="item">
+                            <div class="position-re o-hidden"> <img src="img/news/6.jpg" alt="">
+                                <div class="date">
+                                    <a href="post.html"> <span>Dec</span> <i>08</i> </a>
+                                </div>
+                            </div>
+                            <div class="con"> <span class="category">
+                                    <a href="news.html">Design</a>
+                                </span>
+                                <h5><a href="post.html">Retro Lighting Design in The Hotels</a></h5>
+                            </div>
+                        </div></div><div class="owl-item" style="width: 292px; margin-right: 30px;"><div class="item">
+                            <div class="position-re o-hidden"> <img src="img/news/5.jpg" alt="">
+                                <div class="date">
+                                    <a href="post.html"> <span>Dec</span> <i>08</i> </a>
+                                </div>
+                            </div>
+                            <div class="con"> <span class="category">
+                                    <a href="news.html">Health</a>
+                                </span>
+                                <h5><a href="post.html">Benefits of Swimming for Your Health</a></h5>
+                            </div>
+                        </div></div><div class="owl-item cloned" style="width: 292px; margin-right: 30px;"><div class="item">
+                            <div class="position-re o-hidden"> <img src="img/news/1.jpg" alt="">
+                                <div class="date">
+                                    <a href="post.html"> <span>Dec</span> <i>02</i> </a>
+                                </div>
+                            </div>
+                            <div class="con"> <span class="category">
+                                    <a href="news.html">Restaurant</a>
+                                </span>
+                                <h5><a href="post.html">Historic restaurant renovated</a></h5>
+                            </div>
+                        </div></div><div class="owl-item cloned" style="width: 292px; margin-right: 30px;"><div class="item">
+                            <div class="position-re o-hidden"> <img src="img/news/2.jpg" alt="">
+                                <div class="date">
+                                    <a href="post.html"> <span>Dec</span> <i>04</i> </a>
+                                </div>
+                            </div>
+                            <div class="con"> <span class="category">
+                                    <a href="news.html">Spa</a>
+                                </span>
+                                <h5><a href="post.html">Benefits of Spa Treatments</a></h5>
+                            </div>
+                        </div></div><div class="owl-item cloned" style="width: 292px; margin-right: 30px;"><div class="item">
+                            <div class="position-re o-hidden"> <img src="img/news/3.jpg" alt="">
+                                <div class="date">
+                                    <a href="post.html"> <span>Dec</span> <i>06</i> </a>
+                                </div>
+                            </div>
+                            <div class="con"> <span class="category">
+                                    <a href="news.html">Bathrooms</a>
+                                </span>
+                                <h5><a href="post.html">Hotel Bathroom Collections</a></h5>
+                            </div>
+                        </div></div></div></div><div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><span class="lnr ti-angle-left"></span></button><button type="button" role="presentation" class="owl-next"><span class="lnr ti-angle-right"></span></button></div><div class="owl-dots disabled"></div></div>
             </div>
         </div>
     </div>
