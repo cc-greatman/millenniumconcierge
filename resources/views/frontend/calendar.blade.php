@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 caption text-center">
-                <h1>Our Events</h1>
+                <h1>Our Events Calendar</h1>
             </div>
         </div>
     </div>
@@ -17,61 +17,106 @@
     </a>
 </div>
 
-<!-- Image Gallery -->
+<!-- News  -->
 <section class="news section-padding">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <div class="section-subtitle">Calendar</div>
-                <div class="section-title">Events Calendar</div>
+            <div class="col-md-4 mb-30">
+                <div class="item">
+                        <div class="position-re o-hidden"> <img src="{{ asset("../frontend/img/news/1.jpg") }}" alt="">
+                            <div class="date">
+                                <a href="post.html"> <span>Dec</span> <i>02</i> </a>
+                            </div>
+                        </div>
+                        <div class="con"> <span class="category">
+                                <a href="news.html">Restaurant</a>
+                            </span>
+                            <h5><a href="post.html">Historic restaurant renovated</a></h5>
+                        </div>
+                    </div>
+            </div>
+            <div class="col-md-4 mb-30">
+                <div class="item">
+                        <div class="position-re o-hidden"> <img src="{{ asset("../frontend/img/news/2.jpg") }}" alt="">
+                            <div class="date">
+                                <a href="post.html"> <span>Dec</span> <i>04</i> </a>
+                            </div>
+                        </div>
+                        <div class="con"> <span class="category">
+                                <a href="news.html">Spa</a>
+                            </span>
+                            <h5><a href="post.html">Benefits of Spa Treatments</a></h5>
+                        </div>
+                    </div>
+            </div>
+            <div class="col-md-4 mb-30">
+                <div class="item">
+                        <div class="position-re o-hidden"> <img src="{{ asset("../frontend/img/news/3.jpg") }}" alt="">
+                            <div class="date">
+                                <a href="post.html"> <span>Dec</span> <i>06</i> </a>
+                            </div>
+                        </div>
+                        <div class="con"> <span class="category">
+                                <a href="news.html">Bathrooms</a>
+                            </span>
+                            <h5><a href="post.html">Hotel Bathroom Collections</a></h5>
+                        </div>
+                    </div>
+            </div>
+            <div class="col-md-4 mb-30">
+                <div class="item">
+                        <div class="position-re o-hidden"> <img src="{{ asset("../frontend/img/news/4.jpg") }}" alt="">
+                            <div class="date">
+                                <a href="post.html"> <span>Dec</span> <i>08</i> </a>
+                            </div>
+                        </div>
+                        <div class="con"> 
+                            <span class="category">
+                                <a href="news.html">Health</a>
+                            </span>
+                            <h5><a href="post.html">Weight Loss with Fitness Health Club</a></h5>
+                        </div>
+                    </div>
+            </div>
+            <div class="col-md-4 mb-30">
+                <div class="item">
+                        <div class="position-re o-hidden"> <img src="{{ asset("../frontend/img/news/6.jpg") }}" alt="">
+                            <div class="date">
+                                <a href="post.html"> <span>Dec</span> <i>08</i> </a>
+                            </div>
+                        </div>
+                        <div class="con"> <span class="category">
+                                <a href="news.html">Design</a>
+                            </span>
+                            <h5><a href="post.html">Retro Lighting Design in The Hotels</a></h5>
+                        </div>
+                    </div>
+            </div>
+            <div class="col-md-4 mb-30">
+                <div class="item">
+                        <div class="position-re o-hidden"> <img src="{{ asset("../frontend/img/news/5.jpg") }}" alt="">
+                            <div class="date">
+                                <a href="post.html"> <span>Dec</span> <i>08</i> </a>
+                            </div>
+                        </div>
+                        <div class="con"> <span class="category">
+                                <a href="news.html">Health</a>
+                            </span>
+                            <h5><a href="post.html">Benefits of Swimming for Your Health</a></h5>
+                        </div>
+                    </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
-                <div class="owl-carousel owl-theme owl-loaded owl-drag">
-                    <div class="owl-item" style="width: 351.333px; margin-right: 30px;">
-                        <div class="item">
-                            <div class="position-re o-hidden"> <img src="{{ asset("../frontend/img/news/1.jpg") }}" alt="">
-                                <div class="date">
-                                    <a href="post.html"> <span>Dec</span> <i>02</i> </a>
-                                </div>
-                            </div>
-                            <div class="con"> <span class="category">
-                                    <a href="news.html">Restaurant</a>
-                                </span>
-                                <h5><a href="post.html">Historic restaurant renovated</a></h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="owl-item" style="width: 351.333px; margin-right: 30px;">
-                        <div class="item">
-                            <div class="position-re o-hidden"> <img src="{{ asset("../frontend/img/news/2.jpg") }}" alt="">
-                                <div class="date">
-                                    <a href="post.html"> <span>Dec</span> <i>04</i> </a>
-                                </div>
-                            </div>
-                            <div class="con"> <span class="category">
-                                    <a href="news.html">Spa</a>
-                                </span>
-                                <h5><a href="post.html">Benefits of Spa Treatments</a></h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="owl-item" style="width: 351.333px; margin-right: 30px;">
-                        <div class="item">
-                            <div class="position-re o-hidden"> <img src="{{ asset("../frontend/img/news/3.jpg") }}" alt="">
-                                <div class="date">
-                                    <a href="post.html"> <span>Dec</span> <i>06</i> </a>
-                                </div>
-                            </div>
-                            <div class="con"> <span class="category">
-                                    <a href="news.html">Bathrooms</a>
-                                </span>
-                                <h5><a href="post.html">Hotel Bathroom Collections</a></h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-md-12 text-center">
+                <!-- Pagination -->
+                <ul class="news-pagination-wrap align-center mb-30 mt-30">
+                    <li><a href="news.html#"><i class="ti-angle-left"></i></a></li>
+                    <li><a href="news.html#">1</a></li>
+                    <li><a href="news.html#" class="active">2</a></li>
+                    <li><a href="news.html#">3</a></li>
+                    <li><a href="news.html#"><i class="ti-angle-right"></i></a></li>
+                </ul>
             </div>
         </div>
     </div>
