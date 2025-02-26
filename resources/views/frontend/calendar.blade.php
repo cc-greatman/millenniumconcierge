@@ -37,7 +37,7 @@
             </div>
             <div class="col-md-4 mb-30">
                 <div class="item">
-                        <div class="position-re o-hidden"> <img src="{{ asset("../frontend/img/news/6.jpg") }}" alt="">
+                        <div class="position-re o-hidden"> <img src="{{ asset("../frontend/img/news/10.jpg") }}" alt="">
                             <div class="date">
                                 <a href="javascript:void(0);"> <span>Nov</span> <i>2025</i> </a>
                             </div>
