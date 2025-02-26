@@ -1265,7 +1265,7 @@ color: #aa8453;
     line-height: 1.2em;
     -webkit-animation-delay: .6s;
     animation-delay: .6s;
-    background-image: linear-gradient(to right, #DFBF81, #BF9A53)
+    background-image: linear-gradient(to right, #DFBF81, #BF9A53);
     font-weight: 400;
     letter-spacing: 1px;
 }
