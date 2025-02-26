@@ -93,6 +93,31 @@
         </div>
     </div>
 </section>
+<!-- About -->
+<section class="about section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col col-md-3 animate-box" data-animate-effect="fadeInUp">
+                <img src="{{ asset("../frontend/img/about-9.jpg") }}" alt="">
+            </div>
+            <div class="col col-md-3 animate-box" data-animate-effect="fadeInUp">
+                <img src="{{ asset("../frontend/img/about-9.jpg") }}" alt="">
+            </div>
+            <div class="col-md-6 mb-30 animate-box" data-animate-effect="fadeInUp">
+                <div class="section-subtitle">Millennium Society - <em style="text-transform: lowercase !important;">for the one percent of the one percent</em></div>
+                <div class="section-title">A Portal to the Extraordinary </div>
+                <p><em style="font-weight: 700 !important;">The Millennium Society</em> stands as the epitome of prestige, brought to life by Millennium Concierge Limited, a brand celebrated for its impeccable global standards. Reserved for the elite, our society grants its members access to a lifestyle where every detail is meticulously curated to reflect refinement, convenience, comfort and grandeur. </p>
+                <p>From bespoke travel arrangements to private aviation and from world-class event execution to personal lifestyle management, every service within <em style="font-weight: 700 !important;">The Millennium Society</em> reflects our commitment to excellence and meticulous attention to detail. </p>
+                <!-- call -->
+                <div class="reservations">
+                    <div class="text">
+                        <p>Where Exclusivity Meets Excellence</p> <a href="javascript:void(0);" style="cursor: none !important;">“A curated world of luxury, privilege, and unparalleled access offering a gateway to a life of distinction and global prestige"</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <!-- Rooms 
 <section class="rooms1 section-padding bg-darkblack" data-scroll-index="1">
     <div class="container">
