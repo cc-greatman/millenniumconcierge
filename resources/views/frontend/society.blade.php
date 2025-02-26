@@ -13,7 +13,7 @@
             </video>
         </div>
         <div class="v-middle caption overlay">
-                <div class="container" style="margin-top: 50px;">
+                <div class="container" style="margin-top: 50px; margin-bottom: 50px;">
                     <div class="row">
                         <div class="col-md-10 offset-md-1">
                             <h4>The Millennium Society - for the one percent of the one percent</h4>
