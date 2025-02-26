@@ -39,7 +39,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 mb-30 animate-box" data-animate-effect="fadeInUp">
-                <div class="section-subtitle">The Millennium Society - <em style="font-variant-caps: all-petite-caps">for the one percent of the one percent</em> </div>
+                <div class="section-subtitle">The Millennium Society - <em style="text-transform: lowercase !important;">for the one percent of the one percent</em> </div>
                 <div class="section-title">Enjoy a Luxury Experience</div>
                 <p>Welcome to the best five-star deluxe hotel in New York. Hotel elementum sesue the aucan vestibulum aliquam justo in sapien rutrum volutpat. Donec in quis the pellentesque velit. Donec id velit ac arcu posuere blane.</p>
                 <p>Hotel ut nisl quam nestibulum ac quam nec odio elementum sceisue the aucan ligula. Orci varius natoque penatibus et magnis dis parturient monte nascete ridiculus mus nellentesque habitant morbine.</p>
