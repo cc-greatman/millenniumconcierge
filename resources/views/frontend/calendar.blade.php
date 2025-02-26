@@ -18,7 +18,7 @@
 </div>
 
 <!-- Image Gallery -->
-<section class="news section-padding bg-darkblack">
+<section class="news section-padding">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
