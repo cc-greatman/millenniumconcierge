@@ -97,7 +97,7 @@
 <section class="about section-padding">
     <div class="container">
         <div class="row">
-            <div class="col col-md-3 animate-box" data-animate-effect="fadeInUp">
+            <div class="col col-md-6 animate-box" data-animate-effect="fadeInUp">
                 <img src="{{ asset("../frontend/img/about-9.jpg") }}" alt="">
             </div>
             <div class="col-md-6 mb-30 animate-box" data-animate-effect="fadeInUp">
@@ -470,7 +470,7 @@
     </div>
 </section>
 <!-- News -->
-<section class="news2 section-padding bg-darkblack">
+<section class="news section-padding bg-darkblack">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -480,7 +480,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="">
+                <div class="owl-carousel owl-theme">
                     <div class="item">
                         <div class="position-re o-hidden"> <img src="img/news/1.jpg" alt="">
                             <div class="date">
