@@ -43,7 +43,7 @@
                             </div>
                         </div>
                         <div class="con"> <span class="category">
-                                <a href="javascript:void(0);">Thailand</a>
+                                <a href="javascript:void(0);">Bangkok, Thailand</a>
                             </span>
                             <h5><a href="javascript:void(0);">Asian Pacific Business Roundtable</a></h5>
                         </div>
