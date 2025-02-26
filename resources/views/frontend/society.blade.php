@@ -18,7 +18,7 @@
                         <div class="col-md-10 offset-md-1" style="padding-top: 40px !important;">
                             <h1 class="society">The embodiment of sophistication, offering
                                 unparalleled access to a world of luxury lifestyle and timeless elegance</h1>
-                            <div class="butn-dark"> <a href="#" data-scroll-nav="1"><span>Apply for Membership</span></a> </div>
+                            <div class="butn-light"> <a href="#" data-scroll-nav="1"><span>Apply for Membership</span></a> </div>
                         </div>
                     </div>
                 </div>
