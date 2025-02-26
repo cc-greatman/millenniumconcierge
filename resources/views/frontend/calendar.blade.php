@@ -29,40 +29,46 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="owl-carousel owl-theme owl-loaded owl-drag">
-                    <div class="item">
-                        <div class="position-re o-hidden"> <img src="{{ asset("../frontend/img/news/1.jpg") }}" alt="">
-                            <div class="date">
-                                <a href="post.html"> <span>Dec</span> <i>02</i> </a>
+                    <div class="owl-item" style="width: 351.333px; margin-right: 30px;">
+                        <div class="item">
+                            <div class="position-re o-hidden"> <img src="{{ asset("../frontend/img/news/1.jpg") }}" alt="">
+                                <div class="date">
+                                    <a href="post.html"> <span>Dec</span> <i>02</i> </a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="con"> <span class="category">
-                                <a href="news.html">Restaurant</a>
-                            </span>
-                            <h5><a href="post.html">Historic restaurant renovated</a></h5>
+                            <div class="con"> <span class="category">
+                                    <a href="news.html">Restaurant</a>
+                                </span>
+                                <h5><a href="post.html">Historic restaurant renovated</a></h5>
+                            </div>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="position-re o-hidden"> <img src="{{ asset("../frontend/img/news/2.jpg") }}" alt="">
-                            <div class="date">
-                                <a href="post.html"> <span>Dec</span> <i>04</i> </a>
+                    <div class="owl-item" style="width: 351.333px; margin-right: 30px;">
+                        <div class="item">
+                            <div class="position-re o-hidden"> <img src="{{ asset("../frontend/img/news/2.jpg") }}" alt="">
+                                <div class="date">
+                                    <a href="post.html"> <span>Dec</span> <i>04</i> </a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="con"> <span class="category">
-                                <a href="news.html">Spa</a>
-                            </span>
-                            <h5><a href="post.html">Benefits of Spa Treatments</a></h5>
+                            <div class="con"> <span class="category">
+                                    <a href="news.html">Spa</a>
+                                </span>
+                                <h5><a href="post.html">Benefits of Spa Treatments</a></h5>
+                            </div>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="position-re o-hidden"> <img src="{{ asset("../frontend/img/news/3.jpg") }}" alt="">
-                            <div class="date">
-                                <a href="post.html"> <span>Dec</span> <i>06</i> </a>
+                    <div class="owl-item" style="width: 351.333px; margin-right: 30px;">
+                        <div class="item">
+                            <div class="position-re o-hidden"> <img src="{{ asset("../frontend/img/news/3.jpg") }}" alt="">
+                                <div class="date">
+                                    <a href="post.html"> <span>Dec</span> <i>06</i> </a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="con"> <span class="category">
-                                <a href="news.html">Bathrooms</a>
-                            </span>
-                            <h5><a href="post.html">Hotel Bathroom Collections</a></h5>
+                            <div class="con"> <span class="category">
+                                    <a href="news.html">Bathrooms</a>
+                                </span>
+                                <h5><a href="post.html">Hotel Bathroom Collections</a></h5>
+                            </div>
                         </div>
                     </div>
                 </div>
