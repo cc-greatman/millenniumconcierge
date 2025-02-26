@@ -16,7 +16,6 @@
                 <div class="container" style="margin-top: 50px; margin-bottom: 50px;">
                     <div class="row">
                         <div class="col-md-10 offset-md-1" style="padding-top: 20px;">
-                            <h4>The Millennium Society - for the one percent of the one percent</h4>
                             <h1 class="society">The embodiment of sophistication, offering
                                 unparalleled access to a world of luxury lifestyle and timeless elegance</h1>
                             <div class="butn-dark"> <a href="#" data-scroll-nav="1"><span>Apply for Membership</span></a> </div>
