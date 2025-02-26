@@ -23,9 +23,9 @@
                                 <i class="star-rating"></i>
                                 <i class="star-rating"></i>
                             </span>
-                            <h4>Luxury Hotel & Best Resort</h4>
+                            <h4>A curated world of luxury, privilege, and unparalleled access offering a gateway to a life of distinction and global prestige</h4>
                             <h1>Enjoy a Luxury Experience</h1>
-                            <div class="butn-dark"> <a href="#" data-scroll-nav="1"><span>Rooms & Suites</span></a> </div>
+                            <div class="butn-dark"> <a href="#" data-scroll-nav="1"><span>Apply for Membership</span></a> </div>
                         </div>
                     </div>
                 </div>
