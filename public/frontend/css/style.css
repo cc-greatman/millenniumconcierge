@@ -1269,6 +1269,11 @@ color: #aa8453;
     font-weight: 400;
     letter-spacing: 1px;
 }
+
+.header .caption h1.society {
+    font-size: 6vw;
+}
+
 .header .caption h3 {
     position: relative;
     margin-bottom: 15px;
