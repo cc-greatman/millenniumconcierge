@@ -302,7 +302,7 @@
                 <div class="single-facility animate-box" data-animate-effect="fadeInUp">
                     <span class="flaticon-bed"></span>
                     <h5>Top Luxury Services</h5>
-                    <p> From private aviation to bespoke lifestyle management, every need is fulfilled with precision and discretion.</p>
+                    <p> From private aviation to lifestyle management, every need is met with precision and discretion.</p>
                     <div class="facility-shape"> <span class="flaticon-bed"></span> </div>
                 </div>
             </div>
