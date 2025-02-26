@@ -16,8 +16,7 @@
                 <div class="container" style="margin-top: 50px; margin-bottom: 50px !important;">
                     <div class="row">
                         <div class="col-md-10 offset-md-1" style="padding-top: 40px !important;">
-                            <h1 class="society">The embodiment of sophistication, offering
-                                unparalleled access to a world of luxury lifestyle and timeless elegance</h1>
+                            <h1 class="society">A sanctuary of privilege crafted for those who redefine success</h1>
                             <div class="butn-light"> <a href="#" data-scroll-nav="1"><span>Apply for Membership</span></a> </div>
                         </div>
                     </div>
@@ -26,7 +25,7 @@
     </div>
     <!-- slider reservation -->
     <div class="reservation">
-        <a href="tel:8551004444">
+        <a href="javascript:void(0);">
             <div class="icon d-flex justify-content-center align-items-center">
                 <i class="flaticon-call"></i>
             </div>
@@ -52,6 +51,44 @@
             </div>
             <div class="col col-md-6 animate-box" data-animate-effect="fadeInUp">
                 <img src="{{ asset("../frontend/img/about-9.jpg") }}" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Facilties -->
+<section class="facilties section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-subtitle">Exclusive Benefits</div>
+                <div class="section-title">Experiences That Inspire</div>
+                <p>Membership in The Millennium Society offers access to a suite of exceptional privileges:</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="single-facility animate-box" data-animate-effect="fadeInUp">
+                    <span class="flaticon-world"></span>
+                    <h5>A World-Class Network</h5>
+                    <p>Connect with a select circle of like-minded leaders, innovators, and visionaries.</p>
+                    <div class="facility-shape"> <span class="flaticon-world"></span> </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="single-facility animate-box" data-animate-effect="fadeInUp">
+                    <span class="flaticon-bed"></span>
+                    <h5>Top Luxury Services</h5>
+                    <p> From private aviation to lifestyle management, every need is met with care.</p>
+                    <div class="facility-shape"> <span class="flaticon-bed"></span> </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="single-facility animate-box" data-animate-effect="fadeInUp">
+                    <span class="flaticon-breakfast"></span>
+                    <h5>Elite Experiences</h5>
+                    <p>Savor tailored journeys and exclusive events designed to elevate your lifestyle.</p>
+                    <div class="facility-shape"> <span class="flaticon-breakfast"></span> </div>
+                </div>
             </div>
         </div>
     </div>
@@ -278,44 +315,6 @@
 
             </div>
         </div>
-</section>
- Facilties -->
-<section class="facilties section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-subtitle">Exclusive Benefits</div>
-                <div class="section-title">Experiences That Inspire</div>
-                <p>Membership in The Millennium Society offers access to a suite of exceptional privileges:</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="single-facility animate-box" data-animate-effect="fadeInUp">
-                    <span class="flaticon-world"></span>
-                    <h5>A World-Class Network</h5>
-                    <p>Connect with a select circle of like-minded leaders, innovators, and visionaries.</p>
-                    <div class="facility-shape"> <span class="flaticon-world"></span> </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="single-facility animate-box" data-animate-effect="fadeInUp">
-                    <span class="flaticon-bed"></span>
-                    <h5>Top Luxury Services</h5>
-                    <p> From private aviation to lifestyle management, every need is met with care.</p>
-                    <div class="facility-shape"> <span class="flaticon-bed"></span> </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="single-facility animate-box" data-animate-effect="fadeInUp">
-                    <span class="flaticon-breakfast"></span>
-                    <h5>Elite Experiences</h5>
-                    <p>Savor tailored journeys and exclusive events designed to elevate your lifestyle.</p>
-                    <div class="facility-shape"> <span class="flaticon-breakfast"></span> </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </section>
 <!-- Testiominals -->
 <section class="testimonials">
