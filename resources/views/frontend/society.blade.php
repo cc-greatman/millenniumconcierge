@@ -50,11 +50,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col col-md-3 animate-box" data-animate-effect="fadeInUp">
+            <div class="col col-md-6 animate-box" data-animate-effect="fadeInUp">
                 <img src="{{ asset("../frontend/img/rooms/0.jpg") }}" alt="" class="mt-90 mb-30">
-            </div>
-            <div class="col col-md-3 animate-box" data-animate-effect="fadeInUp">
-                <img src="{{ asset("../frontend/img/about-5.jpg") }}" alt="">
             </div>
         </div>
     </div>
