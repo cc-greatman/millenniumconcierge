@@ -1266,6 +1266,9 @@ color: #aa8453;
     -webkit-animation-delay: .6s;
     animation-delay: .6s;
     background-image: linear-gradient(to right, #DFBF81, #BF9A53);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     font-weight: 400;
     letter-spacing: 1px;
 }
