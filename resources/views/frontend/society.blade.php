@@ -13,9 +13,9 @@
             </video>
         </div>
         <div class="v-middle caption overlay">
-                <div class="container" style="margin-top: 50px; margin-bottom: 50px;">
+                <div class="container" style="margin-top: 50px; margin-bottom: 50px !important;">
                     <div class="row">
-                        <div class="col-md-10 offset-md-1" style="padding-top: 20px;">
+                        <div class="col-md-10 offset-md-1" style="padding-top: 40px !important;">
                             <h1 class="society">The embodiment of sophistication, offering
                                 unparalleled access to a world of luxury lifestyle and timeless elegance</h1>
                             <div class="butn-dark"> <a href="#" data-scroll-nav="1"><span>Apply for Membership</span></a> </div>
