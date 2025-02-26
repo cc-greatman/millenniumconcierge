@@ -39,15 +39,14 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 mb-30 animate-box" data-animate-effect="fadeInUp">
-                <div class="section-subtitle">The Millennium Society - <em style="text-transform: lowercase !important;">for the one percent of the one percent</em> </div>
-                <div class="section-title">Enjoy a Luxury Experience</div>
-                <p>Welcome to the best five-star deluxe hotel in New York. Hotel elementum sesue the aucan vestibulum aliquam justo in sapien rutrum volutpat. Donec in quis the pellentesque velit. Donec id velit ac arcu posuere blane.</p>
-                <p>Hotel ut nisl quam nestibulum ac quam nec odio elementum sceisue the aucan ligula. Orci varius natoque penatibus et magnis dis parturient monte nascete ridiculus mus nellentesque habitant morbine.</p>
+                <div class="section-subtitle">Millennium Society - <em style="text-transform: lowercase !important;">for the one percent of the one percent</em></div>
+                <div class="section-title">A Portal to the Extraordinary </div>
+                <p>The Millennium Society stands as the epitome of prestige, brought to life by Millennium Concierge Limited, a brand celebrated for its impeccable global standards. Reserved for the elite, our society grants its members access to a lifestyle where every detail is meticulously curated to reflect refinement, convenience, comfort and grandeur. </p>
+                <p>From bespoke travel arrangements to private aviation and from world-class event execution to personal lifestyle management, every service within <em>The Millennium Society</em> reflects our commitment to excellence and meticulous attention to detail. </p>
                 <!-- call -->
                 <div class="reservations">
-                    <div class="icon"><span class="flaticon-call"></span></div>
                     <div class="text">
-                        <p>Reservation</p> <a href="tel:855-100-4444">855 100 4444</a>
+                        <p>The Millennium Society</p> <a href="javascript:void(0);" style="cursor: none !important;">“A curated world of luxury, privilege, and unparalleled access offering a gateway to a life of distinction and global prestige</a>
                     </div>
                 </div>
             </div>
