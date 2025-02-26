@@ -97,11 +97,19 @@
 <section class="about section-padding">
     <div class="container">
         <div class="row">
-            <div class="col col-md-3 animate-box" data-animate-effect="fadeInUp">
-                <img src="{{ asset("../frontend/img/about-9.jpg") }}" alt="">
-            </div>
-            <div class="col col-md-3 animate-box" data-animate-effect="fadeInUp">
-                <img src="{{ asset("../frontend/img/about-9.jpg") }}" alt="">
+            <div class="col col-md-6">
+                <div class="col col-md-3 animate-box" data-animate-effect="fadeInUp">
+                    <img src="{{ asset("../frontend/img/about-9.jpg") }}" alt="">
+                </div>
+                <div class="col col-md-3 animate-box" data-animate-effect="fadeInUp">
+                    <img src="{{ asset("../frontend/img/about-9.jpg") }}" alt="">
+                </div>
+                <div class="col col-md-3 animate-box" data-animate-effect="fadeInUp">
+                    <img src="{{ asset("../frontend/img/about-9.jpg") }}" alt="">
+                </div>
+                <div class="col col-md-3 animate-box" data-animate-effect="fadeInUp">
+                    <img src="{{ asset("../frontend/img/about-9.jpg") }}" alt="">
+                </div>
             </div>
             <div class="col-md-6 mb-30 animate-box" data-animate-effect="fadeInUp">
                 <div class="section-subtitle">Millennium Society - <em style="text-transform: lowercase !important;">for the one percent of the one percent</em></div>
