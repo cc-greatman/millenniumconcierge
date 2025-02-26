@@ -14,7 +14,7 @@
                     <li class="nav-item"><a class="nav-link @if(Route::is('home')) active @endif" href="{{ route('home') }}">Home</a></li>
                     <li class="nav-item"><a class="nav-link @if(Route::is('about')) active @endif" href="{{ route('about') }}">About</a></li>
                     <li class="nav-item"><a class="nav-link @if(Route::is('services')) active @endif" href="{{ route('services') }}">Services</a></li>
-                    <li class="nav-item dropdown"> <a class="nav-link @if(Route::is('membership')) active @endif dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Membership <i class="ti-angle-down"></i></a>
+                    <li class="nav-item dropdown"> <a class="nav-link @if(Route::is('membership')) active @endif @if(Route::is('society')) active @endif dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Membership <i class="ti-angle-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('membership') }}" class="dropdown-item @if(Route::is('membership')) active @endif"><span>Silver</span></a></li>
                             <li><a href="{{ route('membership') }}" class="dropdown-item @if(Route::is('membership')) active @endif"><span>Gold</span></a></li>
