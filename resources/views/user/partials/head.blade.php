@@ -41,11 +41,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&amp;family=Outfit:wght@300;400&amp;display=swap">
 
     <!-- [Template CSS Files] -->
-    <link rel="stylesheet" href="{{ asset("../backend/css/style.css") }}" id="main-style-link" />
-    <link rel="stylesheet" href="{{ asset("../backend/css/style-preset.css") }}" />
+    <link rel="stylesheet" href="{{ asset("../backend/css/style.css") }}?v={{ time() }}" id="main-style-link" />
+    <link rel="stylesheet" href="{{ asset("../backend/css/style-preset.css") }}?v={{ time() }}" />
 </head>
 <!-- [Head] end -->
 
 <body data-pc-preset="preset-1" data-pc-sidebar-theme="dark" data-pc-sidebar-caption="false" data-pc-direction="ltr" data-pc-theme="dark" style="background: #101010;">
 
-    
+
