@@ -14,8 +14,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&amp;family=Outfit:wght@300;400&amp;display=swap">
-    <link rel="stylesheet" href="{{ asset("../frontend/css/plugins.css") }}" />
-    <link rel="stylesheet" href="{{ asset("../frontend/css/style.css") }}" />
+    <link rel="stylesheet" href="{{ asset("../frontend/css/plugins.css") }}?v={{ time() }}" />
+    <link rel="stylesheet" href="{{ asset("../frontend/css/style.css") }}?v={{ time() }}" />
 </head>
 <body>
     <!-- Preloader -->
