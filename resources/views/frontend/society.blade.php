@@ -41,8 +41,8 @@
             <div class="col-md-6 mb-30 animate-box" data-animate-effect="fadeInUp">
                 <div class="section-subtitle">Millennium Society - <em style="text-transform: lowercase !important;">for the one percent of the one percent</em></div>
                 <div class="section-title">A Portal to the Extraordinary </div>
-                <p>The Millennium Society stands as the epitome of prestige, brought to life by Millennium Concierge Limited, a brand celebrated for its impeccable global standards. Reserved for the elite, our society grants its members access to a lifestyle where every detail is meticulously curated to reflect refinement, convenience, comfort and grandeur. </p>
-                <p>From bespoke travel arrangements to private aviation and from world-class event execution to personal lifestyle management, every service within <em>The Millennium Society</em> reflects our commitment to excellence and meticulous attention to detail. </p>
+                <p><em style="font-weight: 700 !important;">The Millennium Society</em> stands as the epitome of prestige, brought to life by Millennium Concierge Limited, a brand celebrated for its impeccable global standards. Reserved for the elite, our society grants its members access to a lifestyle where every detail is meticulously curated to reflect refinement, convenience, comfort and grandeur. </p>
+                <p>From bespoke travel arrangements to private aviation and from world-class event execution to personal lifestyle management, every service within <em style="font-weight: 700 !important;">The Millennium Society</em> reflects our commitment to excellence and meticulous attention to detail. </p>
                 <!-- call -->
                 <div class="reservations">
                     <div class="text">
@@ -56,7 +56,7 @@
         </div>
     </div>
 </section>
-<!-- Rooms -->
+<!-- Rooms 
 <section class="rooms1 section-padding bg-darkblack" data-scroll-index="1">
     <div class="container">
         <div class="row">
@@ -184,7 +184,7 @@
         </div>
     </div>
 </section>
-<!-- Pricing -->
+ Pricing
 <section class="pricing section-padding">
     <div class="container">
         <div class="row">
@@ -255,7 +255,7 @@
         </div>
     </div>
 </section>
-<!-- Promo Video -->
+ Promo Video
 <section class="video-wrapper video section-padding bg-img bg-fixed" data-overlay-dark="3" data-background="img/slider/2.jpg">
         <div class="container">
             <div class="row">
@@ -279,61 +279,38 @@
             </div>
         </div>
 </section>
-<!-- Facilties -->
+ Facilties -->
 <section class="facilties section-padding">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="section-subtitle">Our Services</div>
-                <div class="section-title">Hotel Facilities</div>
+                <div class="section-subtitle">Exclusive Benefits</div>
+                <div class="section-title">Experiences That Inspire</div>
+                <p>Membership in The Millennium Society offers access to a suite of exceptional privileges:</p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">
                 <div class="single-facility animate-box" data-animate-effect="fadeInUp">
                     <span class="flaticon-world"></span>
-                    <h5>Pick Up & Drop</h5>
-                    <p>We’ll pick up from airport while you comfy on your ride, mus nellentesque habitant.</p>
+                    <h5>A World-Class Network</h5>
+                    <p>Connect with a select circle of like-minded leaders, innovators, and visionaries.</p>
                     <div class="facility-shape"> <span class="flaticon-world"></span> </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="single-facility animate-box" data-animate-effect="fadeInUp">
-                    <span class="flaticon-car"></span>
-                    <h5>Parking Space</h5>
-                    <p>Fusce tincidunt nis ace park norttito sit amet space, mus nellentesque habitant.</p>
-                    <div class="facility-shape"> <span class="flaticon-car"></span> </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="single-facility animate-box" data-animate-effect="fadeInUp">
                     <span class="flaticon-bed"></span>
-                    <h5>Room Service</h5>
-                    <p>Room tincidunt nis ace park norttito sit amet space, mus nellentesque habitant.</p>
+                    <h5>Unparalleled Luxury Services</h5>
+                    <p> From private aviation to bespoke lifestyle management, every need is fulfilled with precision and discretion.</p>
                     <div class="facility-shape"> <span class="flaticon-bed"></span> </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="single-facility animate-box" data-animate-effect="fadeInUp">
-                    <span class="flaticon-swimming"></span>
-                    <h5>Swimming Pool</h5>
-                    <p>Swimming pool tincidunt nise ace park norttito sit space, mus nellentesque habitant.</p>
-                    <div class="facility-shape"> <span class="flaticon-swimming"></span> </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="single-facility animate-box" data-animate-effect="fadeInUp">
-                    <span class="flaticon-wifi"></span>
-                    <h5>Fibre Internet</h5>
-                    <p>Wifi tincidunt nis ace park norttito sit amet space, mus nellentesque habitant.</p>
-                    <div class="facility-shape"> <span class="flaticon-wifi"></span> </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="single-facility animate-box" data-animate-effect="fadeInUp">
                     <span class="flaticon-breakfast"></span>
-                    <h5>Breakfast</h5>
-                    <p>Eat tincidunt nisa ace park norttito sit amet space, mus nellentesque habitant</p>
+                    <h5>Elite Experiences</h5>
+                    <p>Savor tailored journeys and exclusive events designed to elevate your lifestyle.</p>
                     <div class="facility-shape"> <span class="flaticon-breakfast"></span> </div>
                 </div>
             </div>
