@@ -46,7 +46,7 @@
                 <!-- call -->
                 <div class="reservations">
                     <div class="text">
-                        <p>The Millennium Society</p> <a href="javascript:void(0);" style="cursor: none !important;">“A curated world of luxury, privilege, and unparalleled access offering a gateway to a life of distinction and global prestige</a>
+                        <p>Where Exclusivity Meets Excellence</p> <a href="javascript:void(0);" style="cursor: none !important;">“A curated world of luxury, privilege, and unparalleled access offering a gateway to a life of distinction and global prestige"</a>
                     </div>
                 </div>
             </div>
