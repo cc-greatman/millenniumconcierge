@@ -184,7 +184,7 @@
                 <div class="col-md-8 offset-md-2 text-center">
                     <div class="section-subtitle"><span style="color: #fff; font-weight: 700; font-family: 'Raleway', sans-serif">Let’s Begin Your Journey to Excellence </span></div>
                     <div class="section-title"><span>Contact Us</span></div>
-                    <p style="font-size: 24px; font-weight: 500;">We know you are willing and ready to explore a life of privilege and sophistication, so connect with us today to <strong>Discover The Millennium Society's Trails of Magic.</strong></p>
+                    <p style="font-size: 24px; font-weight: 400;">We know you are willing and ready to explore a life of privilege and sophistication, so connect with us today to <strong>Discover The Millennium Society's Trails of Magic.</strong></p>
                 </div>
             </div>
             <div class="row">
