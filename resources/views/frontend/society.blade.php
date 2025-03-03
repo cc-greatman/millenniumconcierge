@@ -115,26 +115,16 @@
         </div>
     </div>
 </section>
-<!-- About -->
-<div class="video-fullscreen-wrap">
-    <!-- The opacity on the image is made with "data-overlay-dark="number". You can change it using the numbers 0-9. -->
-    <div class="video-fullscreen-video" data-overlay-dark="6">
-        <video playsinline="" autoplay="" loop="" muted="">
-            <source src="" type="video/mp4" autoplay loop muted>
-            <source src="" type="video/webm" autoplay loop muted>
-        </video>
-    </div>
-    <div class="v-middle caption overlay">
-            <div class="container" style="margin-top: 50px; margin-bottom: 50px !important;">
-                <div class="row">
-                    <div class="col-md-10 offset-md-1" style="padding-top: 40px !important;">
-                        <h1 class="society">Exceptional Individuals Engaging in <br> Extraordinary Experiences at <br> Exclusive Destinations</h1>
-                        <div class="butn-light"> <a href="#" data-scroll-nav="1"><span>Apply for Membership</span></a> </div>
-                    </div>
-                </div>
+<!-- Contact CTA -->
+<section class="video-wrapper video section-padding bg-img bg-fixed" data-overlay-dark="3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 text-center">
+                <div class="section-title"><span>Exceptional Individuals Engaging in <br> Extraordinary Experiences at <br> Exclusive Destinations</span></div>
             </div>
         </div>
-</div>
+    </div>
+</section>
 <!-- Faqs -->
 <section class="section-padding bg-darkblack">
     <div class="container">
