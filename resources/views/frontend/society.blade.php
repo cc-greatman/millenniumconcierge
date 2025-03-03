@@ -129,7 +129,7 @@
 <section class="section-padding bg-darkblack">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 text-center caption">
+            <div class="col-md-12 text-center caption" style="margin-bottom: 20px;">
                 <h1>Frequently Asked Questions</h1>
             </div>
             <div class="col-md-12">
