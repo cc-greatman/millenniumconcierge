@@ -37,8 +37,8 @@
     <div class="bottom">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <p>&copy; {{ date('Y') }} Millennium Concierge. All rights reserved.</p>
+                <div class="col-lg-4 text-center col-md-6">
+                    <p>&copy; Copyright {{ date('Y') }} Millennium Concierge. All rights reserved.</p>
                 </div>
             </div>
         </div>
