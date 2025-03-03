@@ -34,7 +34,6 @@
                                 background-clip: text;
                                 -text-fill-color: transparent;
                             ">Silver</a></h4>
-                            <p class="service-text"><strong style="font-weight: 700;">This membership charges: ₦70,000 annually</strong></p>
                             <p class="service-text"><strong style="font-weight: 700;">This membership offers:</strong></p>
                             <p class="service-text">* Discounted hotel rates</p>
                             <p class="service-text">* Itinerary management and flight booking at no extra fee</p>
@@ -59,7 +58,6 @@
                                 background-clip: text;
                                 -text-fill-color: transparent;
                             ">Gold</a></h4>
-                            <p class="service-text"><strong style="font-weight: 700;">This membership charges: ₦100,000 annually</strong></p>
                             <p class="service-text"><strong style="font-weight: 700;">This membership offers:</strong></p>
                             <p class="service-text"><strong style="font-weight: 700; color: #fff">All Silver Membership offers plus:</strong></p>
                             <p class="service-text">* Free access to airport exclusive lounge</p>
@@ -85,7 +83,6 @@
                                 background-clip: text;
                                 -text-fill-color: transparent;
                             ">Millennium Society</a></h4>
-                            <p class="service-text"><strong style="font-weight: 700;">This membership charges: Available on Private Enquiry</strong></p>
                             <p class="service-text"><strong style="font-weight: 700;">This membership offers:</strong></p>
                             <p class="service-text"><strong style="font-weight: 700; color: #fff">All Gold & Silver Membership offers plus:</strong></p>
                             <p class="service-text" style="margin-top: -10px;">* Access to Private Jet Charter at no extra charge</p>
