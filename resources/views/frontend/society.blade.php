@@ -120,7 +120,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2 text-center">
-                <div class="section-title"><span>Exceptional Individuals Engaging in <br> Extraordinary Experiences at <br> Exclusive Destinations</span></div>
+                <div class="section-title"><span>Exceptional Individuals Engaging in Extraordinary Experiences at Exclusive Destinations</span></div>
             </div>
         </div>
     </div>
