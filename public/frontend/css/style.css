@@ -4257,82 +4257,78 @@ button.mfp-arrow {
 
 /* ======= Accordion Box (for Faqs) style ======= */
 .accordion-box {
-  position: relative;
+    position: relative;
     padding: 0;
 }
 .accordion-box .block {
     position: relative;
+    background: #2b2b2b;
     border-radius: 0px;
     overflow: hidden;
-    margin-bottom: 0;
-    border: none;
+    margin-bottom: 15px;
 }
 .accordion-box .block.active-block {
-  background-color: transparent;
+    background-color: #2b2b2b;
 }
 .accordion-box .block:last-child {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 .accordion-box .block .acc-btn {
     position: relative;
-    font-family: 'Allenoire', sans-serif;
-    font-size: 21px;
-    line-height: 30px;
+    font-size: 20px;
+    line-height: 27px;
     font-weight: 400;
     cursor: pointer;
-    padding: 20px 20px 20px 60px;
+    padding: 20px 40px;
+    padding-right: 60px;
     color: #fff;
     transition: all 500ms ease;
+    font-family: 'Gilda Display', serif;;
 }
 .accordion-box .block .acc-btn .count {
-  color: #aa8453;
-  padding-right: 3px;
+    color: #aa8453;
+    padding-right: 3px;
 }
 .accordion-box .block .acc-btn:before {
     position: absolute;
-    left: 0px;
-    top: 13px;
-    font-size: 10px;
+    right: 35px;
+    top: 20px;
+    height: 30px;
+    font-size: 14px;
     font-weight: normal;
-    background: #aa8453;
-    content: "\e649";
+    color: #aa8453;
+    line-height: 30px;
+    content: "\e61a";
     font-family: "Themify";
     transition: all 500ms ease;
-    color: #fff;
-    width: 45px;
-    height: 45px;
-    line-height: 45px;
-    text-align: center;
-    border-radius: 100%;
 }
 .accordion-box .block .acc-btn.active {
-    background-color: transparent;
+    background-color: #2b2b2b;
     color: #aa8453;
 }
 .accordion-box .block .acc-btn.active:before {
-  font-family: "Themify";
-  content: "\e64b";
+    color: "Themify";
+    content: "\e622";
 }
 .accordion-box .block .acc-content {
-  position: relative;
-  display: none;
+    position: relative;
+    display: none;
 }
 .accordion-box .block .content {
-  position: relative;
-    padding: 0px 0px 20px 60px;
-    background-color: transparent;
-    color: #999;
+    position: relative;
+    padding: 0px 40px 30px;
+    background-color: #2b2b2b;
+    color: rgba(255,255,255,0.5);
 }
 .accordion-box .block .acc-content.current {
-  display: block;
+    display: block;
 }
 .accordion-box .block .content .text {
-  display: block;
-  position: relative;
-  top: 0px;
-  display: block;
+    display: block;
+    position: relative;
+    top: 0px;
+    display: block;
 }
-
 
 /* ======= Accordion Menu style ======= */
 .accordion-menu {
