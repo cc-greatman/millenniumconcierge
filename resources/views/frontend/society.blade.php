@@ -98,7 +98,7 @@
     <div class="container">
         <div class="row">
             <div class="col col-md-6 animate-box" data-animate-effect="fadeInUp">
-                <img src="{{ asset("../frontend/img/about-10.jpg") }}" alt="">
+                <img src="{{ asset("../frontend/img/about-11.png") }}" alt="">
             </div>
             <div class="col-md-6 mb-30 animate-box" data-animate-effect="fadeInUp">
                 <div class="section-subtitle">Our Legacy of Excellence</div>
@@ -111,6 +111,68 @@
                         <p>For the One Percent of the One Percent </p> <a href="javascript:void(0);" style="cursor: none !important;">Exceptional Individuals Engaging in Extraordinary Experiences at Exclusive Destinations</a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Faqs -->
+<section class="section-padding bg-darkblack">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center caption">
+                <h1>Frequently Asked Questions</h1>
+            </div>
+            <div class="col-md-12">
+                <ul class="accordion-box clearfix">
+                    <li class="accordion block">
+                        <div class="acc-btn">Who can apply to become a member of The Millennium Society?</div>
+                        <div class="acc-content">
+                            <div class="content">
+                                <div class="text">We embrace individuals with ambition and passion, regardless of their background. Whether you are a visionary, a creator, or a wanderer, TuxedoSociety is tailored for those in pursuit of unparalleled experiences and genuine connections.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="accordion block">
+                        <div class="acc-btn">What is the membership application process? </div>
+                        <div class="acc-content">
+                            <div class="content">
+                                <div class="text">The application process begins by completing a form on our website. Our team thoroughly evaluates each submission to ensure alignment with the values and spirit of our community. Those selected may be invited to an exclusive interview.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="accordion block">
+                        <div class="acc-btn">What are the benefits of becoming a member?</div>
+                        <div class="acc-content">
+                            <div class="content">
+                                <div class="text">Members are granted access to meticulously curated luxury events, bespoke travel arrangements, exclusive networking opportunities, and personalized social concierge services. You will also join a distinguished community of visionary individuals, united by a shared passion for exploration and genuine connection.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="accordion block">
+                        <div class="acc-btn">What does membership cost?</div>
+                        <div class="acc-content">
+                            <div class="content">
+                                <div class="text">The cost of membership is based on the tier you choose. Specific pricing information will be shared with you during the application process to ensure clarity and openness.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="accordion block">
+                        <div class="acc-btn">Can attend events without being a member?</div>
+                        <div class="acc-content">
+                            <div class="content">
+                                <div class="text">Our events are reserved exclusively for members, guaranteeing a refined and bespoke experience. Membership is the sole gateway to our exceptional travel opportunities and curated gatherings.</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="accordion block">
+                        <div class="acc-btn">How often are events and trips organized?</div>
+                        <div class="acc-content">
+                            <div class="content">
+                                <div class="text">Throughout the year, we curate a diverse range of events and journeys, blending global adventures with intimate local gatherings. Members have the freedom to select those that align most closely with their interests and availability.</div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
@@ -338,7 +400,7 @@
             </div>
         </div>
 </section>
-<!-- Testiominals -->
+<!-- Testiominals
 <section class="testimonials">
     <div class="background bg-img bg-fixed section-padding pb-0" data-background="img/slider/2.jpg" data-overlay-dark="3">
         <div class="container">
@@ -388,7 +450,7 @@
         </div>
     </div>
 </section>
-<!-- Services -->
+<!-- Services
 <section class="services section-padding">
     <div class="container">
         <div class="row">
@@ -469,7 +531,7 @@
         </div>
     </div>
 </section>
-<!-- News -->
+<!-- News
 <section class="news section-padding bg-darkblack">
     <div class="container">
         <div class="row">
@@ -562,12 +624,12 @@
         </div>
     </div>
 </section>
-<!-- Reservation & Booking Form -->
+<!-- Reservation & Booking Form
 <section class="testimonials">
     <div class="background bg-img bg-fixed section-padding pb-0" data-background="img/slider/2.jpg" data-overlay-dark="2">
         <div class="container">
             <div class="row">
-                <!-- Reservation -->
+                <!-- Reservation
                 <div class="col-md-5 mb-30 mt-30">
                     <p><i class="star-rating"></i><i class="star-rating"></i><i class="star-rating"></i><i class="star-rating"></i><i class="star-rating"></i></p>
                     <h5>Each of our guest rooms feature a private bath, wi-fi, cable television and include full breakfast.</h5>
@@ -579,7 +641,7 @@
                     </div>
                     <p><i class="ti-check"></i><small>Call us, it's toll-free.</small></p>
                 </div>
-                <!-- Booking From -->
+                <!-- Booking From 
                 <div class="col-md-5 offset-md-2">
                     <div class="booking-box">
                         <div class="head-box">
@@ -645,7 +707,7 @@
         </div>
     </div>
 </section>
-<!-- Clients -->
+<!-- Clients
 <section class="clients">
     <div class="container">
         <div class="row">
@@ -673,6 +735,6 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 @include('frontend.partials.footer')
