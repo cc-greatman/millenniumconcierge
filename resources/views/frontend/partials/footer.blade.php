@@ -6,10 +6,10 @@
                 <div class="col-md-6 offset-md-1">
                     <div class="item">
                         <h3>Get in touch</h3>
-                        <p>Plot 9, Coal City Garden Estate, Okpara Avenue,
+                        <p><strong>Enugu Office: </strong>Plot 9, Coal City Garden Estate, Okpara Avenue,
                             <br>Enugu State, Nigeria.
                         </p>
-                        <p>Suite C303 Third Floor Block C, Millennium Plaza,
+                        <p><strong>Abuja Office: </strong>Suite C303 Third Floor Block C, Millennium Plaza,
                             <br> Plot 251 Herbert Macaulay Way,
                             <br>Central Business District, Abuja.
                         </p>
