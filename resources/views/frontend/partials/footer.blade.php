@@ -9,6 +9,10 @@
                         <p>Plot 9, Coal City Garden Estate, Okpara Avenue,
                             <br>Enugu State, Nigeria.
                         </p>
+                        <p>Suite C303 Third Floor Block C, Millennium Plaza,
+                            <br> Plot 251 Herbert Macaulay Way,
+                            <br>Central Business District, Abuja.
+                        </p>
                         <p class="phone"><a href="tel:+234 813 699 9988">+234 813 699 9988</a></p>
                         <p class="mail"><a href="mailto:info@millenniumconcierge.com">info@millenniumconcierge.com</a></p>
                         <div class="social mt-2"> <a target="_blank" href="https://www.instagram.com/millennium_concierge"><i class="ti-instagram"></i></a> </div>
