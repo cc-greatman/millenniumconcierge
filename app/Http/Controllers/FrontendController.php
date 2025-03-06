@@ -59,6 +59,6 @@ class FrontendController extends Controller
 
         $pageTitle = "Apply to the Millennium Society || ". env('APP_NAME');
 
-        return view('frontend.apply', compact('pageTitle'));
+        return view('frontend.application', compact('pageTitle'));
     }
 }
