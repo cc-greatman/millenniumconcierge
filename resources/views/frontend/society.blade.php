@@ -17,7 +17,7 @@
                     <div class="row">
                         <div class="col-md-10 offset-md-1" style="padding-top: 40px !important;">
                             <h1 class="society">A sanctuary of privilege crafted for those who redefine success</h1>
-                            <div class="butn-light"> <a href="#" data-scroll-nav="1"><span>Apply for Membership</span></a> </div>
+                            <div class="butn-light"> <a href="{{ route('application.form') }}" data-scroll-nav="1"><span>Apply for Membership</span></a> </div>
                         </div>
                     </div>
                 </div>

@@ -54,4 +54,11 @@ class FrontendController extends Controller
 
         return view('frontend.calendar', compact('pageTitle'));
     }
+
+    public function applySociety() {
+
+        $pageTitle = "Apply to the Millennium Society || ". env('APP_NAME');
+
+        return view('frontend.apply', compact('pageTitle'));
+    }
 }
