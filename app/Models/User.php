@@ -89,7 +89,7 @@ class User extends Authenticatable
             0 => "Non Member",
             1 => "Silver Member",
             2 => "Gold Member",
-            3 => "Platinum Member",
+            3 => "Millennium Society Member",
         ];
 
         // Using the optional() helper to avoid checking if the membership exists

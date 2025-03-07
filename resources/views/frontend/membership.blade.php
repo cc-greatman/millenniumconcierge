@@ -28,7 +28,7 @@
                     </div>
                     <div class="service-wrap">
                         <div class="service-cont">
-                            <h4 class="service-title"><a href="#" style="background-image: linear-gradient(to right, #DFBF81, #BF9A53);
+                            <h4 class="service-title"><a href="javascript:void(0);" style="background-image: linear-gradient(to right, #DFBF81, #BF9A53);
                                 -webkit-background-clip: text;
                                 -webkit-text-fill-color: transparent;
                                 background-clip: text;
@@ -52,14 +52,15 @@
                     </div>
                     <div class="service-wrap">
                         <div class="service-cont">
-                            <h4 class="service-title"><a href="#" style="background-image: linear-gradient(to right, #DFBF81, #BF9A53);
+                            <h4 class="service-title"><a href="javascript:void(0);" style="background-image: linear-gradient(to right, #DFBF81, #BF9A53);
                                 -webkit-background-clip: text;
                                 -webkit-text-fill-color: transparent;
                                 background-clip: text;
                                 -text-fill-color: transparent;
                             ">Gold</a></h4>
                             <p class="service-text"><strong style="font-weight: 700;">This membership offers:</strong></p>
-                            <p class="service-text"><strong style="font-weight: 700; color: #fff">All Silver Membership offers plus:</strong></p>
+                            <p class="service-text">* Discounted hotel rates</p>
+                            <p class="service-text">* Itinerary management and flight booking at no extra fee</p>
                             <p class="service-text">* Free access to airport exclusive lounge</p>
                             <p class="service-text" style="margin-top: -10px;">* Access to 24/7 customer service</p>
                         </div>
@@ -77,7 +78,7 @@
                     </div>
                     <div class="service-wrap">
                         <div class="service-cont">
-                            <h4 class="service-title"><a href="#" style="background-image: linear-gradient(to right, #DFBF81, #BF9A53);
+                            <h4 class="service-title"><a href="{{ route('society') }}" style="background-image: linear-gradient(to right, #DFBF81, #BF9A53);
                                 -webkit-background-clip: text;
                                 -webkit-text-fill-color: transparent;
                                 background-clip: text;

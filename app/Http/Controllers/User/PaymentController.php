@@ -40,6 +40,8 @@ class PaymentController extends Controller
 
         $paymentDetails = Paystack::getPaymentData();
 
+        return json_decode(json_encode($paymentDetails), true);
+
         // Check if payment was successful
         if (isset($paymentDetails['status']) && $paymentDetails['status'] === true) {
 
