@@ -39,11 +39,9 @@ class PaymentController extends Controller
     public function handleGatewayCallback() {
 
         $paymentDetails = Paystack::getPaymentData();
-
-        return json_decode(json_encode($paymentDetails), true);
-
+        
         // Check if payment was successful
-        if (isset($paymentDetails['status']) && $paymentDetails['status'] === true) {
+        if (isset($paymentDetails['status']) && $paymentDetails['status'] === true && $paymentDetails['data']['metadata']['plan'] === 'silver') {
 
             // Get authenticated user
             $id = auth()->guard('web')->id();
@@ -72,6 +70,35 @@ class PaymentController extends Controller
 
             // Handle successful payment (e.g., activate membership)
             return redirect()->route('membership.setting.view')->with('success', 'Welcome to the Family!! New Silver Member!!!');
+        } elseif (isset($paymentDetails['status']) && $paymentDetails['status'] === true && $paymentDetails['data']['metadata']['plan'] === 'gold') {
+
+            // Get authenticated user
+            $id = auth()->guard('web')->id();
+            $user = User::findOrFail($id);
+
+            // Update or create membership
+            $user->memberships()->updateOrCreate(
+                ['user_id' => $user->id],
+                [
+                    'type' => 2, // Gold Membership
+                    'status' => 'active',
+                    'start_date' => now(),
+                    'end_date' => now()->addYear(),
+                ]
+            );
+
+            // Create payment record
+            $payment = Payments::updateOrCreate([
+                'user_id' => auth()->id(),
+                'membership_type' => 2,
+                'amount' => 150000,
+                'mode' => 'crypto',
+                'payment_id' => uniqid('mcon_'),
+                'status' => 'completed',
+            ]);
+
+            // Handle successful payment (e.g., activate membership)
+            return redirect()->route('membership.setting.view')->with('success', 'Welcome to the Family!! New Gold Member!!!');
         }
 
         // If payment failed
