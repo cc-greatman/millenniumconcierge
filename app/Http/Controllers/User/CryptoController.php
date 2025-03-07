@@ -24,9 +24,9 @@ class CryptoController extends Controller {
                 'price' => 1650,
                 'currency' => 'USD',
             ],
-            'platinum' => [
+            'society' => [
                 'type' => 3,
-                'price' => 5000,
+                'price' => 3000,
                 'currency' => 'USD',
             ],
         ];
