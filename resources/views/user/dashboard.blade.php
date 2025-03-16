@@ -43,7 +43,7 @@
 
                                     $user = auth()->guard('web')->user();
 
-                                    $membership = $user->membership;
+                                    $membership = $user->memberships;
 
                                     $startDate = $membership->start_date ? Carbon::parse($membership->start_date) : null;
                                     $endDate = $membership->end_date ? Carbon::parse($membership->end_date) : null;
