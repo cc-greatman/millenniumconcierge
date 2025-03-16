@@ -35,7 +35,7 @@
                     <h5 class="mb-0">Subscription Tracker</h5>
                   </div>
                   <div class="row g-3">
-                    <div class="col-md-6 col-xxl-3">
+                    <div class="col-md-12 col-xxl-12">
                       <div class="card shadow-none border mb-0">
                         <div class="card-body p-3">
                           <div class="d-flex align-items-center justify-content-between mb-3">
