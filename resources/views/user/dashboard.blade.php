@@ -36,29 +36,71 @@
                   </div>
                   <div class="row g-3">
                     <div class="col-md-12 col-xxl-12">
-                      <div class="card shadow-none border mb-0">
-                        <div class="card-body p-3">
-                          <div class="d-flex align-items-center justify-content-between mb-3">
-                            <img src="{{ asset("../backend/images/widget/img-travel.png") }}" alt="img" class="img-fluid" />
-                          </div>
-                          @php
-                              $user  = auth()->user();
+                        <div class="card shadow-none border mb-0">
+                            <div class="card-body p-3">
+                                @php
+                                    use Carbon\Carbon;
 
-                              $name  = $user->first_name." ".$user->last_name;
-                              $email = $user->email;
-                          @endphp
-                          <h6 class="mb-3">Membership Type: {{ $user->getMembershipType() }}</h6>
-                          <div class="bg-dark p-3 pt-4 rounded-4">
-                            <div class="progress bg-white bg-opacity-25" style="height: 6px">
-                              <div class="progress-bar bg-white" style="width: {{ min($tripsProgress, 100) }}%"></div>
+                                    $user = auth()->guard('web')->user();
+
+                                    $membership = $user->membership;
+
+                                    $startDate = $membership->start_date ? Carbon::parse($membership->start_date) : null;
+                                    $endDate = $membership->end_date ? Carbon::parse($membership->end_date) : null;
+                                    $currentDate = Carbon::now();
+
+                                    // Default values
+                                    $daysElapsed = 0;
+                                    $totalDays = 365;
+                                    $progress = 0;
+
+                                    if ($startDate && $endDate) {
+                                        $totalDays = $endDate->diffInDays($startDate);
+                                        $daysElapsed = $currentDate->diffInDays($startDate);
+
+                                        // Prevent exceeding 100%
+                                        $progress = min(($daysElapsed / $totalDays) * 100, 100);
+                                    }
+                                @endphp
+
+                                <h6 class="mb-3">Membership Type: <strong>{{ $user->getMembershipType() }}</strong></h6>
+
+                                <p class="mb-1 text-sm"><strong>Status:</strong>
+                                    <span class="badge
+                                        @if($membership->status == 'active') bg-success
+                                        @elseif($membership->status == 'canceled') bg-danger
+                                        @else bg-warning @endif">
+                                        {{ ucfirst($membership->status) }}
+                                    </span>
+                                </p>
+
+                                <!-- Subscription Progress Tracker -->
+                                <div class="bg-dark p-3 pt-4 rounded-4">
+                                    <div class="progress bg-white bg-opacity-25" style="height: 6px">
+                                        <div class="progress-bar
+                                            @if($progress > 75) bg-success
+                                            @elseif($progress > 50) bg-warning
+                                            @else bg-danger @endif"
+                                            style="width: {{ $progress }}%">
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between mt-2">
+                                        <p class="mb-0 text-white text-opacity-75 text-sm">Start: 0 Days</p>
+                                        <p class="mb-0 text-white text-opacity-75 text-sm">Current: {{ $daysElapsed }} Days</p>
+                                        <p class="mb-0 text-white text-opacity-75 text-sm">End: {{ $totalDays }} Days</p>
+                                    </div>
+                                </div>
+
+                                <!-- Renewal & Payment Details -->
+                                <div class="mt-3">
+                                    <p class="mb-1 text-sm"><strong>Renewal Date:</strong> {{ $endDate ? $endDate->format('M d, Y') : 'N/A' }}</p>
+                                    <p class="mb-1 text-sm"><strong>Days Remaining:</strong> {{ max($totalDays - $daysElapsed, 0) }} days</p>
+                                    @if($membership->status !== 'active')
+                                        <a href="" class="btn btn-primary btn-sm">Renew Subscription</a>
+                                    @endif
+                                </div>
                             </div>
-                            <div class="d-flex align-items-center justify-content-between mt-2">
-                              <p class="mb-0 text-white text-opacity-75 text-sm">{{ number_format($tripsProgress, 2) }}%</p>
-                              <p class="mb-0 text-white text-opacity-75 text-sm">${{ number_format($yearlyTripsExpenses, 2) }}</p>
-                            </div>
-                          </div>
                         </div>
-                      </div>
                     </div>
                   </div>
                 </div>
