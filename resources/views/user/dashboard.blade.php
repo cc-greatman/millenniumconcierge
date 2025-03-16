@@ -41,6 +41,12 @@
                           <div class="d-flex align-items-center justify-content-between mb-3">
                             <img src="{{ asset("../backend/images/widget/img-travel.png") }}" alt="img" class="img-fluid" />
                           </div>
+                          @php
+                              $user  = auth()->user();
+
+                              $name  = $user->first_name." ".$user->last_name;
+                              $email = $user->email;
+                          @endphp
                           <h6 class="mb-3">Membership Type: {{ $user->getMembershipType() }}</h6>
                           <div class="bg-dark p-3 pt-4 rounded-4">
                             <div class="progress bg-white bg-opacity-25" style="height: 6px">
