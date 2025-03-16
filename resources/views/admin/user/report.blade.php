@@ -132,7 +132,7 @@
                     <p class="mb-3 mt-3"><strong>Name:</strong> {{ $user->first_name }} {{ $user->last_name }}</p>
                     <p class="mb-3"><strong>Email:</strong> {{ $user->email }}</p>
                     <p class="mb-3"><strong>Phone:</strong> {{ $user->phone ? $user->phone : 'N/A' }}</p>
-                    <div class="mt-3">
+                    <div class="mt-3 mb-3">
                         <a href="{{ route('admin.manage.person.view', $user->id) }}" class="btn btn-primary btn-sm">View User</a>
                     </div>
                 </div>
