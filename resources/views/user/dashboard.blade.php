@@ -57,6 +57,7 @@
                                     if ($startDate && $endDate) {
                                         $totalDays = $endDate->diffInDays($startDate);
                                         $daysElapsed = $currentDate->diffInDays($startDate);
+                                        $daysRemaining = $endDate ? max($endDate->diffInDays($currentDate), 0) : 365;
 
                                         // Prevent exceeding 100%
                                         $progress = min(($daysElapsed / $totalDays) * 100, 100);
@@ -78,8 +79,8 @@
                                 <div class="bg-dark p-3 pt-4 rounded-4">
                                     <div class="progress bg-white bg-opacity-25" style="height: 6px">
                                         <div class="progress-bar
-                                            @if($progress > 75) bg-success
-                                            @elseif($progress > 50) bg-warning
+                                            @if($progress <= 75) bg-success
+                                            @elseif($progress >= 76) bg-warning
                                             @else bg-danger @endif"
                                             style="width: {{ $progress }}%">
                                         </div>
@@ -92,9 +93,9 @@
                                 </div>
 
                                 <!-- Renewal & Payment Details -->
-                                <div class="mt-3">
+                                <div class="d-flex align-items-center mt-3">
                                     <p class="mb-1 text-sm"><strong>Renewal Date:</strong> {{ $endDate ? $endDate->format('M d, Y') : 'N/A' }}</p>
-                                    <p class="mb-1 text-sm"><strong>Days Remaining:</strong> {{ max($totalDays - $daysElapsed, 0) }} days</p>
+                                    <p class="mb-1 text-sm"><strong>Days Remaining:</strong> {{ $daysRemaining }} days</p>
                                     @if($membership->status !== 'active')
                                         <a href="" class="btn btn-primary btn-sm">Renew Subscription</a>
                                     @endif
