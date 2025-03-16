@@ -9,7 +9,7 @@
         <ul class="list-inline footer-link mb-0">
           <li class="list-inline-item"><a href="{{ route('home') }}">Home</a></li>
           <li class="list-inline-item"><a href="{{ route('about') }}">About</a></li>
-          <li class="list-inline-item"><a href="{{ route('gallery') }}">Gallery</a></li>
+          <li class="list-inline-item"><a href="{{ route('calendar') }}">Calendar</a></li>
           <li class="list-inline-item"><a href="{{ route('services') }}">Services</a></li>
           <li class="list-inline-item"><a href="{{ route('membership') }}">Membership</a></li>
           <li class="list-inline-item"><a href="{{ route('contact') }}">Enquiry</a></li>
