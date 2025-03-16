@@ -93,11 +93,15 @@
                                 </div>
 
                                 <!-- Renewal & Payment Details -->
-                                <div class="d-flex align-items-center mt-3">
+                                <div class="d-flex align-items-center justify-content-between mt-3">
                                     <p class="mb-1 text-sm"><strong>Renewal Date:</strong> {{ $endDate ? $endDate->format('M d, Y') : 'N/A' }}</p>
                                     <p class="mb-1 text-sm"><strong>Days Remaining:</strong> {{ $daysRemaining }} days</p>
-                                    @if($membership->status !== 'active')
-                                        <a href="" class="btn btn-primary btn-sm">Renew Subscription</a>
+                                    @if($membership->status === "active")
+                                        <a href="{{ route('membership.setting.view') }}" class="btn btn-primary btn-sm">Manage Membership</a>
+                                    @elseif ($membership->status === "inactive")
+                                        <a href="{{ route('membership.plans.view') }}" class="btn btn-primary btn-sm">Renew Membership</a>
+                                    @elseif ($membership->status === "canceled")
+                                        <a href="{{ route('membership.plans.view') }}" class="btn btn-primary btn-sm">Become a Member</a>
                                     @endif
                                 </div>
                             </div>
