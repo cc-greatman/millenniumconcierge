@@ -51,17 +51,78 @@
 
       <!-- [ Main Content ] start -->
       <div class="row">
-        <div class="col-xl-12 col-md-12">
-            <div class="card shadow-none border">
+        <div class="col-md-12 col-xl-12">
+            <div class="card">
                 <div class="card-body">
-                <h6 class="mb-3 fw-medium">Membership End Date</h6>
-                <h4 class="mb-3 fw-normal text-muted">{{ \Carbon\Carbon::parse(optional($user->memberships)->end_date)->format('d F, Y') }}</h4>
-                <a class="link-primary">
-                    @php
-                        $daysRemaining = \Carbon\Carbon::now()->diffInDays(\Carbon\Carbon::parse(optional($user->memberships)->end_date), false);
-                    @endphp
-                    {{ $daysRemaining > 0 ? "$daysRemaining days till expected renewal" : "Membership expired" }}
-                </a>
+                  <div class="d-flex align-items-center justify-content-between mb-3">
+                    <h5 class="mb-0">Subscription Tracker</h5>
+                  </div>
+                  <div class="row g-3">
+                    <div class="col-md-12 col-xxl-12">
+                        <div class="card shadow-none border mb-0">
+                            <div class="card-body p-3">
+                                @php
+                                    use Carbon\Carbon;
+
+                                    $membership = $user->memberships;
+
+                                    $startDate = $membership->start_date ? Carbon::parse($membership->start_date) : null;
+                                    $endDate = $membership->end_date ? Carbon::parse($membership->end_date) : null;
+                                    $currentDate = Carbon::now();
+
+                                    // Default values
+                                    $daysElapsed = 0;
+                                    $totalDays = 365;
+                                    $progress = 0;
+
+                                    if ($startDate && $endDate) {
+                                        $totalDays = $endDate->diffInDays($startDate);
+                                        $daysElapsed = $currentDate->diffInDays($startDate);
+                                        $daysRemaining = $endDate ? max($endDate->diffInDays($currentDate), 0) : 365;
+
+                                        // Prevent exceeding 100%
+                                        $progress = min(($daysElapsed / $totalDays) * 100, 100);
+                                    }
+                                @endphp
+
+                                <h6 class="mb-3">Membership Type: <strong>{{ $user->getMembershipType() }}</strong></h6>
+
+                                <p class="mb-1 text-sm"><strong>Status:</strong>
+                                    <span class="badge
+                                        @if($membership->status == 'active') bg-success
+                                        @elseif($membership->status == 'canceled') bg-danger
+                                        @else bg-warning @endif">
+                                        {{ ucfirst($membership->status) }}
+                                    </span>
+                                </p>
+
+                                <!-- Subscription Progress Tracker -->
+                                <div class="bg-dark p-3 pt-4 rounded-4">
+                                    <div class="progress bg-white bg-opacity-25" style="height: 6px">
+                                        <div class="progress-bar
+                                            @if($progress <= 75) bg-success
+                                            @elseif($progress >= 76) bg-warning
+                                            @else bg-danger @endif"
+                                            style="width: {{ $progress }}%">
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between mt-2">
+                                        <p class="mb-0 text-white text-opacity-75 text-sm">Start: 0 Days</p>
+                                        <p class="mb-0 text-white text-opacity-75 text-sm">Current: {{ $daysElapsed }} Days</p>
+                                        <p class="mb-0 text-white text-opacity-75 text-sm">End: {{ $totalDays }} Days</p>
+                                    </div>
+                                </div>
+
+                                <!-- Renewal & Payment Details -->
+                                <div class="d-flex align-items-center justify-content-between mt-3">
+                                    <p class="mb-1 text-sm"><strong>Renewal Date:</strong> {{ $endDate ? $endDate->format('M d, Y') : 'N/A' }}</p>
+                                    <p class="mb-1 text-sm"><strong>Days Remaining:</strong> {{ $daysRemaining }} days</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
             </div>
         </div>
         @php
