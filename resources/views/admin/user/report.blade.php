@@ -55,7 +55,7 @@
             <div class="card">
                 <div class="card-body">
                   <div class="d-flex align-items-center justify-content-between mb-3">
-                    <h5 class="mb-0">Subscription Tracker</h5>
+                    <h5 class="mb-0">{{ $user->first_name }}'s Membership Tracker</h5>
                   </div>
                   <div class="row g-3">
                     <div class="col-md-12 col-xxl-12">
@@ -122,6 +122,16 @@
                         </div>
                     </div>
                   </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-12 col-md-12">
+            <div class="card support-bar">
+                <div class="card-body pb-0">
+                    <h2 class="m-0">{{ $user->first_name }}'s Personal Information</h2>
+                    <p class="mb-3 mt-3"><strong>Name:</strong> {{ $user->first_name }} {{ $user->last_name }}</p>
+                    <p class="mb-3"><strong>Email:</strong> {{ $user->email }}</p>
+                    <p class="mb-3"><strong>Phone:</strong> {{ $user->phone }}</p>
                 </div>
             </div>
         </div>

@@ -361,7 +361,7 @@
                                           <option disabled selected>Select Membership</option>
                                           <option value="1">Sliver Membership</option>
                                           <option value="2">Gold Membership</option>
-                                          <option value="3">Platinum Membership</option>
+                                          <option value="3">Millennium Society</option>
                                         </select>
                                       </div>
                                     </div>
