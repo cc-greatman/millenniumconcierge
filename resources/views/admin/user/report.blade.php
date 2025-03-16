@@ -131,7 +131,10 @@
                     <h2 class="m-0">{{ $user->first_name }}'s Personal Information</h2>
                     <p class="mb-3 mt-3"><strong>Name:</strong> {{ $user->first_name }} {{ $user->last_name }}</p>
                     <p class="mb-3"><strong>Email:</strong> {{ $user->email }}</p>
-                    <p class="mb-3"><strong>Phone:</strong> {{ $user->phone }}</p>
+                    <p class="mb-3"><strong>Phone:</strong> {{ $user->phone ? $user->phone : 'N/A' }}</p>
+                    <div class="mt-3">
+                        <a href="{{ route('admin.manage.person.view', $user->id) }}" class="btn btn-primary btn-sm">View User</a>
+                    </div>
                 </div>
             </div>
         </div>
