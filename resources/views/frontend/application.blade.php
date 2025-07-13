@@ -1,62 +1,41 @@
-@include('frontend.partials.head')
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <base href="/public">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>{{ $pageTitle }}</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset("../frontend/img/favicon/apple-touch-icon.png") }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset("../frontend/img/favicon/favicon-32x32.png") }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset("../frontend/img/favicon/favicon-16x16.png") }}">
+    <link rel="manifest" href="{{ asset("img/favicon/site.webmanifest") }}"><link rel="preconnect" href="https://fonts.googleapis.com">
 
-<style>
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-</style>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader-bg"></div>
+    <div id="preloader">
+        <div id="preloader-status">
+            <div class="preloader-position loader"> <span></span> </div>
+        </div>
+    </div>
 
-<iframe src="https://munarealestate.com/?fluent-form=7" allowfullscreen></iframe>
+    <iframe src="https://munarealestate.com/?fluent-form=7" allowfullscreen></iframe>
 
-<!-- jQuery -->
-<script src="{{ asset("../frontend/js/jquery-3.6.3.min.js") }}"></script>
-<script src="{{ asset("../frontend/js/jquery-migrate-3.0.0.min.js") }}"></script>
-<script src="{{ asset("../frontend/js/modernizr-2.6.2.min.js") }}"></script>
-<script src="{{ asset("../frontend/js/imagesloaded.pkgd.min.js") }}"></script>
-<script src="{{ asset("../frontend/js/jquery.isotope.v3.0.2.js") }}"></script>
-<script src="{{ asset("../frontend/js/pace.js") }}"></script>
-<script src="{{ asset("../frontend/js/popper.min.js") }}"></script>
-<script src="{{ asset("../frontend/js/bootstrap.min.js") }}"></script>
-<script src="{{ asset("../frontend/js/scrollIt.min.js") }}"></script>
-<script src="{{ asset("../frontend/js/jquery.waypoints.min.js") }}"></script>
-<script src="{{ asset("../frontend/js/owl.carousel.min.js") }}"></script>
-<script src="{{ asset("../frontend/js/jquery.stellar.min.js") }}"></script>
-<script src="{{ asset("../frontend/js/jquery.magnific-popup.js") }}"></script>
-<script src="{{ asset("../frontend/js/YouTubePopUp.js") }}"></script>
-<script src="{{ asset("../frontend/js/select2.js") }}"></script>
-<script src="{{ asset("../frontend/js/datepicker.js") }}"></script>
-<script src="{{ asset("../frontend/js/smooth-scroll.min.js") }}"></script>
-<script src="{{ asset("../frontend/js/wow.min.js") }}"></script>
-<script src="{{ asset("../frontend/js/vegas.slider.min.js") }}"></script>
-<script src="{{ asset("../frontend/js/custom.js") }}"></script>
-<!-- Vegas Background Slideshow (vegas.slider kenburns) -->
-<script>
-    $(document).ready(function() {
-        $('#kenburnsSliderContainer').vegas({
-            slides: [{
-                src: "../frontend/img/slider/0.jpg"
-            },{
-                src: "../frontend/img/slider/1.jpg"
-            }, {
-                src: "../frontend/img/slider/2.jpg"
-            }, {
-                src: "../frontend/img/slider/3.jpg"
-            }, {
-                src: "../frontend/img/slider/4.jpg"
-            }, {
-                src: "../frontend/img/slider/5.jpg"
-            }],
-            overlay: true,
-            transition: 'fade2',
-            animation: 'kenburnsUpRight',
-            transitionDuration: 1000,
-            delay: 10000,
-            animationDuration: 20000
-        });
-    });
 
-</script>
 </body>
 </html>
