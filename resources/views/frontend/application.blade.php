@@ -19,8 +19,11 @@
             overflow: hidden;
         }
         iframe {
-            width: 100vh;
-            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             border: none;
         }
     </style>
