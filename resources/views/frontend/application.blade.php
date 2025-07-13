@@ -1,6 +1,6 @@
 @include('frontend.partials.head')
 
-<div data-tf-live="01JNNV3JHSDYVPX7ZHA0DJEFHH"></div><script src="//embed.typeform.com/next/embed.js"></script>
+<iframe src="https://munarealestate.com/?fluent-form=7" allowfullscreen></iframe>
 
 <!-- jQuery -->
 <script src="{{ asset("../frontend/js/jquery-3.6.3.min.js") }}"></script>
