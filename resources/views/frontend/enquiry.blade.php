@@ -40,7 +40,13 @@
                                 <div class="reservations mb-15">
                                     <div class="icon"><span class="flaticon-location-pin"></span></div>
                                     <div class="text">
-                                        <p>Address</p> Plot 9, Coal City Garden Estate, Okpara Avenue,
+                                        <p>Abuja Address</p> Third Floor Block C, Millennium Plaza, C303, Plot 251 Herbert Macaulay Wy, Central Business District, Abuja 902211, Federal Capital Territory, Nigeria
+                                    </div>
+                                </div>
+                                <div class="reservations mb-15">
+                                    <div class="icon"><span class="flaticon-location-pin"></span></div>
+                                    <div class="text">
+                                        <p>Enugu Address</p> Plot 9, Coal City Garden Estate, Okpara Avenue,
                                         Enugu State, Nigeria
                                     </div>
                                 </div>
