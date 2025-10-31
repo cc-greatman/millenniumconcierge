@@ -86,7 +86,7 @@
                             ">Millennium Society</a></h4>
                             <p class="service-text"><strong style="font-weight: 700;">This membership offers:</strong></p>
                             <p class="service-text"><strong style="font-weight: 700; color: #fff">All Gold & Silver Membership offers plus:</strong></p>
-                            <p class="service-text" style="margin-top: -10px;">* Access to Private Jet Charter at no extra charge</p>
+                            <p class="service-text" style="margin-top: -10px;">* Discounted Visa Assistance Services</p>
                             <p class="service-text">* E introduction to all Society Members</p>
                             <p class="service-text" style="margin-top: -10px;">* B 2 B meeting set up</p>
                             <p class="service-text" style="margin-top: -10px;">* International Speaking opportunity</p>
