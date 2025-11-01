@@ -61,7 +61,7 @@
                             <p class="service-text"><strong style="font-weight: 700;">This membership offers:</strong></p>
                             <p class="service-text">* Discounted hotel rates</p>
                             <p class="service-text">* Itinerary management and flight booking at no extra fee</p>
-                            <p class="service-text">* Free access to airport exclusive lounge</p>
+                            <p class="service-text">* Discounted Visa Assistance Services</p>
                             <p class="service-text" style="margin-top: -10px;">* Access to 24/7 customer service</p>
                         </div>
                         <div class="service-actions">
